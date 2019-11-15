@@ -58,9 +58,9 @@ extern NSString *getNoticeLogoWithType(NSString *type);
 - (void)setModel:(NoticeModel *)model{
     _model = model;
     
-    _titleLab.text = model.msgContent;
-    _dateLab.text = model.createDate;
-    _logo.image = UIImageName(getNoticeLogoWithType(model.msgType));
+    _titleLab.text = model.content;
+    _dateLab.text = model.createdTime;
+    _logo.image = UIImageName(getNoticeLogoWithType(model.noticeType));
     
 }
 

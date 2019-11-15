@@ -26,24 +26,20 @@
 - (void)updateMessageInfo{
     
     NewParams;
-    [params setSafeObject:CurrentUser.usrNo forKey:@"userId"];
-    [params setSafeObject:@"6" forKey:@"walletType"];
-    
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/admin/wallet/open/getWalletBalancePage")
-    .zz_isPostByURLSession(YES)
+    NSString *url = [NSString stringWithFormat:@"/account-biz/smsAllowance/%@",CurrentUser.usrNo];
+    ZZNetWorker.GET.zz_param(params).zz_url(url)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
         if (model_net.success) {
             
-            NSArray *arr = model_net.data[@"records"];
-            if (arr.count) {
-                NSDictionary *dic = arr.firstObject;
-                
-                NSString *balance = [NSString formatFloatString:dic[@"balance"]];
-                self.messageCount = [balance integerValue];
-                self.changed ++;
-            }
+            NSDictionary *dic = model_net.data;
+            
+            NSString *balance = [NSString formatFloatString:dic[@"balance"]];
+            self.messageCount = [balance integerValue];
+            self.totalIncome = [balance integerValue];
+            self.totalSpend = [balance integerValue];
+            self.changed ++;
             
         }
     });

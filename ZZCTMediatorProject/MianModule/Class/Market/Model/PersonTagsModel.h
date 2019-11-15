@@ -12,9 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonTagsModel : NSObject
 
-@property (nonatomic, strong) NSString *Id;
+
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *des;
 @property (nonatomic, strong) NSString *type;
 
 @end

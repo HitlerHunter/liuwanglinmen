@@ -16,15 +16,13 @@
 - (void)requestOrder{
     
     NewParams;
-    [params setSafeObject:CurrentUser.usrNo forKey:@"platformMerchId"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"userNo"];
     [params setSafeObject:self.money forKey:@"orderAmt"];
-    [params setSafeObject:self.smsCount forKey:@"smsCount"];
+    [params setSafeObject:self.smsCount forKey:@"goodsCount"];
     [params setSafeObject:[IPAddressHelper getNetworkIPAddress] forKey:@"spbillCreateIp"];
-    [params setSafeObject:self.remark forKey:@"remark"];
     
     [SVProgressHUD show];
-    ZZNetWorker.GET.zz_param(params).zz_url(@"/pay/wxPay/appPay")
-    .zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_param(params).zz_url(@"/payment-biz/order/rechargePay")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         [SVProgressHUD dismiss];

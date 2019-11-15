@@ -9,14 +9,14 @@
 #import "SDBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class HomeMessageModel;
+@class NoticeModel;
 @interface MineMessageDetailViewController : SDBaseViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *bottomButton;
-@property (nonatomic, strong) HomeMessageModel *model;
+@property (nonatomic, strong) NoticeModel *model;
 @property (nonatomic, strong) void (^clickBlock)(void);
 
-- (instancetype)initWithModel:(HomeMessageModel *)model;
+- (instancetype)initWithModel:(NoticeModel *)model;
 
 @end
 

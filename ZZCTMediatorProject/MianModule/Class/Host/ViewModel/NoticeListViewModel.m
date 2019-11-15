@@ -11,19 +11,32 @@
 
 @implementation NoticeListViewModel
 
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.showType = @"2";
+        self.rows = @"20";
+    }
+    return self;
+}
+
+- (NSInteger)startPage{
+    return 0;
+}
 
 - (void)requestDataWithCompleteHandler:(refreshBlock)handler{
     
     NewParams;
     
     [params setSafeObject:@(self.page) forKey:@"page"];
-    [params setSafeObject:@"20" forKey:@"rows"];
-    [params setSafeObject:CurrentUser.sysUser.userId forKey:@"shopNo"];
-    [params setSafeObject:self.type forKey:@"msgType"];
+    [params setSafeObject:self.rows forKey:@"rows"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"userNo"];
+    [params setSafeObject:@"0" forKey:@"aimUserId"];
+    [params setSafeObject:self.type forKey:@"noticeType"];
+    [params setSafeObject:self.showType forKey:@"showType"];
     
-    ZZNetWorker.GET.zz_param(params)
-    .zz_url(@"/general/msg/queryMsgRecords")
-    .zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_param(params)
+    .zz_url(@"/payment-biz/noticeRecord/appPage")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

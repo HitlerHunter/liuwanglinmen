@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSString *const MarketPlanTypeWakeUpString = @"rouse";
 static NSString *const MarketPlanTypeBirthdayString = @"birth";
-static NSString *const MarketPlanTypeCustomString = @"consume";
+static NSString *const MarketPlanTypeCustomString = @"custom";
 
 static NSString *const MarketPlanTypeWakeUpTitle = @"会员唤醒";
 static NSString *const MarketPlanTypeBirthdayTitle = @"生日祝福";

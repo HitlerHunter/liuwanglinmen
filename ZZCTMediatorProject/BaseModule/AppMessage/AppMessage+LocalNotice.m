@@ -12,8 +12,8 @@
 @implementation AppMessage (LocalNotice)
 
 - (void)showMessageWithDic:(NSDictionary *)dic{
-    MineMessageModel *model = [MineMessageModel mj_objectWithKeyValues:dic];
-    if (!IsNull(model.Id)) {
+    NoticeModel *model = [NoticeModel mj_objectWithKeyValues:dic];
+    if (!IsNull(model.nid)) {
             // 1.创建通知内容
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         content.title = model.title;
@@ -30,7 +30,7 @@
         UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
         
             // 4.设置UNNotificationRequest
-        NSString *requestIdentifer = @"MineMessageModel";
+        NSString *requestIdentifer = @"NoticeModel";
         UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifer content:content trigger:trigger];
         
             //5.把通知加到UNUserNotificationCenter, 到指定触发点会被触发

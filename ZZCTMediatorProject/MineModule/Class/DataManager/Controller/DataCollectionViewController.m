@@ -47,7 +47,7 @@ typedef NS_ENUM(NSUInteger, ChoiceType) {
 - (DataManagerViewModel *)viewModel{
     if (!_viewModel) {
         _viewModel = [DataManagerViewModel new];
-        _viewModel.day = @"7";
+        _viewModel.day = @"6";
         _viewModel.dataType = DataTypeDealMoney;
     }
     return _viewModel;
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSUInteger, ChoiceType) {
         
         self.dataAllView.label_axtMoney.text = [NSString stringWithFormat:@"%@ 元",[NSString formatFloatString:sumAllFee]];
         
-        self.dataAllView.canEndMoney = [NSString formatFloatString:@(sumSuccessAmt.floatValue-sumAllFee.floatValue+sumDropAmt.floatValue).stringValue];
+        self.dataAllView.canEndMoney = [NSString formatFloatString:@(sumSuccessAmt.floatValue+sumAllFee.floatValue+sumDropAmt.floatValue).stringValue];
         
         NSString *alipay_count = self.viewModel.payWay_alipayDictionary[@"allCount"];
         NSString *alipay_amt = self.viewModel.payWay_alipayDictionary[@"allSumAmt"];
@@ -377,18 +377,18 @@ typedef NS_ENUM(NSUInteger, ChoiceType) {
     }else if (_choiceType == ChoiceTypeDate) {
         [_btn_Date setTitle:title forState:UIControlStateNormal];
         if (index == 0) {
-            if ([self.viewModel.day isEqualToString:@"7"]) {
+            if ([self.viewModel.day isEqualToString:@"6"]) {
                 return;
             }
             
-            self.viewModel.day = @"7";
+            self.viewModel.day = @"6";
 
         }else if (index == 1) {
-            if ([self.viewModel.day isEqualToString:@"30"]) {
+            if ([self.viewModel.day isEqualToString:@"29"]) {
                 return;
             }
             
-            self.viewModel.day = @"30";
+            self.viewModel.day = @"29";
         }
         
         [self requestData];

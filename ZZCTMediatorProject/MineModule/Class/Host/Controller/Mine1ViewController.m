@@ -143,6 +143,7 @@
     }];
     
     MineInterfaceCell *cell_address = [MineInterfaceCell cellWithImage:@"mine_address" title:@"收货地址" block:^{
+        [AppCenter setEmptyControllerTitle:@"收货地址"];
         AppCenterCheckNotOpenToAllUser
     }];
     
@@ -191,6 +192,11 @@
 #pragma mark - HomeToolsView delegate
 - (void)HomeToolsView:(HomeToolsView *)toolsView clickTitle:(NSString *)title {
     if ([title isEqualToString:@"收益明细"]) {
+        if([AppCenter isTestNumber]){
+            [AppCenter setEmptyControllerTitle:@"收益明细"];
+            [AppCenter toEmptyController];
+            return;
+        }
         SYViewController *vc = [SYViewController new];
         PushController(vc);
     }else if ([title isEqualToString:@"商户入驻"] || [title isEqualToString:@"商户信息"]) {
@@ -203,8 +209,10 @@
         APPCenterPowerCheckMerchant
         [[CTMediator sharedInstance] CTMediator_EditShopInfoViewControllerWithNav:self.navigationController];
     }else if ([title isEqualToString:@"商户管理"]) {
+        [AppCenter setEmptyControllerTitle:@"商户管理"];
         AppCenterCheckNotOpenToAllUser
     }else if ([title isEqualToString:@"我的订单"]) {
+        [AppCenter setEmptyControllerTitle:@"我的订单"];
         AppCenterCheckNotOpenToAllUser
     }
     

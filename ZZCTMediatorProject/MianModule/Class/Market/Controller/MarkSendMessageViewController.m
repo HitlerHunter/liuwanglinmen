@@ -118,29 +118,22 @@
         return;
     }
     
-    NSString *personTagId = _topView.personTagId;
+    NSString *personType = _topView.personType;
     
     NewParams;
-    [params setSafeObject:CurrentUser.sysUser.userId forKey:@"userId"];
     
-    [params setSafeObject:@"consume" forKey:@"smsType"];
-    [params setSafeObject:@"disposable" forKey:@"executeType"];//一次性
+    [params setSafeObject:MarketPlanTypeCustomString forKey:@"taskType"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"usrNo"];
     [params setSafeObject:@"1" forKey:@"taskStatus"];
     
-    if (personTagId.length == 0 && [_topView.personTag isEqualToString:@"全部"]) {
-        [params setSafeObject:@"all" forKey:@"sendTargeType"];
-        [params setSafeObject:@"" forKey:@"sendTarge"];
-    }else{
-        [params setSafeObject:@"tag" forKey:@"sendTargeType"];
-        [params setSafeObject:personTagId forKey:@"sendTarge"];
-    }
-    
+    [params setSafeObject:personType forKey:@"sendTargetType"];
+    [params setSafeObject:@"disposable" forKey:@"executeType"];
     
     [params setSafeObject:self.selecetdBoardModel.Id forKey:@"sendTemplateId"];
     [params setSafeObject:self.selecetdBoardModel.templateHead forKey:@"sendHead"];
     [params setSafeObject:self.selecetdBoardModel.templateContent forKey:@"sendContent"];
     
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/general/custom/sms")
+    ZZNetWorker.POST.zz_param(params).zz_url(@"/outside-biz/smsMarketingTask")
     .zz_isPostByURLSession(YES)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);

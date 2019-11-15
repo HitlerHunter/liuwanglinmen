@@ -31,7 +31,7 @@
     
     [self.view addSubview:self.scrollView];
     
-    [self initBoard1];
+//    [self initBoard1];
     [self initBoard2];
     
 }
@@ -65,7 +65,8 @@
     [self.scrollView addSubview:_mineBoard];
     
     [_mineBoard mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.publicBoard.mas_bottom).offset(10);
+//        make.top.mas_equalTo(self.publicBoard.mas_bottom).offset(10);
+        make.top.mas_equalTo(10);
         make.left.right.mas_equalTo(0);
         make.width.mas_equalTo(kScreenWidth);
         make.height.mas_greaterThanOrEqualTo(40);

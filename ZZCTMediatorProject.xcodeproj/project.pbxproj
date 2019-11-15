@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780D31E2237BA4AF00489A85 /* LZEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */; };
 		784CC4B8231E729100513A79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784CC4B7231E729100513A79 /* MapKit.framework */; };
 		785FE22D214112B600FBC11B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE22C214112B600FBC11B /* CoreGraphics.framework */; };
 		785FE22F214112D300FBC11B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE22E214112D300FBC11B /* libc++.tbd */; };
@@ -386,9 +387,7 @@
 		78E88B6423741928004257CE /* HooDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8880C23741926004257CE /* HooDatePicker.m */; };
 		78E88B6523741928004257CE /* NSDate+HooDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8880D23741926004257CE /* NSDate+HooDatePicker.m */; };
 		78E88B8023741928004257CE /* XWScanImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8884623741926004257CE /* XWScanImage.m */; };
-		78E88B8123741928004257CE /* MineMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8884923741926004257CE /* MineMessageModel.m */; };
 		78E88B8223741928004257CE /* AppMessage+LocalNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8884C23741926004257CE /* AppMessage+LocalNotice.m */; };
-		78E88B8323741928004257CE /* HomeMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8884D23741926004257CE /* HomeMessageModel.m */; };
 		78E88B8423741928004257CE /* MineMessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8884E23741926004257CE /* MineMessageDetailViewController.xib */; };
 		78E88B8523741928004257CE /* MineMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8885023741926004257CE /* MineMessageDetailViewController.m */; };
 		78E88B8623741928004257CE /* AppMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8885123741926004257CE /* AppMessage.m */; };
@@ -628,6 +627,8 @@
 /* Begin PBXFileReference section */
 		1FC8687C30577A0DA18F070A /* libPods-ZZCTMediatorProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZZCTMediatorProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21581D70F48E53EA10E62962 /* Pods-ZZCTMediatorProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZCTMediatorProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZZCTMediatorProject/Pods-ZZCTMediatorProject.debug.xcconfig"; sourceTree = "<group>"; };
+		780D31E0237BA4AF00489A85 /* LZEmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZEmptyViewController.h; sourceTree = "<group>"; };
+		780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZEmptyViewController.m; sourceTree = "<group>"; };
 		781B744A212BEB970001A917 /* ZZCTMediatorProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZCTMediatorProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784CC4B7231E729100513A79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		785FE22C214112B600FBC11B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1309,17 +1310,13 @@
 		78E8880D23741926004257CE /* NSDate+HooDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HooDatePicker.m"; sourceTree = "<group>"; };
 		78E8884623741926004257CE /* XWScanImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWScanImage.m; sourceTree = "<group>"; };
 		78E8884723741926004257CE /* XWScanImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWScanImage.h; sourceTree = "<group>"; };
-		78E8884923741926004257CE /* MineMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMessageModel.m; sourceTree = "<group>"; };
 		78E8884A23741926004257CE /* AppMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMessage.h; sourceTree = "<group>"; };
 		78E8884B23741926004257CE /* MineMessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMessageDetailViewController.h; sourceTree = "<group>"; };
 		78E8884C23741926004257CE /* AppMessage+LocalNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppMessage+LocalNotice.m"; sourceTree = "<group>"; };
-		78E8884D23741926004257CE /* HomeMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMessageModel.m; sourceTree = "<group>"; };
 		78E8884E23741926004257CE /* MineMessageDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineMessageDetailViewController.xib; sourceTree = "<group>"; };
-		78E8884F23741926004257CE /* MineMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMessageModel.h; sourceTree = "<group>"; };
 		78E8885023741926004257CE /* MineMessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMessageDetailViewController.m; sourceTree = "<group>"; };
 		78E8885123741926004257CE /* AppMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMessage.m; sourceTree = "<group>"; };
 		78E8885223741926004257CE /* AppMessage+LocalNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppMessage+LocalNotice.h"; sourceTree = "<group>"; };
-		78E8885323741926004257CE /* HomeMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMessageModel.h; sourceTree = "<group>"; };
 		78E8885523741926004257CE /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		78E8885723741926004257CE /* Target_Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_Book.m; sourceTree = "<group>"; };
 		78E8885823741926004257CE /* Target_Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_Book.h; sourceTree = "<group>"; };
@@ -1912,11 +1909,10 @@
 		78E884E223741925004257CE /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				78E884E323741925004257CE /* ViewModel */,
-				78E884E623741925004257CE /* 忘记密码 */,
 				78E884E923741925004257CE /* Login.storyboard */,
+				78E884E623741925004257CE /* 忘记密码 */,
 				78E884EA23741925004257CE /* 账号密码登录 */,
-				78E884F123741925004257CE /* Register */,
+				78E884E323741925004257CE /* ViewModel */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1933,8 +1929,8 @@
 		78E884E623741925004257CE /* 忘记密码 */ = {
 			isa = PBXGroup;
 			children = (
-				78E884E723741925004257CE /* forgetPsw1ViewController.m */,
 				78E884E823741925004257CE /* forgetPsw1ViewController.h */,
+				78E884E723741925004257CE /* forgetPsw1ViewController.m */,
 			);
 			path = "忘记密码";
 			sourceTree = "<group>";
@@ -1942,21 +1938,14 @@
 		78E884EA23741925004257CE /* 账号密码登录 */ = {
 			isa = PBXGroup;
 			children = (
-				78E884EB23741925004257CE /* RegisterTextFieldCell.h */,
-				78E884EC23741925004257CE /* loginViewController.m */,
-				78E884ED23741925004257CE /* RegisterViewController.m */,
-				78E884EE23741925004257CE /* RegisterTextFieldCell.m */,
 				78E884EF23741925004257CE /* loginViewController.h */,
+				78E884EC23741925004257CE /* loginViewController.m */,
+				78E884EB23741925004257CE /* RegisterTextFieldCell.h */,
+				78E884EE23741925004257CE /* RegisterTextFieldCell.m */,
 				78E884F023741925004257CE /* RegisterViewController.h */,
+				78E884ED23741925004257CE /* RegisterViewController.m */,
 			);
 			path = "账号密码登录";
-			sourceTree = "<group>";
-		};
-		78E884F123741925004257CE /* Register */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		78E884F323741925004257CE /* Other */ = {
@@ -2123,7 +2112,6 @@
 				78E8860F23741925004257CE /* 积分明细 */,
 				78E8864923741926004257CE /* 密码修改 */,
 				78E8858C23741925004257CE /* 商户入驻 */,
-				78E8856923741925004257CE /* 收银员管理 */,
 				78E8856D23741925004257CE /* DataManager */,
 				78E8853723741925004257CE /* Host */,
 				78E885B123741925004257CE /* SYSJ */,
@@ -2153,26 +2141,26 @@
 		78E8853B23741925004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8853C23741925004257CE /* ChangePhoneViewController.h */,
 				78E8853D23741925004257CE /* AccountSafeViewController.h */,
-				78E8853E23741925004257CE /* ChangeUserNameViewController.m */,
-				78E8853F23741925004257CE /* SelectStoreViewController.m */,
-				78E8854023741925004257CE /* AppWechatViewController.h */,
-				78E8854123741925004257CE /* MineNoticeSettingViewController.m */,
-				78E8854223741925004257CE /* MineKefuViewController.h */,
-				78E8854323741925004257CE /* MineSettingViewController.m */,
-				78E8854423741925004257CE /* Mine1ViewController.h */,
-				78E8854523741925004257CE /* MineInfoEditViewController.m */,
-				78E8854623741925004257CE /* ChangeUserNameViewController.h */,
 				78E8854723741925004257CE /* AccountSafeViewController.m */,
-				78E8854823741925004257CE /* ChangePhoneViewController.m */,
+				78E8854023741925004257CE /* AppWechatViewController.h */,
 				78E8854923741925004257CE /* AppWechatViewController.m */,
-				78E8854A23741925004257CE /* SelectStoreViewController.h */,
+				78E8853C23741925004257CE /* ChangePhoneViewController.h */,
+				78E8854823741925004257CE /* ChangePhoneViewController.m */,
+				78E8854623741925004257CE /* ChangeUserNameViewController.h */,
+				78E8853E23741925004257CE /* ChangeUserNameViewController.m */,
+				78E8854423741925004257CE /* Mine1ViewController.h */,
+				78E8854E23741925004257CE /* Mine1ViewController.m */,
+				78E8854D23741925004257CE /* MineInfoEditViewController.h */,
+				78E8854523741925004257CE /* MineInfoEditViewController.m */,
+				78E8854223741925004257CE /* MineKefuViewController.h */,
 				78E8854B23741925004257CE /* MineKefuViewController.m */,
 				78E8854C23741925004257CE /* MineNoticeSettingViewController.h */,
-				78E8854D23741925004257CE /* MineInfoEditViewController.h */,
-				78E8854E23741925004257CE /* Mine1ViewController.m */,
+				78E8854123741925004257CE /* MineNoticeSettingViewController.m */,
 				78E8854F23741925004257CE /* MineSettingViewController.h */,
+				78E8854323741925004257CE /* MineSettingViewController.m */,
+				78E8854A23741925004257CE /* SelectStoreViewController.h */,
+				78E8853F23741925004257CE /* SelectStoreViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2208,37 +2196,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		78E8856923741925004257CE /* 收银员管理 */ = {
-			isa = PBXGroup;
-			children = (
-				78E8856A23741925004257CE /* ViewModel */,
-				78E8856B23741925004257CE /* Controller */,
-				78E8856C23741925004257CE /* View */,
-			);
-			path = "收银员管理";
-			sourceTree = "<group>";
-		};
-		78E8856A23741925004257CE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		78E8856B23741925004257CE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		78E8856C23741925004257CE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		78E8856D23741925004257CE /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2253,8 +2210,8 @@
 		78E8856E23741925004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E8856F23741925004257CE /* DataManagerViewModel.m */,
 				78E8857023741925004257CE /* DataManagerViewModel.h */,
+				78E8856F23741925004257CE /* DataManagerViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2262,8 +2219,8 @@
 		78E8857123741925004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8857223741925004257CE /* DataCollectionViewController.m */,
 				78E8857323741925004257CE /* DataCollectionViewController.h */,
+				78E8857223741925004257CE /* DataCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2672,10 +2629,10 @@
 		78E8861323741925004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8861423741925004257CE /* IntegralRecordViewController.m */,
 				78E8861523741925004257CE /* IntegralRecordDetailViewController.h */,
 				78E8861623741925004257CE /* IntegralRecordDetailViewController.m */,
 				78E8861723741925004257CE /* IntegralRecordViewController.h */,
+				78E8861423741925004257CE /* IntegralRecordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3690,6 +3647,8 @@
 				78E887DE23741926004257CE /* LaunchViewController.m */,
 				78E887E123741926004257CE /* ShowNeedAuthenViewController.h */,
 				78E887DB23741926004257CE /* ShowNeedAuthenViewController.m */,
+				780D31E0237BA4AF00489A85 /* LZEmptyViewController.h */,
+				780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */,
 			);
 			path = AppCenter;
 			sourceTree = "<group>";
@@ -3791,13 +3750,9 @@
 				78E8885123741926004257CE /* AppMessage.m */,
 				78E8885223741926004257CE /* AppMessage+LocalNotice.h */,
 				78E8884C23741926004257CE /* AppMessage+LocalNotice.m */,
-				78E8885323741926004257CE /* HomeMessageModel.h */,
-				78E8884D23741926004257CE /* HomeMessageModel.m */,
 				78E8884B23741926004257CE /* MineMessageDetailViewController.h */,
 				78E8885023741926004257CE /* MineMessageDetailViewController.m */,
 				78E8884E23741926004257CE /* MineMessageDetailViewController.xib */,
-				78E8884F23741926004257CE /* MineMessageModel.h */,
-				78E8884923741926004257CE /* MineMessageModel.m */,
 			);
 			path = AppMessage;
 			sourceTree = "<group>";
@@ -3946,9 +3901,9 @@
 			isa = PBXGroup;
 			children = (
 				78E8889923741927004257CE /* NoticeListViewModel.h */,
-				78E8889A23741927004257CE /* NoticeModel.m */,
 				78E8889B23741927004257CE /* NoticeListViewModel.m */,
 				78E8889C23741927004257CE /* NoticeModel.h */,
+				78E8889A23741927004257CE /* NoticeModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -3956,16 +3911,16 @@
 		78E8889D23741927004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8889E23741927004257CE /* NoticeCenterViewController.m */,
-				78E8889F23741927004257CE /* CollectionMoneyViewController.m */,
-				78E888A023741927004257CE /* HomeViewController.m */,
-				78E888A123741927004257CE /* NoticeListViewController.m */,
-				78E888A223741927004257CE /* Home2ViewController.m */,
 				78E888A323741927004257CE /* CollectionMoneyViewController.h */,
-				78E888A423741927004257CE /* NoticeCenterViewController.h */,
-				78E888A523741927004257CE /* HomeViewController.h */,
+				78E8889F23741927004257CE /* CollectionMoneyViewController.m */,
 				78E888A623741927004257CE /* Home2ViewController.h */,
+				78E888A223741927004257CE /* Home2ViewController.m */,
+				78E888A523741927004257CE /* HomeViewController.h */,
+				78E888A023741927004257CE /* HomeViewController.m */,
+				78E888A423741927004257CE /* NoticeCenterViewController.h */,
+				78E8889E23741927004257CE /* NoticeCenterViewController.m */,
 				78E888A723741927004257CE /* NoticeListViewController.h */,
+				78E888A123741927004257CE /* NoticeListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3973,31 +3928,31 @@
 		78E888A823741927004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E888A923741927004257CE /* HomeNewsCell.m */,
-				78E888AA23741927004257CE /* HomeToolItem.h */,
-				78E888AB23741927004257CE /* MainStudyCell.m */,
-				78E888AC23741927004257CE /* HomeToolsView.h */,
-				78E888AD23741927004257CE /* NoticeTableViewCell.m */,
-				78E888AE23741927004257CE /* HomeTodayDataView.m */,
-				78E888AF23741927004257CE /* StudyCollectionViewCell.m */,
-				78E888B023741927004257CE /* TenantTableViewCell.m */,
-				78E888B123741927004257CE /* HomeCellView.h */,
-				78E888B223741927004257CE /* HomeTopToolView.h */,
-				78E888B323741927004257CE /* Home2HeaderView.m */,
-				78E888B423741927004257CE /* MianSectionHeader.h */,
-				78E888B523741927004257CE /* MainStudyCell.h */,
-				78E888B623741927004257CE /* HomeNewsCell.h */,
-				78E888B723741927004257CE /* HomeToolItem.m */,
-				78E888B823741927004257CE /* StudyCollectionViewCell.h */,
-				78E888B923741927004257CE /* HomeTodayDataView.h */,
-				78E888BA23741927004257CE /* NoticeTableViewCell.h */,
-				78E888BB23741927004257CE /* HomeToolsView.m */,
-				78E888BC23741927004257CE /* HomeCellView.m */,
-				78E888BD23741927004257CE /* HomeTopToolView.m */,
-				78E888BE23741927004257CE /* TenantTableViewCell.h */,
-				78E888BF23741927004257CE /* HomeNewsCell.xib */,
-				78E888C023741927004257CE /* MianSectionHeader.m */,
 				78E888C123741927004257CE /* Home2HeaderView.h */,
+				78E888B323741927004257CE /* Home2HeaderView.m */,
+				78E888B123741927004257CE /* HomeCellView.h */,
+				78E888BC23741927004257CE /* HomeCellView.m */,
+				78E888B623741927004257CE /* HomeNewsCell.h */,
+				78E888A923741927004257CE /* HomeNewsCell.m */,
+				78E888BF23741927004257CE /* HomeNewsCell.xib */,
+				78E888B923741927004257CE /* HomeTodayDataView.h */,
+				78E888AE23741927004257CE /* HomeTodayDataView.m */,
+				78E888AA23741927004257CE /* HomeToolItem.h */,
+				78E888B723741927004257CE /* HomeToolItem.m */,
+				78E888AC23741927004257CE /* HomeToolsView.h */,
+				78E888BB23741927004257CE /* HomeToolsView.m */,
+				78E888B223741927004257CE /* HomeTopToolView.h */,
+				78E888BD23741927004257CE /* HomeTopToolView.m */,
+				78E888B523741927004257CE /* MainStudyCell.h */,
+				78E888AB23741927004257CE /* MainStudyCell.m */,
+				78E888B423741927004257CE /* MianSectionHeader.h */,
+				78E888C023741927004257CE /* MianSectionHeader.m */,
+				78E888BA23741927004257CE /* NoticeTableViewCell.h */,
+				78E888AD23741927004257CE /* NoticeTableViewCell.m */,
+				78E888B823741927004257CE /* StudyCollectionViewCell.h */,
+				78E888AF23741927004257CE /* StudyCollectionViewCell.m */,
+				78E888BE23741927004257CE /* TenantTableViewCell.h */,
+				78E888B023741927004257CE /* TenantTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4056,12 +4011,12 @@
 		78E888D723741927004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E888D823741927004257CE /* MarketMessageManager.m */,
-				78E888D923741927004257CE /* MarketRechargeRecordViewModel.h */,
-				78E888DA23741927004257CE /* MarketMessagePayManager.h */,
-				78E888DB23741927004257CE /* MarketRechargeRecordViewModel.m */,
 				78E888DC23741927004257CE /* MarketMessageManager.h */,
+				78E888D823741927004257CE /* MarketMessageManager.m */,
+				78E888DA23741927004257CE /* MarketMessagePayManager.h */,
 				78E888DD23741927004257CE /* MarketMessagePayManager.m */,
+				78E888D923741927004257CE /* MarketRechargeRecordViewModel.h */,
+				78E888DB23741927004257CE /* MarketRechargeRecordViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4069,13 +4024,13 @@
 		78E888DE23741927004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E888DF23741927004257CE /* MarketInvestSuccessController.h */,
-				78E888E023741927004257CE /* MarketInvestRecordVC.m */,
-				78E888E123741927004257CE /* MarketInvestFailureController.m */,
-				78E888E223741927004257CE /* MarketMessageInvestViewController.h */,
 				78E888E323741927004257CE /* MarketInvestFailureController.h */,
+				78E888E123741927004257CE /* MarketInvestFailureController.m */,
 				78E888E423741927004257CE /* MarketInvestRecordVC.h */,
+				78E888E023741927004257CE /* MarketInvestRecordVC.m */,
+				78E888DF23741927004257CE /* MarketInvestSuccessController.h */,
 				78E888E523741927004257CE /* MarketInvestSuccessController.m */,
+				78E888E223741927004257CE /* MarketMessageInvestViewController.h */,
 				78E888E623741927004257CE /* MarketMessageInvestViewController.m */,
 			);
 			path = Controller;
@@ -4093,14 +4048,14 @@
 		78E888EA23741927004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E888EB23741927004257CE /* MarketMessageOtherMoneyView.m */,
 				78E888EC23741927004257CE /* MarketInvestRecordCell.h */,
-				78E888ED23741927004257CE /* MarketMessagePayWayView.m */,
-				78E888EE23741927004257CE /* MarketMessageMoneyView.h */,
-				78E888EF23741927004257CE /* MarketMessageOtherMoneyView.h */,
-				78E888F023741927004257CE /* MarketMessagePayWayView.h */,
 				78E888F123741927004257CE /* MarketInvestRecordCell.m */,
+				78E888EE23741927004257CE /* MarketMessageMoneyView.h */,
 				78E888F223741927004257CE /* MarketMessageMoneyView.m */,
+				78E888EF23741927004257CE /* MarketMessageOtherMoneyView.h */,
+				78E888EB23741927004257CE /* MarketMessageOtherMoneyView.m */,
+				78E888F023741927004257CE /* MarketMessagePayWayView.h */,
+				78E888ED23741927004257CE /* MarketMessagePayWayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4216,16 +4171,16 @@
 		78E8891F23741927004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E8892023741927004257CE /* CouponListViewModel.h */,
-				78E8892123741927004257CE /* CouponSendRecordViewModel.h */,
-				78E8892223741927004257CE /* CouponVipViewModel.m */,
-				78E8892323741927004257CE /* CouponViewModel.m */,
 				78E8892423741927004257CE /* CouponDetailViewModel.h */,
-				78E8892523741927004257CE /* CouponListViewModel.m */,
-				78E8892623741927004257CE /* CouponSendRecordViewModel.m */,
 				78E8892723741927004257CE /* CouponDetailViewModel.m */,
-				78E8892823741927004257CE /* CouponVipViewModel.h */,
+				78E8892023741927004257CE /* CouponListViewModel.h */,
+				78E8892523741927004257CE /* CouponListViewModel.m */,
+				78E8892123741927004257CE /* CouponSendRecordViewModel.h */,
+				78E8892623741927004257CE /* CouponSendRecordViewModel.m */,
 				78E8892923741927004257CE /* CouponViewModel.h */,
+				78E8892323741927004257CE /* CouponViewModel.m */,
+				78E8892823741927004257CE /* CouponVipViewModel.h */,
+				78E8892223741927004257CE /* CouponVipViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4233,26 +4188,26 @@
 		78E8892A23741927004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8892B23741927004257CE /* CouponChoiceViewController.m */,
-				78E8892C23741927004257CE /* CreatCouponCheckViewController.h */,
-				78E8892D23741927004257CE /* CouponSendResultController.h */,
-				78E8892E23741927004257CE /* CouponListViewController.h */,
-				78E8892F23741927004257CE /* CreatCouponViewController.h */,
-				78E8893023741927004257CE /* CouponListChoiceController.h */,
-				78E8893123741927004257CE /* CouponDateSettingViewController.h */,
-				78E8893223741927004257CE /* CouponDetailViewController.h */,
-				78E8893323741927004257CE /* CouponVipChoiceController.h */,
-				78E8893423741927004257CE /* CouponSendRecordController.h */,
-				78E8893523741927004257CE /* CreatCouponCheckViewController.m */,
 				78E8893623741927004257CE /* CouponChoiceViewController.h */,
-				78E8893723741927004257CE /* CouponSendResultController.m */,
-				78E8893823741927004257CE /* CreatCouponViewController.m */,
-				78E8893923741927004257CE /* CouponListViewController.m */,
-				78E8893A23741927004257CE /* CouponSendRecordController.m */,
-				78E8893B23741927004257CE /* CouponVipChoiceController.m */,
-				78E8893C23741927004257CE /* CouponDetailViewController.m */,
-				78E8893D23741927004257CE /* CouponListChoiceController.m */,
+				78E8892B23741927004257CE /* CouponChoiceViewController.m */,
+				78E8893123741927004257CE /* CouponDateSettingViewController.h */,
 				78E8893E23741927004257CE /* CouponDateSettingViewController.m */,
+				78E8893223741927004257CE /* CouponDetailViewController.h */,
+				78E8893C23741927004257CE /* CouponDetailViewController.m */,
+				78E8893023741927004257CE /* CouponListChoiceController.h */,
+				78E8893D23741927004257CE /* CouponListChoiceController.m */,
+				78E8892E23741927004257CE /* CouponListViewController.h */,
+				78E8893923741927004257CE /* CouponListViewController.m */,
+				78E8893423741927004257CE /* CouponSendRecordController.h */,
+				78E8893A23741927004257CE /* CouponSendRecordController.m */,
+				78E8892D23741927004257CE /* CouponSendResultController.h */,
+				78E8893723741927004257CE /* CouponSendResultController.m */,
+				78E8893323741927004257CE /* CouponVipChoiceController.h */,
+				78E8893B23741927004257CE /* CouponVipChoiceController.m */,
+				78E8892C23741927004257CE /* CreatCouponCheckViewController.h */,
+				78E8893523741927004257CE /* CreatCouponCheckViewController.m */,
+				78E8892F23741927004257CE /* CreatCouponViewController.h */,
+				78E8893823741927004257CE /* CreatCouponViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4260,12 +4215,12 @@
 		78E8893F23741927004257CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78E8894023741927004257CE /* CouponSendRecordModel.h */,
-				78E8894123741927004257CE /* CouponVipModel.m */,
 				78E8894223741927004257CE /* CouponModel.h */,
+				78E8894523741927004257CE /* CouponModel.m */,
+				78E8894023741927004257CE /* CouponSendRecordModel.h */,
 				78E8894323741927004257CE /* CouponSendRecordModel.m */,
 				78E8894423741927004257CE /* CouponVipModel.h */,
-				78E8894523741927004257CE /* CouponModel.m */,
+				78E8894123741927004257CE /* CouponVipModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4273,32 +4228,32 @@
 		78E8894623741927004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E8894723741927004257CE /* CouponCardView.m */,
-				78E8894823741927004257CE /* CouponDetailTopView.h */,
-				78E8894923741927004257CE /* CouponChoiceCell.h */,
-				78E8894A23741927004257CE /* CouponInputMoneyCell.m */,
-				78E8894B23741927004257CE /* CouponVipSectionHeaderView.h */,
-				78E8894C23741927004257CE /* CouponInputTextCell.h */,
-				78E8894D23741927004257CE /* CouponDetailTableViewCell.h */,
-				78E8894E23741927004257CE /* CouponVipCell.h */,
-				78E8894F23741927004257CE /* CouponCell.h */,
 				78E8895023741927004257CE /* CounponVipSearchBarView.h */,
-				78E8895123741927004257CE /* CouponDetailCellView.m */,
-				78E8895223741927004257CE /* CouponSwitchCell.h */,
-				78E8895323741927004257CE /* CouponSelectTextCell.h */,
-				78E8895423741927004257CE /* CouponDetailTopView.m */,
-				78E8895523741927004257CE /* CouponCardView.h */,
-				78E8895623741927004257CE /* CouponCell.m */,
-				78E8895723741927004257CE /* CouponVipCell.m */,
-				78E8895823741927004257CE /* CouponDetailTableViewCell.m */,
-				78E8895923741927004257CE /* CouponInputMoneyCell.h */,
-				78E8895A23741927004257CE /* CouponVipSectionHeaderView.m */,
-				78E8895B23741927004257CE /* CouponInputTextCell.m */,
-				78E8895C23741927004257CE /* CouponChoiceCell.m */,
-				78E8895D23741927004257CE /* CouponSwitchCell.m */,
 				78E8895E23741927004257CE /* CounponVipSearchBarView.m */,
+				78E8895523741927004257CE /* CouponCardView.h */,
+				78E8894723741927004257CE /* CouponCardView.m */,
+				78E8894F23741927004257CE /* CouponCell.h */,
+				78E8895623741927004257CE /* CouponCell.m */,
+				78E8894923741927004257CE /* CouponChoiceCell.h */,
+				78E8895C23741927004257CE /* CouponChoiceCell.m */,
 				78E8895F23741927004257CE /* CouponDetailCellView.h */,
+				78E8895123741927004257CE /* CouponDetailCellView.m */,
+				78E8894D23741927004257CE /* CouponDetailTableViewCell.h */,
+				78E8895823741927004257CE /* CouponDetailTableViewCell.m */,
+				78E8894823741927004257CE /* CouponDetailTopView.h */,
+				78E8895423741927004257CE /* CouponDetailTopView.m */,
+				78E8895923741927004257CE /* CouponInputMoneyCell.h */,
+				78E8894A23741927004257CE /* CouponInputMoneyCell.m */,
+				78E8894C23741927004257CE /* CouponInputTextCell.h */,
+				78E8895B23741927004257CE /* CouponInputTextCell.m */,
+				78E8895323741927004257CE /* CouponSelectTextCell.h */,
 				78E8896023741927004257CE /* CouponSelectTextCell.m */,
+				78E8895223741927004257CE /* CouponSwitchCell.h */,
+				78E8895D23741927004257CE /* CouponSwitchCell.m */,
+				78E8894E23741927004257CE /* CouponVipCell.h */,
+				78E8895723741927004257CE /* CouponVipCell.m */,
+				78E8894B23741927004257CE /* CouponVipSectionHeaderView.h */,
+				78E8895A23741927004257CE /* CouponVipSectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4388,10 +4343,10 @@
 		78E8898823741927004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E8898923741927004257CE /* MessageTaskViewModel.m */,
+				78E8898C23741927004257CE /* MarketBoardManager.h */,
 				78E8898A23741927004257CE /* MarketBoardManager.m */,
 				78E8898B23741927004257CE /* MessageTaskViewModel.h */,
-				78E8898C23741927004257CE /* MarketBoardManager.h */,
+				78E8898923741927004257CE /* MessageTaskViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4399,30 +4354,30 @@
 		78E8898D23741927004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8898E23741927004257CE /* MessageRecordWaitSendController.h */,
-				78E8898F23741927004257CE /* MarkSendMessageViewController.m */,
-				78E8899023741927004257CE /* MarketMessageViewController.h */,
-				78E8899123741927004257CE /* MessageSendRecordViewController.h */,
-				78E8899223741927004257CE /* WakeUpAddBirthdayController.h */,
-				78E8899323741927004257CE /* MarketBoardManagerViewController.m */,
-				78E8899423741927004257CE /* MessageSendRecordDetailViewController.m */,
-				78E8899523741927004257CE /* MarketBoardCreateViewController.h */,
-				78E8899623741927004257CE /* MarketHomeViewController.h */,
-				78E8899723741927004257CE /* MessageSendQuestionViewController.h */,
+				78E889A423741927004257CE /* ChoicePersonViewController.h */,
 				78E8899823741927004257CE /* ChoicePersonViewController.m */,
-				78E8899923741927004257CE /* MessageRecordDidSendController.m */,
-				78E8899A23741927004257CE /* MarketMessageViewController.m */,
-				78E8899B23741927004257CE /* MarkSendMessageViewController.h */,
-				78E8899C23741927004257CE /* MessageRecordWaitSendController.m */,
-				78E8899D23741927004257CE /* WakeUpAddBirthdayController.m */,
-				78E8899E23741927004257CE /* MessageSendRecordViewController.m */,
-				78E8899F23741927004257CE /* MarketHomeViewController.m */,
+				78E8899523741927004257CE /* MarketBoardCreateViewController.h */,
 				78E889A023741927004257CE /* MarketBoardCreateViewController.m */,
 				78E889A123741927004257CE /* MarketBoardManagerViewController.h */,
-				78E889A223741927004257CE /* MessageSendRecordDetailViewController.h */,
+				78E8899323741927004257CE /* MarketBoardManagerViewController.m */,
+				78E8899623741927004257CE /* MarketHomeViewController.h */,
+				78E8899F23741927004257CE /* MarketHomeViewController.m */,
+				78E8899023741927004257CE /* MarketMessageViewController.h */,
+				78E8899A23741927004257CE /* MarketMessageViewController.m */,
+				78E8899B23741927004257CE /* MarkSendMessageViewController.h */,
+				78E8898F23741927004257CE /* MarkSendMessageViewController.m */,
 				78E889A323741927004257CE /* MessageRecordDidSendController.h */,
-				78E889A423741927004257CE /* ChoicePersonViewController.h */,
+				78E8899923741927004257CE /* MessageRecordDidSendController.m */,
+				78E8898E23741927004257CE /* MessageRecordWaitSendController.h */,
+				78E8899C23741927004257CE /* MessageRecordWaitSendController.m */,
+				78E8899723741927004257CE /* MessageSendQuestionViewController.h */,
 				78E889A523741927004257CE /* MessageSendQuestionViewController.m */,
+				78E889A223741927004257CE /* MessageSendRecordDetailViewController.h */,
+				78E8899423741927004257CE /* MessageSendRecordDetailViewController.m */,
+				78E8899123741927004257CE /* MessageSendRecordViewController.h */,
+				78E8899E23741927004257CE /* MessageSendRecordViewController.m */,
+				78E8899223741927004257CE /* WakeUpAddBirthdayController.h */,
+				78E8899D23741927004257CE /* WakeUpAddBirthdayController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4431,11 +4386,11 @@
 			isa = PBXGroup;
 			children = (
 				78E889A723741927004257CE /* MarketBoardCellModel.h */,
-				78E889A823741927004257CE /* PersonTagsModel.h */,
-				78E889A923741927004257CE /* MessageSendRecordModel.m */,
-				78E889AA23741927004257CE /* PersonTagsModel.m */,
 				78E889AB23741927004257CE /* MarketBoardCellModel.m */,
 				78E889AC23741927004257CE /* MessageSendRecordModel.h */,
+				78E889A923741927004257CE /* MessageSendRecordModel.m */,
+				78E889A823741927004257CE /* PersonTagsModel.h */,
+				78E889AA23741927004257CE /* PersonTagsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4443,24 +4398,24 @@
 		78E889AD23741927004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E889AE23741927004257CE /* MarketBoardCell.m */,
-				78E889AF23741927004257CE /* WakeUpAddBirthdayTopView.h */,
-				78E889B023741927004257CE /* MarketBoardView.m */,
-				78E889B123741927004257CE /* MarkMessageChoicePersonView.m */,
 				78E889B223741927004257CE /* ChoicePersonCell.h */,
-				78E889B323741927004257CE /* MarketBoardTypeSelectView.m */,
-				78E889B423741927004257CE /* MarketPortCell.m */,
-				78E889B523741927004257CE /* MessageSendQuestionView.h */,
-				78E889B623741927004257CE /* MessageSendRecordCell.h */,
-				78E889B723741927004257CE /* WakeUpAddBirthdayTopView.m */,
-				78E889B823741927004257CE /* MarketBoardCell.h */,
-				78E889B923741927004257CE /* MarketBoardView.h */,
-				78E889BA23741927004257CE /* MarketPortCell.h */,
-				78E889BB23741927004257CE /* MarketBoardTypeSelectView.h */,
 				78E889BC23741927004257CE /* ChoicePersonCell.m */,
+				78E889B823741927004257CE /* MarketBoardCell.h */,
+				78E889AE23741927004257CE /* MarketBoardCell.m */,
+				78E889BB23741927004257CE /* MarketBoardTypeSelectView.h */,
+				78E889B323741927004257CE /* MarketBoardTypeSelectView.m */,
+				78E889B923741927004257CE /* MarketBoardView.h */,
+				78E889B023741927004257CE /* MarketBoardView.m */,
+				78E889BA23741927004257CE /* MarketPortCell.h */,
+				78E889B423741927004257CE /* MarketPortCell.m */,
 				78E889BD23741927004257CE /* MarkMessageChoicePersonView.h */,
-				78E889BE23741927004257CE /* MessageSendRecordCell.m */,
+				78E889B123741927004257CE /* MarkMessageChoicePersonView.m */,
+				78E889B523741927004257CE /* MessageSendQuestionView.h */,
 				78E889BF23741927004257CE /* MessageSendQuestionView.m */,
+				78E889B623741927004257CE /* MessageSendRecordCell.h */,
+				78E889BE23741927004257CE /* MessageSendRecordCell.m */,
+				78E889AF23741927004257CE /* WakeUpAddBirthdayTopView.h */,
+				78E889B723741927004257CE /* WakeUpAddBirthdayTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4675,8 +4630,8 @@
 		78E88C4A23741C7A004257CE /* ZZNotificationExtension */ = {
 			isa = PBXGroup;
 			children = (
-				78E88C4B23741C7A004257CE /* NotificationService.m */,
 				78E88C4C23741C7A004257CE /* NotificationService.h */,
+				78E88C4B23741C7A004257CE /* NotificationService.m */,
 				78E88C4D23741C7A004257CE /* Info.plist */,
 				78E88C4E23741C7A004257CE /* ZZNotificationExtension.entitlements */,
 			);
@@ -5155,6 +5110,7 @@
 				78E88C2523741928004257CE /* WakeUpAddBirthdayTopView.m in Sources */,
 				78E88AF423741928004257CE /* SDCityPickerConst.m in Sources */,
 				78E88BA423741928004257CE /* NoticeModel.m in Sources */,
+				780D31E2237BA4AF00489A85 /* LZEmptyViewController.m in Sources */,
 				78E88A8923741927004257CE /* CashTitleInfoCell.m in Sources */,
 				78E88A4E23741927004257CE /* MineInfoEditStyle1Cell.m in Sources */,
 				78E88A4123741927004257CE /* ChangePhoneViewController.m in Sources */,
@@ -5175,7 +5131,6 @@
 				78E88A4523741927004257CE /* LZImagesView.m in Sources */,
 				78E88BF123741928004257CE /* CouponCardView.m in Sources */,
 				78E88B8623741928004257CE /* AppMessage.m in Sources */,
-				78E88B8123741928004257CE /* MineMessageModel.m in Sources */,
 				78E88BE623741928004257CE /* CouponSendResultController.m in Sources */,
 				78E88B2D23741928004257CE /* H5CommonViewController.m in Sources */,
 				78E88B6523741928004257CE /* NSDate+HooDatePicker.m in Sources */,
@@ -5421,7 +5376,6 @@
 				78E88C1423741928004257CE /* ChoicePersonViewController.m in Sources */,
 				78E88ACC23741928004257CE /* ZLPhotoBrowserCell.m in Sources */,
 				78E88B9923741928004257CE /* ZZFilterCollectionViewLayout.m in Sources */,
-				78E88B8323741928004257CE /* HomeMessageModel.m in Sources */,
 				78E88AB623741928004257CE /* XYNoDataView.m in Sources */,
 				78E88BAD23741928004257CE /* NoticeTableViewCell.m in Sources */,
 				78E88BA623741928004257CE /* NoticeCenterViewController.m in Sources */,
@@ -5755,6 +5709,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -5778,6 +5733,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
+				MARKETING_VERSION = 2.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5797,6 +5753,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -5820,6 +5777,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
+				MARKETING_VERSION = 2.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";

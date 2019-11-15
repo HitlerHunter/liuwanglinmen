@@ -12,11 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NoticeModel : NSObject
 
-@property (nonatomic, strong) NSString *createDate;
-@property (nonatomic, strong) NSString *mid;
-@property (nonatomic, strong) NSString *msgContent;
-@property (nonatomic, strong) NSString *msgType;
-@property (nonatomic, strong) NSString *shopNo;
+@property (nonatomic, strong) NSString *createdTime;
+@property (nonatomic, strong) NSString *nid;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *noticeType;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *isClick;
+@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSString *delFlag;
 @end
 
 NS_ASSUME_NONNULL_END

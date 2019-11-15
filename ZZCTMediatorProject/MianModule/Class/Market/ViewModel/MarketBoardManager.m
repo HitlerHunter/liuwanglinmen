@@ -47,7 +47,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
     dispatch_once(&onceToken, ^{
         if (manager == nil) {
             manager = [[MarketBoardManager alloc]init];
-            [manager requestPublicBoardData];
+//            [manager requestPublicBoardData];
             [manager requestMineBoardData];
             
         }
@@ -56,7 +56,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 }
 
 - (void)refreshData{
-    [self requestPublicBoardData];
+//    [self requestPublicBoardData];
     [self requestMineBoardData];
 }
 
@@ -64,7 +64,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (NSMutableArray *)getMineBoardArrayWithType:(NSString *)type{
     NSMutableArray *arr = [NSMutableArray array];
     for (MarketBoardCellModel *model in self.mineBoardArray) {
-        if ([model.targetType isEqualToString:type]) {
+        if ([model.businessType isEqualToString:type]) {
             [arr addObject:model.modelCopy];
         }
     }
@@ -75,7 +75,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (NSMutableArray *)getMineBoardArrayWithOutUnpassByType:(NSString *)type{
     NSMutableArray *arr = [NSMutableArray array];
     for (MarketBoardCellModel *model in self.mineBoardArray) {
-        if ([model.targetType isEqualToString:type] && model.templateStatus == MarketBoardStatusSuccess) {
+        if ([model.businessType isEqualToString:type] && model.status == MarketBoardStatusSuccess) {
             [arr addObject:model.modelCopy];
         }
     }
@@ -86,7 +86,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (NSMutableArray *)getPublicBoardArrayWithType:(NSString *)type{
     NSMutableArray *arr = [NSMutableArray array];
     for (MarketBoardCellModel *model in self.publicBoardArray) {
-        if ([model.targetType isEqualToString:type]) {
+        if ([model.businessType isEqualToString:type]) {
             [arr addObject:model.modelCopy];
         }
     }
@@ -112,11 +112,10 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)requestPublicBoardData{
     
     NewParams;
-    [params setSafeObject:@"common" forKey:@"template_type"];
-    [params setSafeObject:@"30" forKey:@"limit"];
-    [params setSafeObject:CurrentUser.usrNo forKey:@"user_id"];
-    
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/general/tbSmsTemplate/page")
+ 
+    ZZNetWorker.POST
+    .zz_willHandlerParam(NO).zz_param(params)
+    .zz_url(@"/outside-biz/smsMarketingTemplate/page")
     .zz_isPostByURLSession(YES)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
@@ -134,11 +133,10 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)requestMineBoardData{
     
     NewParams;
-    [params setSafeObject:@"consume" forKey:@"template_type"];
-    [params setSafeObject:@"100" forKey:@"limit"];
-    [params setSafeObject:CurrentUser.usrNo forKey:@"user_id"];
-    
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/general/tbSmsTemplate/page")
+
+    ZZNetWorker.POST
+    .zz_willHandlerParam(NO).zz_param(params)
+    .zz_url(@"/outside-biz/smsMarketingTemplate/page")
     .zz_isPostByURLSession(YES)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
@@ -157,20 +155,13 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)addBoard:(MarketBoardCellModel *)board returnBlock:(void (^)(BOOL isSuccess))returnBlock{
     
     NewParams;
-    [params setSafeObject:CurrentUserMerchant.pmsMerchantInfo.shortMerchantName forKey:@"merchantName"];
-    [params setSafeObject:CurrentUser.usrNo forKey:@"merchantNo"];
-    [params setSafeObject:CurrentUser.sysUser.userId forKey:@"userId"];
-    
-    [params setSafeObject:CurrentUser.memberDetail.phone forKey:@"mobile"];
-    [params setSafeObject:board.targetType forKey:@"targetType"];
+    [params setSafeObject:board.businessType forKey:@"businessType"];
     [params setSafeObject:board.templateContent forKey:@"templateContent"];
     [params setSafeObject:board.templateHead forKey:@"templateHead"];
-    [params setSafeObject:board.templateName forKey:@"templateName"];
-    [params setSafeObject:@"consume" forKey:@"templateType"];
-    [params setSafeObject:@"0" forKey:@"templateStatus"];
+    [params setSafeObject:board.userName forKey:@"userName"];
     
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/general/tbSmsTemplate")
-    .zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_param(params).zz_url(@"/outside-biz/smsMarketingTemplate")
+    .zz_setParamType(ZZNetWorkerParamTypeAppendAfterURL)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
@@ -188,7 +179,7 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 #pragma mark - 删除模板
 - (void)removeBoard:(MarketBoardCellModel *)board{
     
-    NSString *urlStr = [NSString stringWithFormat:@"/general/tbSmsTemplate/%@",board.Id];
+    NSString *urlStr = [NSString stringWithFormat:@"/outside-biz/smsMarketingTemplate/%@",board.Id];
 
     ZZNetWorker.DELETE.zz_param(@{}).zz_url(urlStr)
     .zz_isPostByURLSession(YES)
@@ -209,10 +200,9 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)editBoard:(MarketBoardCellModel *)board returnBlock:(void (^)(BOOL isSuccess))returnBlock{
     
     NewParams;
-    [params setSafeObject:board.targetType forKey:@"targetType"];
+    [params setSafeObject:board.businessType forKey:@"businessType"];
     [params setSafeObject:board.templateContent forKey:@"templateContent"];
     [params setSafeObject:board.templateHead forKey:@"templateHead"];
-    [params setSafeObject:board.templateName forKey:@"templateName"];
     [params setSafeObject:board.Id forKey:@"id"];
     
     ZZNetWorker.PUT.zz_param(params).zz_url(@"/general/tbSmsTemplate")

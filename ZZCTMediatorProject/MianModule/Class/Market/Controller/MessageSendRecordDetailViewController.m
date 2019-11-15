@@ -132,10 +132,9 @@
 - (void)requestDetailData{
     
     
-    NSString *urlStr = [NSString stringWithFormat:@"/general/tbExecuteTaskTrace/%@",_model.Id];
+    NSString *urlStr = [NSString stringWithFormat:@"/outside-biz/smsMarketingLog/%@",_model.Id];
     
     ZZNetWorker.GET.zz_param(@{}).zz_url(urlStr)
-    .zz_isPostByURLSession(YES)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

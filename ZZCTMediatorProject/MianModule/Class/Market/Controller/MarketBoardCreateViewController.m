@@ -101,7 +101,7 @@
     _textView.text = _boardModel.templateContent;
     
     
-    _typeView.selectedTitle = getMarketBoardTypeTitleWithTypeStr(_boardModel.targetType);
+    _typeView.selectedTitle = getMarketBoardTypeTitleWithTypeStr(_boardModel.businessType);
 }
 
 - (void)initView1{
@@ -218,11 +218,11 @@
     
     MarketBoardCellModel *board = self.boardModel.modelCopy;
     
+    board.userName = CurrentUser.usrName;
     board.templateHead = self.titleTF.text;
-    board.templateName = self.titleTF.text;
     board.templateContent = self.textView.text;
-    board.templateStatus = MarketBoardStatusReviewing;
-    board.targetType = getMarketBoardTypeStrWithTypeTitle(self.typeView.selectedTitle);
+    board.status = MarketBoardStatusReviewing;
+    board.businessType = getMarketBoardTypeStrWithTypeTitle(self.typeView.selectedTitle);
     
     if (board.templateHead.length == 0) {
         [self showMessage:@"请输入模板名称"];
@@ -240,7 +240,7 @@
     }
     
     if (!self.isEdit) {
-        self.boardModel.templateType = @"consume";
+        self.boardModel.businessType = MarketPlanTypeCustomString;
         //创建
         [[MarketBoardManager shareInstance] addBoard:board returnBlock:^(BOOL isSuccess) {
             if (isSuccess) {
@@ -251,10 +251,9 @@
         [[MarketBoardManager shareInstance] editBoard:board returnBlock:^(BOOL isSuccess) {
             if (isSuccess) {
                 self.boardModel.templateHead = board.templateHead;
-                self.boardModel.templateName = board.templateName;
                 self.boardModel.templateContent = board.templateContent;
-                self.boardModel.templateStatus = MarketBoardStatusReviewing;
-                self.boardModel.targetType = board.targetType;
+                self.boardModel.status = MarketBoardStatusReviewing;
+                self.boardModel.businessType = board.businessType;
                 
                 [self lz_popController];
             }

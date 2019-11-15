@@ -73,13 +73,13 @@
     if (model.cellType == MarketBoardCellTypeShow) {
         self.label_status.hidden = NO;
         NSString *icon = @"";
-        if (model.templateStatus == MarketBoardStatusSuccess) {
+        if (model.status == MarketBoardStatusSuccess) {
             self.label_status.text = @"审核成功";
             icon = @"messageReview_pass_status";
-        }else if (model.templateStatus == MarketBoardStatusNoPass) {
+        }else if (model.status == MarketBoardStatusNoPass) {
             self.label_status.text = @"审核未通过";
             icon = @"messageReview_NoPass_status";
-        }else if (model.templateStatus == MarketBoardStatusReviewing) {
+        }else if (model.status == MarketBoardStatusReviewing) {
             self.label_status.text = @"审核中";
             icon = @"messageReview_reviewing_status";
         }

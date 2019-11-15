@@ -31,17 +31,17 @@ typedef void(^MarketBoardCellBlock)(MarketBoardCellModel *model);
 
 @property (nonatomic, strong) NSString *Id;
 
-@property (nonatomic, strong) NSString *userId;
-@property (nonatomic, strong) NSString *mobile;
-@property (nonatomic, strong) NSString *merchantNo;
-@property (nonatomic, strong) NSString *merchantName;
+@property (nonatomic, strong) NSString *usrNo;
+@property (nonatomic, strong) NSString *userName;
 
+@property (nonatomic, strong) NSString *businessType;
 @property (nonatomic, strong) NSString *templateHead;
-@property (nonatomic, strong) NSString *templateName;
 @property (nonatomic, strong) NSString *templateContent;
-@property (nonatomic, strong) NSString *targetType;
-@property (nonatomic, strong) NSString *templateType;
-@property (nonatomic, assign) MarketBoardStatus templateStatus;
+@property (nonatomic, strong) NSString *auditReason;
+@property (nonatomic, strong) NSString *delFlag;
+@property (nonatomic, strong) NSString *createTime;
+@property (nonatomic, strong) NSString *remark;
+@property (nonatomic, assign) MarketBoardStatus status;
 
 @property (nonatomic, assign) BOOL isSelected;
 

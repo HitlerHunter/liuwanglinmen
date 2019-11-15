@@ -66,6 +66,7 @@
 
     
     [self configZZNetWork];
+    
         //检查v
     [AppCenter getAppInfo];
     

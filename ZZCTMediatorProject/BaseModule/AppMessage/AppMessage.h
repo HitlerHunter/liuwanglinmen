@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MineMessageModel.h"
-#import "HomeMessageModel.h"
+#import "NoticeModel.h"
+#import "NoticeModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppMessage : NSObject
 
-@property (nonatomic, strong) NSMutableArray <HomeMessageModel *> *messageArray;
+@property (nonatomic, strong) NSMutableArray <NoticeModel *> *messageArray;
 
 @property (nonatomic, strong, null_resettable) NSDictionary *noticeParams;
 
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addNewMessageWithDic:(NSDictionary *)dic;
 
 /**首页弹窗*/
-+ (void)getHomePresentNoticeWithBlock:(void(^)(HomeMessageModel *message))block;
++ (void)getHomePresentNoticeWithBlock:(void(^)(NoticeModel *message))block;
 /**消息轮播*/
 - (void)getNewNotice;
 

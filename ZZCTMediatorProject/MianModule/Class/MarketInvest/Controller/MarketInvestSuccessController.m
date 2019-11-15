@@ -75,7 +75,7 @@
 }
 
 - (void)save{
-    [self lz_popController];
+    [self lineBackWithId:LinearBackId_Order];
 }
 
 @end

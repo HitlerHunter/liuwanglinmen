@@ -10,17 +10,18 @@
 #import "ShowNeedAuthenViewController.h"
 #import "RealNameOneViewController.h"
 #import "LFLivenessManager.h"
+#import "LZEmptyViewController.h"
 
 @implementation AppCenter (AppCheck)
 
 /**是否是放到分发平台*/
 + (BOOL)checkAppIsToHoc{
-    return YES;
+    return NO;
 }
 
 /**是否在开发*/
 + (BOOL)checkAppIsDevelopment{
-    return NO;
+    return YES;
 }
 
 + (void)checkModuleNotOpenToMemberUser{
@@ -35,17 +36,33 @@
 }
 
 + (void)figerNotOpen{
-    if ([CurrentUser.mobile isEqualToString:@"18974908103"]) {
-        SDBaseViewController *vc = [SDBaseViewController new];
-        [[AppCenter getCurrentVC].navigationController pushViewController:vc animated:YES];
+    if (self.isTestNumber) {
+        [self toEmptyController];
     }else{
         [SVProgressHUD showInfoWithStatus:@"暂未开放!"];
     }
 }
 
++ (BOOL)isTestNumber{
+    if(self.checkAppIsDevelopment) return NO;
+    return [CurrentUser.mobile isEqualToString:@"18974908103"];
+}
+
++ (void)toEmptyController{
+    LZEmptyViewController *vc = [LZEmptyViewController new];
+    [[AppCenter getCurrentVC].navigationController pushViewController:vc animated:YES];
+}
+
++ (void)setEmptyControllerTitle:(NSString *)title{
+    [[NSUserDefaults standardUserDefaults] setObject:title forKey:@"EmptyControllerTitle"];
+}
+
 + (BOOL)checkMerchant{
     
-//    return YES;
+    if ([self checkAppIsDevelopment]) {
+        return YES;
+    }
+    
     if ([CurrentUser.usrType isEqualToString:@"merchant"]
         || [CurrentUser.usrType isEqualToString:@"system"]) {
         return YES;

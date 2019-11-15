@@ -97,7 +97,9 @@
         [self.scrollView addSubview:imgView];
     }
     
+    [self.view addSubview:self.scrollView];
     
+    /*
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.userInteractionEnabled = YES;
     btn.frame = CGRectMake(kScreenWidth - 70, LZApp.shareInstance.app_statusBarHeight+20, 44, 44);
@@ -108,10 +110,9 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(tgClick) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    [self.view addSubview:self.scrollView];
     [self.view addSubview:btn];
     [self.view bringSubviewToFront:btn];
+     */
     
     
     UIPageControl *page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenHeight - 50, kScreenWidth, 30)];

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger changed;
 @property (nonatomic, assign) NSInteger messageCount;
+@property (nonatomic, assign) NSInteger totalIncome;
+@property (nonatomic, assign) NSInteger totalSpend;
 
 @property (nonatomic, strong) NSString *messageCountStr;
 

@@ -32,44 +32,21 @@
 }
 
 - (void)requestData{
-    NewParams;
-
-    [params setSafeObject:@1 forKey:@"page"];
-    [params setSafeObject:@100 forKey:@"rows"];
     
-    if ([AppCenter powerCheck]) {
-        [params setSafeObject:CurrentUser.usrNo forKey:@"userId"];
-    }else{
-        [params setSafeObject:CurrentUser.sysUser.userId forKey:@"userId"];
+    NSArray *arr = @[@{@"name":@"未交易用户",@"type":@"trade"},
+                     @{@"name":@"领劵用户",@"type":@"coupon"},
+                     @{@"name":@"直推用户",@"type":@"direct"}];
+    
+    self.dataArray = [PersonTagsModel mj_objectArrayWithKeyValuesArray:arr];
+    
+    [self.tableView reloadData];
+    
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    
+    if (self.selectedBlock && self.dataArray.count) {
+        PersonTagsModel *model = self.dataArray[0];
+        self.selectedBlock(model.name, model.type);
     }
-    
-    ZZNetWorker.GET.zz_param(params).zz_url(@"/admin/tags/page")
-    .zz_isPostByURLSession(YES)
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        ZZNetWorkModelWithJson(data);
-
-        if (model_net.success) {
-            self.dataArray = [PersonTagsModel mj_objectArrayWithKeyValuesArray:model_net.data[@"records"]];
-            
-            PersonTagsModel *allModel = [PersonTagsModel new];
-            allModel.name = @"全部";
-            allModel.Id = @"";
-            [self.dataArray insertObject:allModel atIndex:0];
-            
-            [self.tableView reloadData];
-            
-            [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
-            
-            if (self.selectedBlock && self.dataArray.count) {
-                PersonTagsModel *model = self.dataArray[0];
-                self.selectedBlock(model.name, model.Id);
-            }
-            
-        }else{
-            [SVProgressHUD showErrorWithStatus:@"修改模板失败，请稍后再试"];
-        }
-        
-    });
 }
 
 #pragma mark - tableView Delegate
@@ -98,7 +75,7 @@
     
     if (self.selectedBlock) {
         PersonTagsModel *model = self.dataArray[indexPath.row];
-        self.selectedBlock(model.name, model.Id);
+        self.selectedBlock(model.name, model.type);
     }
 }
 

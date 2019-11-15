@@ -52,12 +52,12 @@
                                             CYLTabBarItemSelectedImage : @"shouye_selected"
                                             };
     NSDictionary * tabBarItem2Attribute = @{
-                                            CYLTabBarItemTitle : @"推广",
+                                            CYLTabBarItemTitle : @"我要推广",
                                             CYLTabBarItemImage : @"share_normal",
                                             CYLTabBarItemSelectedImage : @"share_selected"
                                             };
     NSDictionary * tabBarItem3Attribute = @{
-                                            CYLTabBarItemTitle : @"升级",
+                                            CYLTabBarItemTitle : @"我要升级",
                                             CYLTabBarItemImage : @"levelup_normal",
                                             CYLTabBarItemSelectedImage : @"levelup_selected"
                                             };

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NoticeListViewModel : BaseRefreshViewModel
 
 @property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *rows;
+@property (nonatomic, strong) NSString *showType;
 
 @end
 

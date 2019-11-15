@@ -52,8 +52,8 @@
     UITapGestureRecognizer *topTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topTapClick)];
     [self addGestureRecognizer:topTap];
     
-    self.personTag = @"全部";
-    self.personTagId = @"";
+    self.personTag = @"未交易用户";
+    self.personType = @"trade";
     
 }
 
@@ -64,7 +64,7 @@
     vc.selectedBlock = ^(NSString * _Nonnull title, NSString * _Nonnull Id) {
         @strongify(self);
         self.personTag = title;
-        self.personTagId = Id;
+        self.personType = Id;
         self.label_person.text = title;
     };
     PushController(vc);

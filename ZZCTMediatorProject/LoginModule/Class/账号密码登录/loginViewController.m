@@ -93,18 +93,44 @@
         self.phoneTF.text = @"18974908103";
         self.pswdTF.text = @"111111";
         
-        self.phoneTF.text = @"15973192415";
-        self.pswdTF.text = @"123456";
-        
         self.phoneTF.text = @"18680670412";
-        self.pswdTF.text = @"zhouli1104";
+        self.pswdTF.text = @"459615";
+        
+        self.phoneTF.text = @"13779799999";
+        self.pswdTF.text = @"123456";
     }
     
     
-    UIButton *btn = [UIButton buttonWithFontSize:16 text:@"《六旺商家版用户协议》" textColor:rgb(255,81,0)];
-    [btn addTarget:self action:@selector(toAgrementVC) forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(kScreenWidth*0.5-100, kScreenHeight-80, 200, 30);
-    [self.phoneTF.superview addSubview:btn];
+//    UIButton *btn = [UIButton buttonWithFontSize:16 text:@"注册/登录即同意《六旺商家版用户协议》" textColor:rgb(255,81,0)];
+//    [btn addTarget:self action:@selector(toAgrementVC) forControlEvents:UIControlEventTouchUpInside];
+//    btn.frame = CGRectMake(kScreenWidth*0.5-100, kScreenHeight-80, 200, 30);
+//    [self.phoneTF.superview addSubview:btn];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《六旺商家版用户协议》"];
+    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
+    
+        // text-style1
+    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(8, 11)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(255,81,0) range:NSMakeRange(8, 11)];
+    
+    UILabel *label_xy = [UILabel labelWithFont:Font_PingFang_SC_Bold(18) text:@"" textColor:rgb(255,81,0)];
+    [self.phoneTF.superview addSubview:label_xy];
+    [label_xy mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
+        make.bottom.mas_equalTo(-10);
+        make.height.mas_equalTo(20);
+    }];
+    label_xy.attributedText = attributedString;
+    
+    UIButton *btn1 = [UIButton buttonWithFontSize:14 text:@"" textColor:rgb(53, 53, 53)];
+    [self.phoneTF.superview addSubview:btn1];
+    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(label_xy);
+        make.size.mas_equalTo(label_xy);
+    }];
+
+    [btn1 addTarget:self action:@selector(toAgrementVC) forControlEvents:UIControlEventTouchUpInside];
 }
 
 

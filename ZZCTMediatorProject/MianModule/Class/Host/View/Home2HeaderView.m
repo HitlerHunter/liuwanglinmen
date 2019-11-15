@@ -52,7 +52,7 @@
     
     [self addHeader];
     [self addSubview:self.cycleScrollView];
-//    [self addSubview:self.noticeView];
+    [self addSubview:self.noticeView];
     [self addSubview:self.todayView];
     [self addUIToolView2];
     [self addSubview:self.cycleScrollView2];
@@ -84,7 +84,7 @@
     UIImageView *avatar = [UIImageView new];
     UILabel *nameLabel = [UILabel labelWithFontSize:16];
     UIImageView *message = [UIImageView viewWithImage:UIImageName(@"xiaoxi")];
-    message.hidden = YES;
+//    message.hidden = YES;
     
     [view addSubview:avatar];
     [view addSubview:nameLabel];
@@ -163,7 +163,7 @@
         VipManagerViewController *vc = [VipManagerViewController new];
         PushController(vc);
     }else if ([title isEqualToString:@"短信营销"]) {
-        AppCenterCheckNotOpen
+        [AppCenter setEmptyControllerTitle:@"短信营销"];
         APPCenterPowerCheckMerchant
         MarketMessageViewController *vc = [MarketMessageViewController new];
         PushController(vc);
@@ -182,7 +182,7 @@
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_BookViewController];
         PushController(vc);
     }else if ([title isEqualToString:@"数据统计"]) {
-//        AppCenterCheckNotOpen
+
         APPCenterPowerCheckMerchant
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_FormDataManagerController];
         [self.viewController presentViewController:vc animated:YES completion:nil];
@@ -199,7 +199,7 @@
 #pragma mark - 消息通知
 - (void)advertScrollView:(SGAdvertScrollView *)advertScrollView didSelectedItemAtIndex:(NSInteger)index{
     
-    HomeMessageModel *message = [AppMessage.shareInstance.messageArray safeObjectWithIndex:index];
+    NoticeModel *message = [AppMessage.shareInstance.messageArray safeObjectWithIndex:index];
     
     if (message) {
             //消息详情
@@ -295,7 +295,7 @@
 
 - (HomeToolsView *)toolsView2{
     if (!_toolsView2) {
-        _toolsView2 = [[HomeToolsView alloc] initWithFrame:CGRectMake(0, self.cycleScrollView.bottom, kScreenWidth, 160)];
+        _toolsView2 = [[HomeToolsView alloc] initWithFrame:CGRectMake(0, self.noticeView.bottom, kScreenWidth, 160)];
         _toolsView2.backgroundColor = LZWhiteColor;
         _toolsView2.maxCountOneLine = 4;
         _toolsView2.topSpacing = 20;

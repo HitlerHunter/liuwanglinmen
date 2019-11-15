@@ -19,19 +19,19 @@
     
     NewParams;
     [params setSafeObject:@(self.page) forKey:@"page"];
-    [params setSafeObject:@20 forKey:@"size"];
-    [params setSafeObject:@([CurrentUser.usrNo integerValue]) forKey:@"userId"];
+    [params setSafeObject:@20 forKey:@"limit"];
+    [params setSafeObject:@([CurrentUser.usrNo integerValue]) forKey:@"usrNo"];
     
     if (_isWaitingSend) {
         //未执行
-        [params setSafeObject:@"1" forKey:@"list"];
+        [params setSafeObject:@"1" forKey:@"taskStatus"];
     }else{
       
-        [params setSafeObject:@"2,3,4" forKey:@"list"];
+        [params setSafeObject:@"2,3" forKey:@"taskStatus"];
     }
     
-    ZZNetWorker.POST.zz_param(params)
-    .zz_url(@"/general/tbSmsTask/pageForApp").zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_willHandlerParam(NO).zz_param(params)
+    .zz_url(@"/outside-biz/smsMarketingTask/page")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

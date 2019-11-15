@@ -38,13 +38,14 @@
     [self.view addSubview:self.scrollView];
     [self addView1];
     
-    [[MarketMessageManager shareInstance] getMessageRechargeRule:^(BOOL isSuccess) {
-        if (isSuccess) {
-            [self configView];
-        }
-    }];
+//    [[MarketMessageManager shareInstance] getMessageRechargeRule:^(BOOL isSuccess) {
+//        if (isSuccess) {
+//            [self configView];
+//        }
+//    }];
     
-    
+    [MarketMessageManager shareInstance].messagePrice = 0.1;
+    [self configView];
 }
 
 - (void)configView{
@@ -60,7 +61,7 @@
         AppPayStatus status = [x.object integerValue];
         if (status == AppPayStatusSuccess) {
             MarketInvestSuccessController *success = [[MarketInvestSuccessController alloc] initWithMoney:self.payManager.money];
-            PushController(success);
+            PushIdController(success, LinearBackId_Order);
         }else if (status == AppPayStatusFailue) {
             MarketInvestFailureController *failure = [MarketInvestFailureController new];
             PushController(failure);

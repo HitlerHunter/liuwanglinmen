@@ -7,7 +7,7 @@
 //
 
 #import "MineMessageDetailViewController.h"
-#import "HomeMessageModel.h"
+#import "NoticeModel.h"
 
 @interface MineMessageDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -18,7 +18,7 @@
 
 @implementation MineMessageDetailViewController
 
-- (instancetype)initWithModel:(HomeMessageModel *)model{
+- (instancetype)initWithModel:(NoticeModel *)model{
     if ([super init]) {
         _model = model;
     }

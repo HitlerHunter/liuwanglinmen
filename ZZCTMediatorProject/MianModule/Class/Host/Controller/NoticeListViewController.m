@@ -21,9 +21,7 @@
 - (instancetype)initWithType:(NSString *)type{
     self = [super init];
     if (self) {
-        if (![type isEqualToString:@"all"]) {
-            self.viewModel.type = type;
-        }
+        self.viewModel.type = type;
     }
     return self;
 }
@@ -46,7 +44,6 @@
     
     [self.viewModel refreshData];
 }
-
 
 
 - (NoticeListViewModel *)viewModel{

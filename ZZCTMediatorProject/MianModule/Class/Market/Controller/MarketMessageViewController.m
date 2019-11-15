@@ -93,10 +93,11 @@
                          @"info":@"会员生日，专属关怀",
                          @"icon":@"birthday_gift",
                          },
+                       /*
                        @{@"title":@"会员唤醒",
                          @"info":@"唤醒会员，精准营销",
                          @"icon":@"huiyuanhuanxing",
-                         },
+                         },*/
                        @{@"title":@"短信群发",
                          @"info":@"自定义短信内容、发送对象",
                          @"icon":@"duanxinqunfa",
@@ -166,7 +167,7 @@
 //充值
 - (void)toInvest{
     MarketMessageInvestViewController *vc = [MarketMessageInvestViewController new];
-    PushController(vc);
+    PushIdController(vc, LinearBackId_Order);
 }
 
 - (void)showAlertView{

@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     if (_planType==MarketPlanTypeWakeUp) {
         _type = MarketPlanTypeWakeUpString;
         self.title = @"会员唤醒";
@@ -44,8 +43,6 @@
         _type = MarketPlanTypeBirthdayString;
         self.title = @"生日祝福";
     }
-    
-    
     
     [self.view addSubview:self.scrollView];
     
@@ -58,14 +55,14 @@
         make.height.mas_equalTo(85);
     }];
     
-    [self initBoard1];
+//    [self initBoard1];
     [self initBoard2];
     
     UILabel *label_name = [UILabel labelWithFont:Font_PingFang_SC_Regular(16) text:@"短信模板" textColor:rgb(53,53,53)];
     [self.scrollView addSubview:label_name];
     [label_name mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
-        make.bottom.mas_equalTo(self.publicBoard.mas_top).offset(-7);
+        make.bottom.mas_equalTo(self.mineBoard.mas_top).offset(-7);
     }];
     
     @weakify(self);
@@ -141,7 +138,8 @@
     [self.scrollView addSubview:_mineBoard];
     
     [_mineBoard mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.publicBoard.mas_bottom).offset(10);
+//        make.top.mas_equalTo(self.publicBoard.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.topView.mas_bottom).offset(40);
         make.left.right.mas_equalTo(0);
         make.width.mas_equalTo(kScreenWidth);
         make.height.mas_greaterThanOrEqualTo(40);
@@ -214,19 +212,15 @@
     }
     
     NewParams;
-    [params setSafeObject:CurrentUser.sysUser.userId forKey:@"userId"];
     
-    if (_planType==MarketPlanTypeWakeUp) {
-        [params setSafeObject:@"rouse" forKey:@"smsType"];
-    }else{
-        [params setSafeObject:@"birthday" forKey:@"smsType"];
-    }
-    
+    [params setSafeObject:MarketPlanTypeBirthdayString forKey:@"taskType"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"usrNo"];
+    [params setSafeObject:@"1" forKey:@"taskStatus"];
+
     [params setSafeObject:@"regular" forKey:@"executeType"];//定期
     [params setSafeObject:delayDay forKey:@"delayDay"];
     [params setSafeObject:@"1" forKey:@"taskStatus"];
-    [params setSafeObject:perdayTime forKey:@"perdayTime"];
-    [params setSafeObject:@"all" forKey:@"sendTargeType"];
+    [params setSafeObject:perdayTime forKey:@"executeTime"];
     
     [params setSafeObject:self.selecetdBoardModel.Id forKey:@"sendTemplateId"];
     [params setSafeObject:self.selecetdBoardModel.templateHead forKey:@"sendHead"];
@@ -234,8 +228,7 @@
     
 //    [params setSafeObject:getMarketBoardTypeTitleWithTypeStr(self.selecetdBoardModel.targetType) forKey:@"sendTarge"];
     
-    ZZNetWorker.POST.zz_param(params).zz_url(@"/general/custom/sms")
-    .zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_param(params).zz_url(@"/outside-biz/smsMarketingTask")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

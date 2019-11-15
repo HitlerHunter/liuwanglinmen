@@ -17,13 +17,13 @@
 - (MarketBoardCellModel *)modelCopy{
     MarketBoardCellModel *model = [MarketBoardCellModel new];
     model.templateHead = self.templateHead;
-    model.templateName = self.templateName;
     model.templateContent = self.templateContent;
-    model.targetType = self.targetType;
+    model.businessType = self.businessType;
     model.cellType = self.cellType;
-    model.templateStatus = self.templateStatus;
-    model.userId = self.userId;
+    model.status = self.status;
+    model.usrNo = self.usrNo;
     model.Id = self.Id;
+    model.delFlag = self.delFlag;
     return model;
 }
 

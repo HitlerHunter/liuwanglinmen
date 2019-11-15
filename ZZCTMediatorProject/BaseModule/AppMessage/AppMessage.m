@@ -7,6 +7,8 @@
 //
 
 #import "AppMessage.h"
+#import "NoticeListViewModel.h"
+#import "NoticeModel.h"
 
 @implementation AppMessage
 
@@ -28,56 +30,46 @@
 
 }
 
-+ (void)getHomePresentNoticeWithBlock:(void(^)(HomeMessageModel *message))block{
++ (void)getHomePresentNoticeWithBlock:(void(^)(NoticeModel *message))block{
     
-    NewParams;
-    [params setSafeObject:@"merchant" forKey:@"aimUserId"];//商户：merchant 代理商：agent
-    
-    [params setSafeObject:@"1" forKey:@"showType"];
-    
-    ZZNetWorker.GET.zz_param(params).zz_url(@"/admin/app/showNotice")
-    .zz_isPostByURLSession(YES)
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        ZZNetWorkModelWithJson(data);
-        if (model_net.success) {
+    NoticeListViewModel *listVM = [NoticeListViewModel new];
+    listVM.rows = @"1";
+    listVM.showType = @"1";
+    listVM.CompleteHandler = ^(BOOL isSuccess, BOOL hasMore, NSMutableArray *datas) {
+        if (isSuccess) {
             
-            HomeMessageModel *model = [HomeMessageModel mj_objectWithKeyValues:model_net.data];
-   
-            if (block) {
-                block(model);
+            if (datas.count) {
+                NoticeModel *model = datas.firstObject;
+                if (block) {
+                    block(model);
+                }
             }
-            
         }
-        
-    });
+    };
+    [listVM refreshData];
 }
 
 - (void)getNewNotice{
     
-    NewParams;
-    [params setSafeObject:@"merchant" forKey:@"aimUserId"];//商户：merchant 代理商：agent
-    
-    [params setSafeObject:@"2" forKey:@"showType"];
-    
-    ZZNetWorker.GET.zz_param(params).zz_url(@"/admin/app/showNotices")
-    .zz_isPostByURLSession(YES)
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        ZZNetWorkModelWithJson(data);
-        if (model_net.success) {
+    NoticeListViewModel *listVM = [NoticeListViewModel new];
+    listVM.rows = @"100";
+    listVM.showType = @"2";
+    listVM.CompleteHandler = ^(BOOL isSuccess, BOOL hasMore, NSMutableArray *datas) {
+        if (isSuccess) {
             
-            NSArray *arr = [HomeMessageModel mj_objectArrayWithKeyValuesArray:model_net.data];
             [self.messageArray removeAllObjects];
-            [self.messageArray addObjectsFromArray:arr];
+            [self.messageArray addObjectsFromArray:datas];
             
             [self refreshUI];
         }
-        
-    });
+    };
+    [listVM refreshData];
+    
 }
 
 - (void)addNewMessageWithDic:(NSDictionary *)dic{
-    HomeMessageModel *model = [HomeMessageModel mj_objectWithKeyValues:dic];
-    if (!IsNull(model.Id)) {
+    NoticeModel *model = [NoticeModel mj_objectWithKeyValues:dic];
+    if (!IsNull(model.nid)) {
         [self.messageArray addObject:model];
         [self refreshUI];
     }
@@ -85,8 +77,8 @@
 
 - (NSMutableArray *)messageTitleArray{
     NSMutableArray *arr = [NSMutableArray array];
-    for (HomeMessageModel *message in self.messageArray) {
-        [arr addObject:message.title];
+    for (NoticeModel *message in self.messageArray) {
+        [arr addObject:message.content];
     }
     
     return arr;

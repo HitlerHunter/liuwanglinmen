@@ -62,7 +62,7 @@
     [self.tableView registerClass:[MainStudyCell class] forCellReuseIdentifier:@"MainStudyCell"];
     
     @weakify(self);
-    [AppMessage getHomePresentNoticeWithBlock:^(HomeMessageModel * _Nonnull message) {
+    [AppMessage getHomePresentNoticeWithBlock:^(NoticeModel * _Nonnull message) {
         @strongify(self);
         if (message) {
             [self showAppMessage:message];
@@ -82,7 +82,7 @@
 - (void)handleNotice{
     if (AppMessage.shareInstance.noticeParams) {
         
-        HomeMessageModel *message = [HomeMessageModel mj_objectWithKeyValues:AppMessage.shareInstance.noticeParams];
+        NoticeModel *message = [NoticeModel mj_objectWithKeyValues:AppMessage.shareInstance.noticeParams];
         if (message) {
                 //消息详情
             MineMessageDetailViewController *detail = [[MineMessageDetailViewController alloc] initWithModel:message];
@@ -94,7 +94,7 @@
 }
 
 #pragma mark - 通知弹窗
-- (void)showAppMessage:(HomeMessageModel *)message{
+- (void)showAppMessage:(NoticeModel *)message{
     
     if (message.content != nil && message.content.length > 0) {
         NSString *messageStr = [NSString stringWithFormat:@"\n%@",message.content];
