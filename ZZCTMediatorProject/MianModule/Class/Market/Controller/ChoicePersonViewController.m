@@ -33,7 +33,7 @@
 
 - (void)requestData{
     
-    NSArray *arr = @[@{@"name":@"未交易用户",@"type":@"trade"},
+    NSArray *arr = @[@{@"name":@"消费用户",@"type":@"trade"},
                      @{@"name":@"领劵用户",@"type":@"coupon"},
                      @{@"name":@"直推用户",@"type":@"direct"}];
     

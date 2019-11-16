@@ -33,8 +33,10 @@
     
     if (!contentStr) {
         
+        self.contentHandler(self.bestAttemptContent);
         return;
     }
+    
     NSError *err;
     NSDictionary *extrasParam = [NSJSONSerialization JSONObjectWithData:jsonData
                                                                 options:NSJSONReadingMutableContainers

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NoticeListViewController : SDBaseViewController
 
 - (instancetype)initWithType:(NSString *)type;
+- (void)clearDatas;
 
 @end
 

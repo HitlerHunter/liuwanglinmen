@@ -42,14 +42,13 @@
     
     [self initCellView1];
     [self addStopRemoveBtn];
-    
-    [self requestDetailData];
+
 }
 
 - (void)initCellView1{
     
     _cellView1 = [VipPersonDetailCellView new];
-//    _cellView1.dataArray = [self creatDataArray];
+    _cellView1.dataArray = [self creatDataArray];
     [self.scrollView addSubview:_cellView1];
     
     [_cellView1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -111,8 +110,7 @@
 - (void)stopPlan{
     
     MessageSendRecordModel *model = _model.modelCopy;
-    //终止
-    model.taskStatus = MessageSendRecordStatusSendPause;
+    model.taskStatus =  MessageSendRecordStatusSendFailue;
     
     [SVProgressHUD show];
     [MessageTaskViewModel editTask:model returnBlock:^(BOOL isSuccess) {
@@ -128,64 +126,24 @@
     }];
 }
 
-
-- (void)requestDetailData{
-    
-    
-    NSString *urlStr = [NSString stringWithFormat:@"/outside-biz/smsMarketingLog/%@",_model.Id];
-    
-    ZZNetWorker.GET.zz_param(@{}).zz_url(urlStr)
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        ZZNetWorkModelWithJson(data);
-        
-        if (model_net.success) {
-            
-            self.model.remark = model_net.data[@"remark"];
-            self.model.sendSuccessCount = [NSString stringWithFormat:@"%@",model_net.data[@"sendSuccessCount"]];
-            self.model.sendFailureCount = [NSString stringWithFormat:@"%@",model_net.data[@"sendFailureCount"]];
-            
-            if ([self.model.sendTargeType isEqualToString:@"all"]) {
-                self.model.tagName =@"全部会员";
-                self.cellView1.dataArray = [self creatDataArray];
-            }else{
-                [MessageTaskViewModel getTagNameWithId:self.model.sendTarge returnBlock:^(NSString * _Nonnull TagName) {
-                    self.model.tagName = TagName;
-                    self.cellView1.dataArray = [self creatDataArray];
-                }];
-            }
-            
-        }else{
-            [SVProgressHUD showErrorWithStatus:@"获取详情失败，请稍后再试"];
-        }
-    });
-}
-
 - (NSMutableArray * )creatVauleArray{
     
     NSMutableArray *vauleArray = [NSMutableArray array];
     
-    if (IsNull(_model.smsType)) {//发送类型
-        [vauleArray addObject:@""];
-    }else{
-        [vauleArray addObject:getMessageSendTaskSMSTypeTitleWithSMSType(_model.smsType)];
-    }
+    [vauleArray addObject:getMessageSendTaskSMSTypeTitleWithSMSType(_model.taskType)];
     
     [vauleArray addObject:self.model.tagName];//发送对象
     
-    if (IsNull(_model.executeTime)) {//发送时间
+    if (IsNull(_model.updateTime)) {//发送时间
         [vauleArray addObject:@""];
     }else{
-        [vauleArray addObject:_model.executeTime];
+        [vauleArray addObject:_model.updateTime];
     }
     
-    //发送次数
-    NSInteger allCount = _model.sendSuccessCount.integerValue + _model.sendFailureCount.integerValue;
-    [vauleArray addObject:[NSString stringWithFormat:@"%ld",allCount]];
-    
-    if (IsNull(_model.sendSuccessCount)) {//发送成功次数
+    if (IsNull(_model.remark)) {//发送次数
         [vauleArray addObject:@"0"];
     }else{
-        [vauleArray addObject:_model.sendSuccessCount];
+        [vauleArray addObject:[NSString stringWithFormat:@"%@",_model.remark]];
     }
     
     if (IsNull(_model.sendContent)) {//发送内容
@@ -199,7 +157,7 @@
 
 - (NSMutableArray *)creatDataArray{
     
-    NSArray *titleArray = @[@"发送类型",@"发送对象",@"发送时间",@"发送条数",@"成功发送条数",@"发送内容",];
+    NSArray *titleArray = @[@"发送类型",@"发送对象",@"发送时间",@"发送条数",@"发送内容",];
     NSMutableArray *vauleArray = [self creatVauleArray];
     
     NSMutableArray *arr1 = [NSMutableArray array];

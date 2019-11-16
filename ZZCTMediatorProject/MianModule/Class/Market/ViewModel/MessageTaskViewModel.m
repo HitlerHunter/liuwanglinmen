@@ -59,10 +59,9 @@
     
     NewParams;
     [params setSafeObject:@(task.taskStatus) forKey:@"taskStatus"];
-    [params setSafeObject:task.Id forKey:@"id"];
+    [params setSafeObject:task.taskId forKey:@"taskId"];
     
-    ZZNetWorker.PUT.zz_param(params).zz_url(@"/general/tbSmsTask")
-    .zz_isPostByURLSession(YES)
+    ZZNetWorker.PUT.zz_param(params).zz_url(@"/outside-biz/smsMarketingTask")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
@@ -79,25 +78,4 @@
     
 }
 
-#pragma mark - 通过id查询tag名称
-+ (void)getTagNameWithId:(NSString *)tagId returnBlock:(void (^)(NSString *TagName))returnBlock{
-    
-    NewParams;
-    [params setSafeObject:tagId forKey:@"id"];
-    
-    ZZNetWorker.GET.zz_param(params).zz_url(@"/admin/tags/getById")
-    .zz_isPostByURLSession(YES)
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        ZZNetWorkModelWithJson(data);
-        
-        if (model_net.success) {
-                //让本地同步
-            if (returnBlock) {
-                returnBlock(model_net.data[@"name"]);
-            }
-        }
-        
-    });
-    
-}
 @end

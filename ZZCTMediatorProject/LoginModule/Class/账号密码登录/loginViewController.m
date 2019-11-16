@@ -26,7 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
@@ -41,6 +41,7 @@
     
     self.titleLabel.text = title;
     self.widthConstraint.constant = kScreenWidth;
+    
     
     NSString *phonePlc = @"请输入登录账号";
     _pswdPlaceholder = [[NSMutableAttributedString alloc] initWithString:phonePlc];
@@ -90,22 +91,12 @@
     
     
     if ([AppCenter checkAppIsDevelopment]) {
-        self.phoneTF.text = @"18974908103";
-        self.pswdTF.text = @"111111";
-        
-        self.phoneTF.text = @"18680670412";
-        self.pswdTF.text = @"459615";
         
         self.phoneTF.text = @"13779799999";
         self.pswdTF.text = @"123456";
     }
     
-    
-//    UIButton *btn = [UIButton buttonWithFontSize:16 text:@"注册/登录即同意《六旺商家版用户协议》" textColor:rgb(255,81,0)];
-//    [btn addTarget:self action:@selector(toAgrementVC) forControlEvents:UIControlEventTouchUpInside];
-//    btn.frame = CGRectMake(kScreenWidth*0.5-100, kScreenHeight-80, 200, 30);
-//    [self.phoneTF.superview addSubview:btn];
-    
+
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《六旺商家版用户协议》"];
     [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
@@ -117,7 +108,7 @@
     UILabel *label_xy = [UILabel labelWithFont:Font_PingFang_SC_Bold(18) text:@"" textColor:rgb(255,81,0)];
     [self.phoneTF.superview addSubview:label_xy];
     [label_xy mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
+        make.centerX.mas_equalTo(self.phoneTF.superview);
         make.bottom.mas_equalTo(-10);
         make.height.mas_equalTo(20);
     }];
@@ -202,6 +193,7 @@
     [super viewWillAppear:animated];
 
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.bottomConstraint.constant = kScreenHeight-self.loginBtn.bottom;
 }
 
 - (void)toAgrementVC{

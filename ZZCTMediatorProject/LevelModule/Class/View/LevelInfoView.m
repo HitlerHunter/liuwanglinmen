@@ -45,6 +45,28 @@
     LevelInfoCellModel *cellModel4 = [LevelInfoCellModel modelWithTitle:dic[@"4"][@"title"] text:dic[@"4"][@"explains"] tagInfo:@"" imageName:@"level_gouwu"];
     LevelInfoCellModel *cellModel5 = [LevelInfoCellModel modelWithTitle:dic[@"5"][@"title"] text:dic[@"5"][@"explains"] tagInfo:@"" imageName:@"level_tuijian"];
 
+    NSString *upgradeAmount = [NSString stringWithFormat:@"￥%@ ",dic[@"upgradeAmount"]];
+    NSMutableAttributedString *attPrice1 = [[NSMutableAttributedString alloc]initWithString:upgradeAmount];
+    
+    NSString *sourceAmount = [NSString stringWithFormat:@"￥%@",dic[@"upgradeSourceAmount"]];
+     NSMutableAttributedString *attPrice2 = [[NSMutableAttributedString alloc]initWithString:sourceAmount];
+     [attPrice2 addAttribute:NSBaselineOffsetAttributeName value:@(0) range:NSMakeRange(0,sourceAmount.length)];
+     [attPrice2 addAttribute:NSStrikethroughStyleAttributeName
+                      value:@(NSUnderlinePatternSolid |
+    NSUnderlineStyleSingle)
+                      range:NSMakeRange(0,sourceAmount.length)];
+    
+    NSMutableAttributedString *attPrice3 = [[NSMutableAttributedString alloc]initWithString:@" 立即升级"];
+
+    [attPrice1 addAttribute:NSFontAttributeName value:Font_PingFang_SC_Regular(18) range:NSMakeRange(0,attPrice1.length)];
+    [attPrice2 addAttribute:NSFontAttributeName value:Font_PingFang_SC_Regular(15) range:NSMakeRange(0,attPrice2.length)];
+    [attPrice3 addAttribute:NSFontAttributeName value:Font_PingFang_SC_Regular(18) range:NSMakeRange(0,attPrice3.length)];
+    
+    [attPrice1 appendAttributedString:attPrice2];
+    [attPrice1 appendAttributedString:attPrice3];
+    
+    [attPrice1 addAttribute:NSForegroundColorAttributeName value:LZWhiteColor range:NSMakeRange(0,attPrice1.length)];
+    
     //限时活动
     if (type == LevelInfoTypeVIP) {
         model.title = @"五大权益";
@@ -54,6 +76,8 @@
         if (CurrentUser.userLvl >= LevelInfoTypeVIP) {
             model.btnTitle = @"已升级";
             model.isBtnAble = NO;
+        }else{
+            model.btnAttributedTitle = attPrice1;
         }
         
     }else if (type == LevelInfoTypeServer) {
@@ -67,6 +91,8 @@
         if (CurrentUser.userLvl >= LevelInfoTypeServer) {
             model.btnTitle = @"已升级";
             model.isBtnAble = NO;
+        }else{
+            model.btnAttributedTitle = attPrice1;
         }
         
     }else if (type == LevelInfoTypeAreaServer) {
@@ -239,36 +265,7 @@
     
     [btn addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    //协议
-    /*
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"点击升级即同意《六旺临门VIP协议》"];
-    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
-    
-        // text-style1
-    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(7, 11)];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(255,81,0) range:NSMakeRange(7, 11)];
-    
-    UILabel *label_xy = [UILabel labelWithFont:Font_PingFang_SC_Bold(18) text:@"" textColor:rgb(255,81,0)];
-    [self addSubview:label_xy];
-    [label_xy mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.bottom.mas_equalTo(-10);
-        make.height.mas_equalTo(20);
-    }];
-    label_xy.attributedText = attributedString;
-    
-    UIButton *btn1 = [UIButton buttonWithFontSize:14 text:@"" textColor:rgb(53, 53, 53)];
-    [self addSubview:btn1];
-    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(label_xy);
-        make.size.mas_equalTo(label_xy);
-    }];
 
-    [btn1 addTarget:self action:@selector(btnClick1) forControlEvents:UIControlEventTouchUpInside];
-     */
-    
     UIView *xyView = [UIView new];
     [self addSubview:xyView];
     [xyView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -368,7 +365,13 @@
         lastView = cell;
     }
     
-    [_btn setTitle:model.btnTitle forState:UIControlStateNormal];
+    if (model.btnAttributedTitle) {
+        [_btn setAttributedTitle:model.btnAttributedTitle forState:UIControlStateNormal];
+    }else{
+        [_btn setAttributedTitle:nil forState:UIControlStateNormal];
+        [_btn setTitle:model.btnTitle forState:UIControlStateNormal];
+    }
+    
     [_btn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(lastView.mas_bottom).offset(10);
         make.bottom.mas_equalTo(-40);

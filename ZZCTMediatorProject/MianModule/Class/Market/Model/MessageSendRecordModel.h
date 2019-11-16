@@ -17,30 +17,39 @@ typedef NS_ENUM(NSUInteger, MessageSendRecordStatus) {
     MessageSendRecordStatusSending = 1,
     /**执行成功*/
     MessageSendRecordStatusSendSuccess = 2,
-    /**执行失败*/
+    /**执行失败终止*/
     MessageSendRecordStatusSendFailue = 3,
-    /**执行终止*/
-    MessageSendRecordStatusSendPause = 4,
 };
 
 static NSString *const MessageSendTaskTypeWakeUpString = @"rouse";
-static NSString *const MessageSendTaskTypeBirthdayString = @"birthday";
+static NSString *const MessageSendTaskTypeBirthdayString = @"birth";
 static NSString *const MessageSendTaskTypeCustomString = @"custom";
+
+static NSString *const MessageSendTargetTypeDirectString = @"direct";
+static NSString *const MessageSendTargetTypeCouponString = @"coupon";
+static NSString *const MessageSendTargetTypeTradeString = @"trade";
+
+static NSString *const MessageSendTargetTypeDirectNameString = @"直推用户";
+static NSString *const MessageSendTargetTypeCouponNameString = @"领劵用户";
+static NSString *const MessageSendTargetTypeTradeNameString = @"消费用户";
 
 /**MessageSendTask 1 --> 执行中 ...*/
 extern NSString *getMessageSendTaskStatusTitleWithStatus(MessageSendRecordStatus status);
 /**MessageSendTask birthday --> 生日祝福 ...*/
 extern NSString *getMessageSendTaskSMSTypeTitleWithSMSType(NSString *SMSType);
+/**MessageSendTask direct --> 直推用户 ...*/
+extern NSString *getMessageSendTargetTypeTitleWithSMSType(NSString *sendTargetType);
 
 @interface MessageSendRecordModel : NSObject
 
 @property (nonatomic, strong) NSString *createTime;
 @property (nonatomic, strong) NSString *delFlag;
-@property (nonatomic, strong) NSString *delayDay;
+@property (nonatomic, strong) NSString *preDays;
 @property (nonatomic, strong) NSString *executeTime;
+@property (nonatomic, strong) NSString *updateTime;
 @property (nonatomic, strong) NSString *executeType;
-@property (nonatomic, strong) NSString *Id;
-@property (nonatomic, strong) NSString *perdayTime;
+@property (nonatomic, strong) NSString *taskId;
+
 @property (nonatomic, strong) NSString *reason;
 @property (nonatomic, strong) NSString *remark;
 
@@ -50,14 +59,13 @@ extern NSString *getMessageSendTaskSMSTypeTitleWithSMSType(NSString *SMSType);
 @property (nonatomic, strong) NSString *sendTargeType;
 @property (nonatomic, strong) NSString *sendTemplateId;
 
-@property (nonatomic, strong) NSString *tagName;
 @property (nonatomic, strong) NSString *sendTimes;
 @property (nonatomic, strong) NSString *smsType;
 @property (nonatomic, assign) MessageSendRecordStatus taskStatus;
-@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *taskType;
+@property (nonatomic, strong) NSString *usrNo;
 
-@property (nonatomic, strong) NSString *sendSuccessCount;
-@property (nonatomic, strong) NSString *sendFailureCount;
+@property (nonatomic, strong, readonly) NSString *tagName;
 
 @property (nonatomic, strong, readonly) MessageSendRecordModel *modelCopy;
 @end

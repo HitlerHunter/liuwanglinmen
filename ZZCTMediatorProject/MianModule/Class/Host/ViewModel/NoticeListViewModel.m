@@ -14,7 +14,6 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self.showType = @"2";
         self.rows = @"20";
     }
     return self;
@@ -27,15 +26,14 @@
 - (void)requestDataWithCompleteHandler:(refreshBlock)handler{
     
     NewParams;
-    
     [params setSafeObject:@(self.page) forKey:@"page"];
     [params setSafeObject:self.rows forKey:@"rows"];
-    [params setSafeObject:CurrentUser.usrNo forKey:@"userNo"];
+    [params setSafeObject:self.userNo forKey:@"userNo"];
     [params setSafeObject:@"0" forKey:@"aimUserId"];
     [params setSafeObject:self.type forKey:@"noticeType"];
     [params setSafeObject:self.showType forKey:@"showType"];
     
-    ZZNetWorker.POST.zz_param(params)
+    ZZNetWorker.POST.zz_willHandlerParam(NO).zz_param(params)
     .zz_url(@"/payment-biz/noticeRecord/appPage")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
@@ -59,4 +57,38 @@
     });
 }
 
+#pragma mark - 操作
+/**清空*/
++ (void)clearNoticeWithBlock:(void (^)(BOOL isSuccess))block{
+    
+    NSString *url = [NSString stringWithFormat:@"/payment-biz/noticeRecord/batchDeleteByUserNo/%@",CurrentUser.usrNo];
+    ZZNetWorker.DELETE.zz_param(@{})
+    .zz_url(url)
+    .zz_completion(^(NSDictionary *data, NSError *error) {
+        ZZNetWorkModelWithJson(data);
+        
+        if (block) {
+            block(model_net.success);
+        }
+      
+    });
+}
+
+/**删除*/
++ (void)removeNoticeWithNoticeId:(NSString *)noticeId
+                           block:(void (^)(BOOL isSuccess))block{
+    
+    
+    NSString *url = [NSString stringWithFormat:@"/payment-biz/noticeRecord/%@",noticeId];
+    ZZNetWorker.DELETE.zz_param(@{})
+    .zz_url(url)
+    .zz_completion(^(NSDictionary *data, NSError *error) {
+        ZZNetWorkModelWithJson(data);
+        
+        if (block) {
+            block(model_net.success);
+        }
+      
+    });
+}
 @end

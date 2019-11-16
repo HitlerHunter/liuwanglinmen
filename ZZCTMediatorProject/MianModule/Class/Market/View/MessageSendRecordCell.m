@@ -91,9 +91,9 @@
     _label_title.text = model.sendHead;
     _label_status.text = [NSString stringWithFormat:@" (%@)",getMessageSendTaskStatusTitleWithStatus(model.taskStatus)];
     
-    _label_count.text = IsNull(model.sendTimes)?@"0":model.sendTimes;
+    _label_count.text = IsNull(model.remark)?@"0":model.remark;
     _label_date.text = IsNull(model.createTime)?@"":model.createTime;
-    _label_type.text = getMessageSendTaskSMSTypeTitleWithSMSType(model.smsType);
+    _label_type.text = getMessageSendTaskSMSTypeTitleWithSMSType(model.taskType);
  
     @weakify(self);
     [[RACObserve(model, taskStatus) takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id  _Nullable x) {

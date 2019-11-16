@@ -33,7 +33,7 @@
     
     self.titleLabel.text = _model.title;
     self.timeLabel.text = _model.createdTime;
-    self.infoLabel.text = _model.content;
+    self.infoLabel.text = _model.contentDetail;
 
 }
 

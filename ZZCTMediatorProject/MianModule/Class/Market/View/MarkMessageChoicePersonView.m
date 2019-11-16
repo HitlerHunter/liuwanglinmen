@@ -16,7 +16,7 @@
     self.backgroundColor = LZWhiteColor;
     
     UILabel *label_title = [UILabel labelWithFont:Font_PingFang_SC_Regular(14) text:@"发送会员" textColor:rgb(101,101,101)];
-    UILabel *label_person = [UILabel labelWithFont:Font_PingFang_SC_Regular(14) text:@"全部" textColor:rgb(255,81,0)];
+    UILabel *label_person = [UILabel labelWithFont:Font_PingFang_SC_Regular(14) text:@"选择发送对象" textColor:rgb(255,81,0)];
     label_person.textAlignment = NSTextAlignmentRight;
     
     UIImageView *moreIcon = [UIImageView viewWithImage:UIImageName(@"more_orange")];
@@ -52,8 +52,8 @@
     UITapGestureRecognizer *topTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topTapClick)];
     [self addGestureRecognizer:topTap];
     
-    self.personTag = @"未交易用户";
-    self.personType = @"trade";
+    self.personTag = @"";
+    self.personType = @"";
     
 }
 

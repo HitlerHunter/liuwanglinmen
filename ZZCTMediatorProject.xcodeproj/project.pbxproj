@@ -417,7 +417,6 @@
 		78E88BA523741928004257CE /* NoticeListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8889B23741927004257CE /* NoticeListViewModel.m */; };
 		78E88BA623741928004257CE /* NoticeCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8889E23741927004257CE /* NoticeCenterViewController.m */; };
 		78E88BA723741928004257CE /* CollectionMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8889F23741927004257CE /* CollectionMoneyViewController.m */; };
-		78E88BA823741928004257CE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E888A023741927004257CE /* HomeViewController.m */; };
 		78E88BA923741928004257CE /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E888A123741927004257CE /* NoticeListViewController.m */; };
 		78E88BAA23741928004257CE /* Home2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E888A223741927004257CE /* Home2ViewController.m */; };
 		78E88BAB23741928004257CE /* HomeNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E888A923741927004257CE /* HomeNewsCell.m */; };
@@ -1365,12 +1364,10 @@
 		78E8889C23741927004257CE /* NoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeModel.h; sourceTree = "<group>"; };
 		78E8889E23741927004257CE /* NoticeCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeCenterViewController.m; sourceTree = "<group>"; };
 		78E8889F23741927004257CE /* CollectionMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionMoneyViewController.m; sourceTree = "<group>"; };
-		78E888A023741927004257CE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		78E888A123741927004257CE /* NoticeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListViewController.m; sourceTree = "<group>"; };
 		78E888A223741927004257CE /* Home2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home2ViewController.m; sourceTree = "<group>"; };
 		78E888A323741927004257CE /* CollectionMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionMoneyViewController.h; sourceTree = "<group>"; };
 		78E888A423741927004257CE /* NoticeCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeCenterViewController.h; sourceTree = "<group>"; };
-		78E888A523741927004257CE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		78E888A623741927004257CE /* Home2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home2ViewController.h; sourceTree = "<group>"; };
 		78E888A723741927004257CE /* NoticeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListViewController.h; sourceTree = "<group>"; };
 		78E888A923741927004257CE /* HomeNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsCell.m; sourceTree = "<group>"; };
@@ -2168,30 +2165,30 @@
 		78E8855023741925004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E8855123741925004257CE /* LZImagesView.m */,
-				78E8855223741925004257CE /* MineInfoEditStyle1Cell.h */,
-				78E8855323741925004257CE /* MineSettingTopView.h */,
-				78E8855423741925004257CE /* SettingSwitchView.h */,
-				78E8855523741925004257CE /* MineInfoEditInputCell.h */,
-				78E8855623741925004257CE /* SettingSwitchCell.h */,
-				78E8855723741925004257CE /* MineUserInfoHeader.m */,
-				78E8855823741925004257CE /* SettingNormalCell.m */,
-				78E8855923741925004257CE /* MineInterfaceCell.m */,
-				78E8855A23741925004257CE /* MineKefuCell.m */,
 				78E8855B23741925004257CE /* LoginOutCell.h */,
-				78E8855C23741925004257CE /* UserInfoShowView.m */,
-				78E8855D23741925004257CE /* MineInfoEditInputCell.m */,
-				78E8855E23741925004257CE /* SettingSwitchView.m */,
-				78E8855F23741925004257CE /* MineSettingTopView.m */,
-				78E8856023741925004257CE /* MineInfoEditStyle1Cell.m */,
-				78E8856123741925004257CE /* LZImagesView.h */,
-				78E8856223741925004257CE /* MineUserInfoHeader.h */,
-				78E8856323741925004257CE /* SettingSwitchCell.m */,
-				78E8856423741925004257CE /* MineKefuCell.h */,
-				78E8856523741925004257CE /* MineInterfaceCell.h */,
-				78E8856623741925004257CE /* SettingNormalCell.h */,
-				78E8856723741925004257CE /* UserInfoShowView.h */,
 				78E8856823741925004257CE /* LoginOutCell.m */,
+				78E8856123741925004257CE /* LZImagesView.h */,
+				78E8855123741925004257CE /* LZImagesView.m */,
+				78E8855523741925004257CE /* MineInfoEditInputCell.h */,
+				78E8855D23741925004257CE /* MineInfoEditInputCell.m */,
+				78E8855223741925004257CE /* MineInfoEditStyle1Cell.h */,
+				78E8856023741925004257CE /* MineInfoEditStyle1Cell.m */,
+				78E8856523741925004257CE /* MineInterfaceCell.h */,
+				78E8855923741925004257CE /* MineInterfaceCell.m */,
+				78E8856423741925004257CE /* MineKefuCell.h */,
+				78E8855A23741925004257CE /* MineKefuCell.m */,
+				78E8855323741925004257CE /* MineSettingTopView.h */,
+				78E8855F23741925004257CE /* MineSettingTopView.m */,
+				78E8856223741925004257CE /* MineUserInfoHeader.h */,
+				78E8855723741925004257CE /* MineUserInfoHeader.m */,
+				78E8856623741925004257CE /* SettingNormalCell.h */,
+				78E8855823741925004257CE /* SettingNormalCell.m */,
+				78E8855623741925004257CE /* SettingSwitchCell.h */,
+				78E8856323741925004257CE /* SettingSwitchCell.m */,
+				78E8855423741925004257CE /* SettingSwitchView.h */,
+				78E8855E23741925004257CE /* SettingSwitchView.m */,
+				78E8856723741925004257CE /* UserInfoShowView.h */,
+				78E8855C23741925004257CE /* UserInfoShowView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3617,14 +3614,14 @@
 		78E887CF23741926004257CE /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
-				78E887D023741926004257CE /* UserManager.m */,
 				78E887D123741926004257CE /* LZUser.h */,
+				78E887D623741926004257CE /* LZUser.m */,
+				78E887D523741926004257CE /* LZUserMerchant.h */,
 				78E887D223741926004257CE /* LZUserMerchant.m */,
 				78E887D323741926004257CE /* LZUserWallet.h */,
-				78E887D423741926004257CE /* UserManager.h */,
-				78E887D523741926004257CE /* LZUserMerchant.h */,
-				78E887D623741926004257CE /* LZUser.m */,
 				78E887D723741926004257CE /* LZUserWallet.m */,
+				78E887D423741926004257CE /* UserManager.h */,
+				78E887D023741926004257CE /* UserManager.m */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -3915,8 +3912,6 @@
 				78E8889F23741927004257CE /* CollectionMoneyViewController.m */,
 				78E888A623741927004257CE /* Home2ViewController.h */,
 				78E888A223741927004257CE /* Home2ViewController.m */,
-				78E888A523741927004257CE /* HomeViewController.h */,
-				78E888A023741927004257CE /* HomeViewController.m */,
 				78E888A423741927004257CE /* NoticeCenterViewController.h */,
 				78E8889E23741927004257CE /* NoticeCenterViewController.m */,
 				78E888A723741927004257CE /* NoticeListViewController.h */,
@@ -5344,7 +5339,6 @@
 				78E88A5023741927004257CE /* LoginOutCell.m in Sources */,
 				78E88B3323741928004257CE /* CALayer+XibBorderColor.m in Sources */,
 				78E88A1523741927004257CE /* LoginViewModel.m in Sources */,
-				78E88BA823741928004257CE /* HomeViewController.m in Sources */,
 				78E88A1423741927004257CE /* Target_Login.m in Sources */,
 				78E88A5923741927004257CE /* DataCollectionCircleChatView.m in Sources */,
 				78E88BD123741928004257CE /* RealNameViewModel.m in Sources */,
@@ -5733,7 +5727,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5777,7 +5771,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5807,7 +5801,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
@@ -5836,7 +5830,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
 				PRODUCT_NAME = ZZNotificationExtension;

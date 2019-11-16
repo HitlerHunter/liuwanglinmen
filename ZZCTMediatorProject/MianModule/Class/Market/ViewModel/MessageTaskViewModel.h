@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isWaitingSend;
 
 + (void)editTask:(MessageSendRecordModel *)task returnBlock:(void (^)(BOOL isSuccess))returnBlock;
+
 //通过id查询tag名称
 + (void)getTagNameWithId:(NSString *)tagId returnBlock:(void (^)(NSString *TagName))returnBlock;
 @end

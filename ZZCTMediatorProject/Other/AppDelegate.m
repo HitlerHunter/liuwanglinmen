@@ -196,9 +196,9 @@
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
 }
 
@@ -258,6 +258,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         
         if (!contentStr) {
             completionHandler(UNNotificationPresentationOptionAlert);
+            [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
             return;
         }
         
@@ -285,7 +286,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         
     }
     
-    completionHandler(UNNotificationPresentationOptionAlert |UNNotificationPresentationOptionBadge| UNNotificationPresentationOptionSound); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
@@ -314,7 +315,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
                                                                           error:&err];
             SDLog(@"\n\n extrasParam:\n%@\n\n",extrasParam);
             if (!extrasParam) {
-                completionHandler(UNNotificationPresentationOptionBadge);
+                completionHandler(UNNotificationPresentationOptionNone);
                 [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
                 return;
             }
@@ -331,7 +332,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     } else {
             // Fallback on earlier versions
     }
-    completionHandler();  // 系统要求执行这个方法
+    
+    completionHandler(UNNotificationPresentationOptionNone);
 }
 
 @end

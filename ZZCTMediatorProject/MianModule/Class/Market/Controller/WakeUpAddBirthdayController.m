@@ -212,14 +212,12 @@
     }
     
     NewParams;
-    
     [params setSafeObject:MarketPlanTypeBirthdayString forKey:@"taskType"];
     [params setSafeObject:CurrentUser.usrNo forKey:@"usrNo"];
     [params setSafeObject:@"1" forKey:@"taskStatus"];
-
+    [params setSafeObject:@"direct" forKey:@"sendTargetType"];
     [params setSafeObject:@"regular" forKey:@"executeType"];//定期
     [params setSafeObject:delayDay forKey:@"delayDay"];
-    [params setSafeObject:@"1" forKey:@"taskStatus"];
     [params setSafeObject:perdayTime forKey:@"executeTime"];
     
     [params setSafeObject:self.selecetdBoardModel.Id forKey:@"sendTemplateId"];

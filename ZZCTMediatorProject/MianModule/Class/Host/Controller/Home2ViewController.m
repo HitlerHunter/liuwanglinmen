@@ -76,6 +76,7 @@
     
     [self.viewModel refreshData];
     
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 #pragma mark - 处理推送消息

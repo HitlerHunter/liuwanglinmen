@@ -52,6 +52,7 @@
             }
             
             [dic2 setSafeObject:model_net.data[@"upgradeAmount"] forKey:@"upgradeAmount"];
+            [dic2 setSafeObject:model_net.data[@"upgradeSourceAmount"] forKey:@"upgradeSourceAmount"];
             
             if (level == 1) {
                 self.dic1 = dic2;

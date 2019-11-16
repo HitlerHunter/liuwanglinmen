@@ -15,7 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *rows;
 @property (nonatomic, strong) NSString *showType;
+@property (nonatomic, strong) NSString *userNo;
 
+/**清空*/
++ (void)clearNoticeWithBlock:(void (^)(BOOL isSuccess))block;
+/**删除*/
++ (void)removeNoticeWithNoticeId:(NSString *)noticeId
+                           block:(void (^)(BOOL isSuccess))block;
 @end
 
 NS_ASSUME_NONNULL_END

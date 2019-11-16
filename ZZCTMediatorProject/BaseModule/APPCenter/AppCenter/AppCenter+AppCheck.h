@@ -36,7 +36,7 @@ return ;\
 + (void)checkModuleNotOpenToAllUser;
 + (BOOL)checkMerchant;
 + (BOOL)checkRealName;
-+ (BOOL)isTestNumber;
++ (BOOL)isDevelopmentNumber;
 + (void)toEmptyController;
 + (void)setEmptyControllerTitle:(NSString *)title;
 /**是否是放到分发平台*/

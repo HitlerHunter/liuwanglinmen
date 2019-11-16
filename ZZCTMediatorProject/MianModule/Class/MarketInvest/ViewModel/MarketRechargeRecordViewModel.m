@@ -22,11 +22,11 @@
     [params setSafeObject:@(self.page) forKey:@"page"];
     [params setSafeObject:@"20" forKey:@"rows"];
     [params setSafeObject:CurrentUser.usrNo forKey:@"userNo"];
+    [params setSafeObject:@"1" forKey:@"orderType"];
     [params setSafeObject:@"01" forKey:@"orderStatus"];
-    [params setSafeObject:@"wx" forKey:@"channel"];//只有微信充值
     
-    ZZNetWorker.POST.zz_param(params)
-    .zz_url(@"/payment-biz/order/orderQuery").zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_willHandlerParam(NO).zz_param(params)
+    .zz_url(@"/payment-biz/order/pageGoods")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

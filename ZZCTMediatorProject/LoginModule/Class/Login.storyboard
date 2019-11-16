@@ -137,7 +137,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="jiI-ZS-0W9" firstAttribute="leading" secondItem="OVv-ju-fra" secondAttribute="leading" constant="25" id="106-1t-OyK"/>
-                                    <constraint firstAttribute="bottom" secondItem="jiI-ZS-0W9" secondAttribute="bottom" constant="411" id="7PQ-jx-liP"/>
+                                    <constraint firstAttribute="bottom" secondItem="jiI-ZS-0W9" secondAttribute="bottom" constant="30" id="7PQ-jx-liP"/>
                                     <constraint firstItem="WYQ-zH-8GO" firstAttribute="leading" secondItem="OVv-ju-fra" secondAttribute="leading" constant="8" id="7nq-Fu-OG1"/>
                                     <constraint firstItem="WYQ-zH-8GO" firstAttribute="top" secondItem="jiI-ZS-0W9" secondAttribute="bottom" constant="10" id="BND-wo-qQ4"/>
                                     <constraint firstItem="dAq-QC-Lao" firstAttribute="leading" secondItem="OVv-ju-fra" secondAttribute="leading" id="Ecf-YI-Wbd"/>
@@ -178,6 +178,7 @@
                     <navigationItem key="navigationItem" id="dwo-vX-iFD"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="7PQ-jx-liP" id="DSP-6j-MSZ"/>
                         <outlet property="loginBtn" destination="jiI-ZS-0W9" id="vEh-ud-kDV"/>
                         <outlet property="phoneTF" destination="7fq-Pj-SLe" id="Lk9-eZ-vAi"/>
                         <outlet property="pswdTF" destination="emV-c3-O4K" id="hXo-AG-awt"/>

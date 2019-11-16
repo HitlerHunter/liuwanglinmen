@@ -79,46 +79,62 @@
 
 - (void)getUserInfo:(void (^)(BOOL isSuccess))block{
     
+    [[self class] refreshUserInfo:^(BOOL isSuccess, LZUser *user) {
+        if (isSuccess) {
+            self.user = user;
+            [self getUserWallet];
+            
+            @weakify(self);
+            [self getUserMerchant:^(LZUserMerchant *merchant) {
+                @strongify(self);
+               self.merchant = merchant;
+            }];
+        }
+        
+        if (block) {
+            block(isSuccess);
+        }
+    }];
+}
+
+- (void)refreshUserLevelAndTypeInfo{
+    
+    [[self class] refreshUserInfo:^(BOOL isSuccess, LZUser *user) {
+        if (isSuccess) {
+            self.user.usrType = user.usrType;
+            self.user.userLvl = user.userLvl;
+        }
+    }];
+}
+
++ (void)refreshUserInfo:(void (^)(BOOL isSuccess,LZUser *user))block{
+    
     if (!CurrentUser.access_token.length) {
         if (block) {
-            block(NO);
+            block(NO,nil);
         }
         return;
     }
     
     ZZNetWorker.GET.zz_url(API_getUserInfo)
-    .zz_isPostByURLSession(YES)
     .zz_setParamType(ZZNetWorkerParamTypeAppendAfterURL)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         
         ZZNetWorkModelWithJson(data);
         
-        BOOL isTokenValid = NO;
         if (model_net.success) {
 
             LZUser *user = [LZUser mj_objectWithKeyValues:model_net.data];
-            if (user.sysUser.lzUserType == LZUserTypeUnknow) {
-                [SVProgressHUD showErrorWithStatus:@"该账号无登录权限！"];
-                 
-            }else{
-                isTokenValid = YES;
-                self.user = user;
-                [self getUserWallet];
-                
-                @weakify(self);
-                [self getUserMerchant:^(LZUserMerchant *merchant) {
-                    @strongify(self);
-                   self.merchant = merchant;
-                }];
+            
+            if (block) {
+                block(model_net.success,user);
             }
             
         }else{
             [SVProgressHUD showErrorWithStatus:model_net.message];
         }
         
-        if (block) {
-            block(isTokenValid);
-        }
+        
     });
 }
 

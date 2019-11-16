@@ -112,11 +112,12 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)requestPublicBoardData{
     
     NewParams;
- 
+    [params setSafeObject:@"0" forKey:@"delFlag"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"usrNo"];
+    
     ZZNetWorker.POST
     .zz_willHandlerParam(NO).zz_param(params)
     .zz_url(@"/outside-biz/smsMarketingTemplate/page")
-    .zz_isPostByURLSession(YES)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
@@ -133,7 +134,9 @@ NSString *getMarketBoardTypeStrWithTypeTitle(NSString *title){
 - (void)requestMineBoardData{
     
     NewParams;
-
+    [params setSafeObject:@"0" forKey:@"delFlag"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"usrNo"];
+    
     ZZNetWorker.POST
     .zz_willHandlerParam(NO).zz_param(params)
     .zz_url(@"/outside-biz/smsMarketingTemplate/page")

@@ -43,7 +43,13 @@
     }
     
     self.userNameLabel.text = [NSString stringWithFormat:@"%@",model.txnUserName];
-    self.phoneLabel.text = [NSString stringWithFormat:@"%@",model.txnUserMobile.phoneTakeSecure];
+    
+    if (IsNull(model.txnUserMobile)) {
+        self.phoneLabel.text = @" ";
+    }else{
+        self.phoneLabel.text = [NSString stringWithFormat:@"%@",model.txnUserMobile.phoneTakeSecure];
+    }
+    
     
     self.label_1.text = [NSString stringWithFormat:@"交易金额：%@",[NSString formatMoneyCentToYuanString:model.flowAmt]];
     self.label_2.text = [NSString stringWithFormat:@"交易类型：%@",model.showType];

@@ -21,7 +21,7 @@
 
 /**是否在开发*/
 + (BOOL)checkAppIsDevelopment{
-    return YES;
+    return NO;
 }
 
 + (void)checkModuleNotOpenToMemberUser{
@@ -36,21 +36,24 @@
 }
 
 + (void)figerNotOpen{
-    if (self.isTestNumber) {
+    if (self.isDevelopmentNumber) {
         [self toEmptyController];
     }else{
         [SVProgressHUD showInfoWithStatus:@"暂未开放!"];
     }
 }
 
-+ (BOOL)isTestNumber{
++ (BOOL)isDevelopmentNumber{
     if(self.checkAppIsDevelopment) return NO;
-    return [CurrentUser.mobile isEqualToString:@"18974908103"];
+    return [CurrentUser.mobile isEqualToString:@"13779799999"];
 }
 
 + (void)toEmptyController{
     LZEmptyViewController *vc = [LZEmptyViewController new];
     [[AppCenter getCurrentVC].navigationController pushViewController:vc animated:YES];
+    
+    NSString *registerId = [[NSUserDefaults standardUserDefaults] objectForKey:@"JPUSHServiceRegisterid"];
+    [[UIPasteboard generalPasteboard] setString:registerId];
 }
 
 + (void)setEmptyControllerTitle:(NSString *)title{

@@ -32,10 +32,11 @@ extern NSString *getNoticeLogoWithType(NSString *type);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
     
-    UILabel *titleLabel = [UILabel labelWithFont:Font_PingFang_SC_Bold(15) text:@"悬赏任务发布成功" textColor:rgb(53,53,53)];
+    UILabel *titleLabel = [UILabel labelWithFont:Font_PingFang_SC_Regular(13) text:@"悬赏任务发布成功" textColor:rgb(53,53,53)];
+    titleLabel.numberOfLines = 2;                 
     [self.contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(avatar.mas_centerY).offset(0);
+        make.centerY.mas_equalTo(avatar.mas_centerY).offset(-10);
         make.left.mas_equalTo(avatar.mas_right).offset(15);
         make.right.mas_equalTo(-15);
     }];
@@ -43,7 +44,7 @@ extern NSString *getNoticeLogoWithType(NSString *type);
     UILabel *dateLabel = [UILabel labelWithFont:Font_PingFang_SC_Medium(12) text:@"2019-09-30  09:30" textColor:rgb(152,152,152)];
     [self.contentView addSubview:dateLabel];
     [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(avatar.mas_centerY).offset(4);
+        make.bottom.mas_equalTo(-10);
         make.left.mas_equalTo(titleLabel);
         make.right.mas_equalTo(titleLabel);
     }];
@@ -77,5 +78,5 @@ NSString *getNoticeLogoWithType(NSString *type){
     }else if (type.integerValue == 4) {
         return @"notice_coupon";
     }
-    return @"";
+    return @"notice_sys";
 }

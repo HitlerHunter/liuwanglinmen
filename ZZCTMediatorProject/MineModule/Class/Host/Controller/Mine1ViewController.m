@@ -61,6 +61,8 @@
         }
     }
     
+    /**刷新用户等级信息*/
+    [[UserManager shareInstance] refreshUserLevelAndTypeInfo];
 }
 
 - (void)viewDidLoad{
@@ -192,7 +194,7 @@
 #pragma mark - HomeToolsView delegate
 - (void)HomeToolsView:(HomeToolsView *)toolsView clickTitle:(NSString *)title {
     if ([title isEqualToString:@"收益明细"]) {
-        if([AppCenter isTestNumber]){
+        if([AppCenter isDevelopmentNumber]){
             [AppCenter setEmptyControllerTitle:@"收益明细"];
             [AppCenter toEmptyController];
             return;

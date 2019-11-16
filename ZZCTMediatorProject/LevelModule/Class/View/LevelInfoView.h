@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, LevelInfoType) {
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *btnTitle;
+@property (nonatomic, strong) NSAttributedString *btnAttributedTitle;
 @property (nonatomic, assign) BOOL isBtnAble;
 @property (nonatomic, strong) NSArray <LevelInfoCellModel *> *cellModelArray;
 @property (nonatomic, strong) void (^submitBlock)(void);

@@ -135,7 +135,7 @@
 //类型选择
 - (void)initTypeView{
     self.typeView = [MarketBoardTypeSelectView new];
-    self.typeView.titleArray = @[MarketPlanTypeBirthdayTitle,MarketPlanTypeWakeUpTitle,MarketPlanTypeCustomTitle,];
+    self.typeView.titleArray = @[MarketPlanTypeBirthdayTitle,MarketPlanTypeCustomTitle,];
     [self.scrollView addSubview:self.typeView];
     
     [self.typeView mas_makeConstraints:^(MASConstraintMaker *make) {

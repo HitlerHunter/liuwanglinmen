@@ -35,6 +35,7 @@
     NoticeListViewModel *listVM = [NoticeListViewModel new];
     listVM.rows = @"1";
     listVM.showType = @"1";
+    
     listVM.CompleteHandler = ^(BOOL isSuccess, BOOL hasMore, NSMutableArray *datas) {
         if (isSuccess) {
             
@@ -51,20 +52,27 @@
 
 - (void)getNewNotice{
     
-    NoticeListViewModel *listVM = [NoticeListViewModel new];
-    listVM.rows = @"100";
-    listVM.showType = @"2";
-    listVM.CompleteHandler = ^(BOOL isSuccess, BOOL hasMore, NSMutableArray *datas) {
-        if (isSuccess) {
+    NewParams;
+    [params setSafeObject:@"1" forKey:@"page"];
+    [params setSafeObject:@"100" forKey:@"rows"];
+    [params setSafeObject:@"1" forKey:@"showType"];
+    
+    ZZNetWorker.POST.zz_param(params)
+    .zz_url(@"/payment-biz/noticeRecord/appFirstPageMsg")
+    .zz_completion(^(NSDictionary *data, NSError *error) {
+        ZZNetWorkModelWithJson(data);
+        
+        if (model_net.success) {
+            
+            NSArray *datas = [NoticeModel mj_objectArrayWithKeyValuesArray:model_net.data[@"records"]];
             
             [self.messageArray removeAllObjects];
             [self.messageArray addObjectsFromArray:datas];
             
             [self refreshUI];
         }
-    };
-    [listVM refreshData];
-    
+      
+    });
 }
 
 - (void)addNewMessageWithDic:(NSDictionary *)dic{

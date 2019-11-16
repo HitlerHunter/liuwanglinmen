@@ -117,8 +117,13 @@
         [self showMessage:@"请选择模板"];
         return;
     }
-    
+
     NSString *personType = _topView.personType;
+    
+    if (personType.length == 0) {
+        [self showMessage:@"请选择发送对象"];
+        return;
+    }
     
     NewParams;
     

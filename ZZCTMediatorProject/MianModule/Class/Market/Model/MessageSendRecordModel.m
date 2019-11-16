@@ -14,6 +14,10 @@
     return @{@"Id":@"id"};
 }
 
+- (NSString *)tagName{
+    return getMessageSendTargetTypeTitleWithSMSType(self.sendTargeType);
+}
+
 NSString *getMessageSendTaskStatusTitleWithStatus(MessageSendRecordStatus status){
     
     switch (status) {
@@ -24,13 +28,10 @@ NSString *getMessageSendTaskStatusTitleWithStatus(MessageSendRecordStatus status
             return @"执行中";
             break;
         case MessageSendRecordStatusSendFailue:
-            return @"发送失败";
+            return @"已终止";
             break;
         case MessageSendRecordStatusSendSuccess:
             return @"已完成";
-            break;
-        case MessageSendRecordStatusSendPause:
-            return @"已终止";
             break;
             
         default:
@@ -50,11 +51,24 @@ NSString *getMessageSendTaskStatusTitleWithStatus(MessageSendRecordStatus status
     return MarketPlanTypeCustomTitle;
 };
 
+NSString *getMessageSendTargetTypeTitleWithSMSType(NSString *sendTargetType){
+    if ([sendTargetType isEqualToString:MessageSendTargetTypeDirectString]) {
+        return MessageSendTargetTypeDirectNameString;
+    }else if ([sendTargetType isEqualToString:MessageSendTargetTypeCouponString]) {
+        return MessageSendTargetTypeCouponNameString;
+    }else if ([sendTargetType isEqualToString:MessageSendTargetTypeTradeString]) {
+        return MessageSendTargetTypeTradeNameString;
+    }
+    
+    return MessageSendTargetTypeDirectNameString;
+}
+
 - (MessageSendRecordModel *)modelCopy{
     MessageSendRecordModel *model = [MessageSendRecordModel new];
     model.taskStatus = self.taskStatus;
-    model.userId = self.userId;
-    model.Id = self.Id;
+    model.usrNo = self.usrNo;
+    model.sendTemplateId = self.sendTemplateId;
+    model.taskId = self.taskId;
     return model;
 }
 

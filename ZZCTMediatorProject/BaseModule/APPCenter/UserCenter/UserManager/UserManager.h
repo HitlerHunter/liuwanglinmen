@@ -24,6 +24,7 @@
 + (UserManager *)shareInstance;
 
 - (void)refreshToken:(void (^)(BOOL isTokenValid))block;
+- (void)refreshUserLevelAndTypeInfo;
 - (void)getUserInfo:(void (^)(BOOL isSuccess))block;
 - (void)getUserWallet;
 - (void)getUserMerchant:(void (^)(LZUserMerchant *merchant))block;
