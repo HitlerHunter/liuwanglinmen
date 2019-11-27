@@ -21,4 +21,5 @@
 - (void)CTMediator_getOperatorMansWithBlock:(void (^)(NSArray *datas))block;
 /**店铺信息编辑资料*/
 - (void)CTMediator_EditShopInfoViewControllerWithNav:(UINavigationController *)nav;
+- (UIViewController *)CTMediator_OrderManagerController;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppPayManager.h"
+#import <WechatOpenSDK/WXApi.h>
 
 @implementation AppPayManager
 
@@ -49,9 +50,26 @@
             name = WXPayFinishedUplevelNotificationName;
         }else if (self.currentPayType == AppPayTypeMarketMessage) {
             name = WXPayFinishedMarketMessageNotificationName;
+        }else if (self.currentPayType == AppPayTypeBoomGoodsPay) {
+            name = WXPayFinishedHotGoodsNotificationName;
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:name object:@(status)];
     }
+}
+
+- (void)WXPayWithDic:(NSDictionary *)dict{
+    
+    NSMutableString *stamp  = [dict objectForKey:@"timestamp"];
+    
+    //调起微信支付
+    PayReq* req             = [[PayReq alloc] init];
+    req.partnerId           = [dict objectForKey:@"partnerid"];
+    req.prepayId            = [dict objectForKey:@"prepayid"];
+    req.nonceStr            = [dict objectForKey:@"noncestr"];
+    req.timeStamp           = stamp.intValue;
+    req.package             = [dict objectForKey:@"package"];
+    req.sign                = [dict objectForKey:@"sign"];
+    [WXApi sendReq:req];
 }
 @end

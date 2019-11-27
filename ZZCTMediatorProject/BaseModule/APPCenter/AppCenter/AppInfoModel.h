@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *iosDownUrl;
 @property (nonatomic, strong) NSString *iosUrl;
+@property (nonatomic, strong) NSString *remark;
 
 @end
 

@@ -12,9 +12,7 @@
 #import "MarketMessagePayWayView.h"
 #import "MarketInvestSuccessController.h"
 #import "MarketInvestFailureController.h"
-
 #import "MarketMessagePayManager.h"
-#import "AppPayManager.h"
 
 
 @interface MarketMessageInvestViewController ()<MarketMessageMoneyViewDelegate,MarketMessagePayWayViewDelegate>

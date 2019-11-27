@@ -12,7 +12,6 @@
 #import "LevelUpAreaServerController.h"
 #import "LevelUpServerController.h"
 #import "LevelUpViewModel.h"
-#import "AppPayManager.h"
 #import "LevelUpSuccessViewController.h"
 
 @interface LevelViewController ()
@@ -22,6 +21,7 @@
 @property (nonatomic, strong) LevelUpViewModel *viewModel;
 
 @property (nonatomic, assign) LevelInfoType upToLevel;
+@property (nonatomic, assign) BOOL isShowNotificationSelected;
 @end
 
 @implementation LevelViewController
@@ -29,15 +29,20 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    if (CurrentUser.userLvl == 0) {
-        [_topView toSelectInde:1];
-    }else if (CurrentUser.userLvl == 1) {
-        [_topView toSelectInde:2];
-    }else if (CurrentUser.userLvl == 3
-              || CurrentUser.userLvl == 2
-              || CurrentUser.userLvl == 4) {
-        [_topView toSelectInde:3];
+    if (!_isShowNotificationSelected) {
+        if (CurrentUser.userLvl == 0) {
+            [_topView toSelectInde:1];
+        }else if (CurrentUser.userLvl == 1) {
+            [_topView toSelectInde:2];
+        }else if (CurrentUser.userLvl == 3
+                  || CurrentUser.userLvl == 2
+                  || CurrentUser.userLvl == 4) {
+            [_topView toSelectInde:3];
+        }
+    }else{
+        _isShowNotificationSelected = NO;
     }
+    
 }
 
 - (void)viewDidLoad {
@@ -118,6 +123,13 @@
         }else if (status == AppPayStatusCancel) {
             [self showMessage:@"支付取消"];
         }
+    }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:LevelUpNeedSelectedNotificationName object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        self.isShowNotificationSelected = YES;
+        NSInteger index = [x.object integerValue];
+        [self.topView toSelectInde:index];
     }];
 }
 

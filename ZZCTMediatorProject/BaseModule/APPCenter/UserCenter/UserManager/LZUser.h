@@ -61,6 +61,8 @@
 
 @property (nonatomic, assign) CGFloat money;
 
+@property (nonatomic, strong) NSDictionary *currentUserInfoDic;
+
 ////////// --- >废弃
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *phone;

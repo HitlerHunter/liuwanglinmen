@@ -63,7 +63,7 @@
 #import "MarketMessageManager.h"
 
 
-
+#import "AppPayManager.h"
 
 #import "SelectStoreViewController.h"
 #import "LZAppBanks.h"

@@ -16,6 +16,7 @@
 #import "LoginOutCell.h"
 #import "AccountSafeViewController.h"
 #import "MineSettingTopView.h"
+#import "FeedbackViewController.h"
 
 @interface MineSettingViewController ()
 
@@ -38,8 +39,8 @@
     
     MineSettingTopView *topView = [[MineSettingTopView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 90)];
     self.tableView.tableHeaderView = topView;
-    //,@"意见反馈"
-    _titleArray = @[@[@"账户与安全"],@[@"语音播报",@"消息推送设置"],@[@"清除缓存",@"当前版本"],@[@"退出登录"]];
+    
+    _titleArray = @[@[@"账户与安全"],@[@"语音播报",@"消息推送设置"],@[@"清除缓存",@"当前版本",@"意见反馈"],@[@"退出登录"]];
     _iconArray = @[@[@"zhanghaoshezhi"],@[@"yuyinbobaox",@"yuyinbobaox"],@[@"qinglihuancun",@"banben",@"guanyu"],@[@""]];
 }
 
@@ -120,7 +121,8 @@
         }else if (row == 1) {
             
         }else if (row == 2) {
-            
+            FeedbackViewController *vc = [FeedbackViewController new];
+            PushController(vc);
         }else if (row == 3) {
             
         }

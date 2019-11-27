@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, DXRadianDirection) {
 //line
 @property (nonatomic, strong) CALayer *topLine;
 @property (nonatomic, strong) CALayer *bottomLine;
+@property (nonatomic, strong) UIColor *lineColor;
 
 - (void)setBottomLineX:(CGFloat)spacingX;
 - (void)setTopLineX:(CGFloat)spacingX;

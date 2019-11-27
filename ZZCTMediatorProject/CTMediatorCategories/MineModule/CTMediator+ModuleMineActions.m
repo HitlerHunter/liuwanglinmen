@@ -17,6 +17,7 @@ NSString * const kCTMediatorActionManManagerController = @"ManManagerController"
 NSString * const kCTMediatorActionOrderRecordController = @"OrderRecordController";
 NSString * const kCTMediatorActionGoodsManageController = @"GoodsManageController";
 NSString * const kCTMediatorActionEditShopInfoViewController = @"pushEditShopInfoViewController";
+NSString * const kCTMediatorActionOrderManagerController = @"OrderManagerController";
 
 NSString * const kCTMediatorActionGetOperatorMans = @"getOperatorMans";
 
@@ -58,6 +59,22 @@ NSString * const kCTMediatorActionGetOperatorMans = @"getOperatorMans";
 {
     UIViewController *viewController = [self performTarget:kCTMediatorTargetMine
                                                     action:kCTMediatorActionManManagerController
+                                                    params:@{}
+                                         shouldCacheTarget:NO
+                                        ];
+    if ([viewController isKindOfClass:[UIViewController class]]) {
+            // view controller 交付出去之后，可以由外界选择是push还是present
+        return viewController;
+    } else {
+            // 这里处理异常场景，具体如何处理取决于产品
+        return [SDBaseViewController new];
+    }
+}
+
+- (UIViewController *)CTMediator_OrderManagerController
+{
+    UIViewController *viewController = [self performTarget:kCTMediatorTargetMine
+                                                    action:kCTMediatorActionOrderManagerController
                                                     params:@{}
                                          shouldCacheTarget:NO
                                         ];

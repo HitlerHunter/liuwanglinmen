@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		780D31E2237BA4AF00489A85 /* LZEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */; };
+		781CA8C5238294BB00EEE670 /* Login2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781CA8C4238294BB00EEE670 /* Login2ViewController.m */; };
+		781E3328238D07420058E317 /* ShowNeedLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E3327238D07420058E317 /* ShowNeedLevelViewController.m */; };
+		78270E8E2386338A005B02DC /* GoodsDetailToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78270E8D2386338A005B02DC /* GoodsDetailToolView.m */; };
 		784CC4B8231E729100513A79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784CC4B7231E729100513A79 /* MapKit.framework */; };
 		785FE22D214112B600FBC11B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE22C214112B600FBC11B /* CoreGraphics.framework */; };
 		785FE22F214112D300FBC11B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE22E214112D300FBC11B /* libc++.tbd */; };
@@ -23,6 +26,42 @@
 		785FE28C214120CF00FBC11B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE28B214120CF00FBC11B /* JavaScriptCore.framework */; };
 		785FE28E214120D700FBC11B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE28D214120D700FBC11B /* CFNetwork.framework */; };
 		785FE290214120DF00FBC11B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE28F214120DF00FBC11B /* CoreLocation.framework */; };
+		7872E160238387ED001920C8 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E15F238387ED001920C8 /* FeedbackViewController.m */; };
+		7872E16823839A3E001920C8 /* MineAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E16723839A3E001920C8 /* MineAddressViewController.m */; };
+		7872E16B23839BE7001920C8 /* MineAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E16A23839BE7001920C8 /* MineAddressCell.m */; };
+		7872E16E2383CB5C001920C8 /* CreatMineAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E16D2383CB5C001920C8 /* CreatMineAddressViewController.m */; };
+		7872E1712383D344001920C8 /* MineAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E1702383D344001920C8 /* MineAddressModel.m */; };
+		7872E1742383D879001920C8 /* MineAddressViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E1732383D879001920C8 /* MineAddressViewModel.m */; };
+		7872E17723851C98001920C8 /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E17623851C98001920C8 /* GoodsDetailViewController.m */; };
+		7872E17A23851D36001920C8 /* GoodsDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872E17923851D36001920C8 /* GoodsDetailTopView.m */; };
+		7874D65223863EA40059068A /* GoodsSureOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D65123863EA40059068A /* GoodsSureOrderController.m */; };
+		7874D65523863FD50059068A /* SureOrderAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D65423863FD50059068A /* SureOrderAddressView.m */; };
+		7874D6582386603C0059068A /* GoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6572386603C0059068A /* GoodsInfoView.m */; };
+		7874D65B238662AD0059068A /* SureOrderInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D65A238662AD0059068A /* SureOrderInfoView.m */; };
+		7874D65E238669A70059068A /* GoodsCountSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D65C238669A70059068A /* GoodsCountSelectView.m */; };
+		7874D66123866BC50059068A /* OrderPayWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D66023866BC50059068A /* OrderPayWayView.m */; };
+		7874D66423866FE90059068A /* SureOrderToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D66323866FE90059068A /* SureOrderToolView.m */; };
+		7874D6672386732C0059068A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6662386732C0059068A /* GoodsModel.m */; };
+		7874D6D323868EAD0059068A /* MineOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6BB23868EAC0059068A /* MineOrderDetailViewController.m */; };
+		7874D6D823868EAD0059068A /* MineOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6C423868EAC0059068A /* MineOrderViewController.m */; };
+		7874D6D923868EAD0059068A /* MineOrderBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6C523868EAC0059068A /* MineOrderBaseViewController.m */; };
+		7874D6DA23868EAD0059068A /* MineOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6C823868EAC0059068A /* MineOrderModel.m */; };
+		7874D6DB23868EAD0059068A /* MineOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */; };
+		7874D6DC23868EAD0059068A /* MineOrderTableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */; };
+		7874D6DD23868EAD0059068A /* NoMoreOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CF23868EAC0059068A /* NoMoreOrderView.m */; };
+		7874D6DE23868EAD0059068A /* MineOrderTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */; };
+		7874D6E2238690280059068A /* MineOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6E0238690280059068A /* MineOrderViewModel.m */; };
+		7874D6E8238790F90059068A /* MineOrderDetailStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6E7238790F90059068A /* MineOrderDetailStatusView.m */; };
+		7874D6EB2387925D0059068A /* MineOrderDetailAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6EA2387925D0059068A /* MineOrderDetailAddressView.m */; };
+		7874D6EE2387AD570059068A /* MineOrderDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6ED2387AD570059068A /* MineOrderDetailInfoView.m */; };
+		7874D6F12387B1D20059068A /* MineOrderDetailOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6F02387B1D20059068A /* MineOrderDetailOrderView.m */; };
+		7874D6F42387C7D00059068A /* VipPersonDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6F32387C7D00059068A /* VipPersonDetailModel.m */; };
+		7874D6FC2387DD7E0059068A /* MerchantManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6FB2387DD7E0059068A /* MerchantManagerViewController.m */; };
+		7874D6FF2387DDA00059068A /* MerchantManagerTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6FE2387DDA00059068A /* MerchantManagerTopView.m */; };
+		7874D7022387DF1E0059068A /* MerchantManagerCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D7012387DF1E0059068A /* MerchantManagerCardView.m */; };
+		7874D7052387E6830059068A /* MerchantManagerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D7042387E6830059068A /* MerchantManagerViewModel.m */; };
+		7874D7082387E72E0059068A /* MerchantManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D7072387E72E0059068A /* MerchantManagerModel.m */; };
+		7874D70B2387E8E20059068A /* MerchantManagerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D70A2387E8E20059068A /* MerchantManagerCell.m */; };
 		7897000A2374F54E00635E69 /* libexbankcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 789700082374F54E00635E69 /* libexbankcardios.a */; };
 		7897000C2374F55A00635E69 /* libbexbankcard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7897000B2374F55A00635E69 /* libbexbankcard.a */; };
 		78B069052379545A0064E75F /* ZZNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78B068FD2379545A0064E75F /* ZZNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -629,6 +668,12 @@
 		780D31E0237BA4AF00489A85 /* LZEmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZEmptyViewController.h; sourceTree = "<group>"; };
 		780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZEmptyViewController.m; sourceTree = "<group>"; };
 		781B744A212BEB970001A917 /* ZZCTMediatorProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZCTMediatorProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		781CA8C3238294BB00EEE670 /* Login2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login2ViewController.h; sourceTree = "<group>"; };
+		781CA8C4238294BB00EEE670 /* Login2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Login2ViewController.m; sourceTree = "<group>"; };
+		781E3326238D07420058E317 /* ShowNeedLevelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNeedLevelViewController.h; sourceTree = "<group>"; };
+		781E3327238D07420058E317 /* ShowNeedLevelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNeedLevelViewController.m; sourceTree = "<group>"; };
+		78270E8C2386338A005B02DC /* GoodsDetailToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsDetailToolView.h; sourceTree = "<group>"; };
+		78270E8D2386338A005B02DC /* GoodsDetailToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailToolView.m; sourceTree = "<group>"; };
 		784CC4B7231E729100513A79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		785FE22C214112B600FBC11B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		785FE22E214112D300FBC11B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -644,6 +689,78 @@
 		785FE28B214120CF00FBC11B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		785FE28D214120D700FBC11B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		785FE28F214120DF00FBC11B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7872E15E238387ED001920C8 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		7872E15F238387ED001920C8 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		7872E16623839A3E001920C8 /* MineAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineAddressViewController.h; sourceTree = "<group>"; };
+		7872E16723839A3E001920C8 /* MineAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineAddressViewController.m; sourceTree = "<group>"; };
+		7872E16923839BE7001920C8 /* MineAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineAddressCell.h; sourceTree = "<group>"; };
+		7872E16A23839BE7001920C8 /* MineAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineAddressCell.m; sourceTree = "<group>"; };
+		7872E16C2383CB5C001920C8 /* CreatMineAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatMineAddressViewController.h; sourceTree = "<group>"; };
+		7872E16D2383CB5C001920C8 /* CreatMineAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatMineAddressViewController.m; sourceTree = "<group>"; };
+		7872E16F2383D344001920C8 /* MineAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineAddressModel.h; sourceTree = "<group>"; };
+		7872E1702383D344001920C8 /* MineAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineAddressModel.m; sourceTree = "<group>"; };
+		7872E1722383D879001920C8 /* MineAddressViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineAddressViewModel.h; sourceTree = "<group>"; };
+		7872E1732383D879001920C8 /* MineAddressViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineAddressViewModel.m; sourceTree = "<group>"; };
+		7872E17523851C98001920C8 /* GoodsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
+		7872E17623851C98001920C8 /* GoodsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
+		7872E17823851D36001920C8 /* GoodsDetailTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsDetailTopView.h; sourceTree = "<group>"; };
+		7872E17923851D36001920C8 /* GoodsDetailTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailTopView.m; sourceTree = "<group>"; };
+		7874D65023863EA40059068A /* GoodsSureOrderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsSureOrderController.h; sourceTree = "<group>"; };
+		7874D65123863EA40059068A /* GoodsSureOrderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsSureOrderController.m; sourceTree = "<group>"; };
+		7874D65323863FD50059068A /* SureOrderAddressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SureOrderAddressView.h; sourceTree = "<group>"; };
+		7874D65423863FD50059068A /* SureOrderAddressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SureOrderAddressView.m; sourceTree = "<group>"; };
+		7874D6562386603C0059068A /* GoodsInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsInfoView.h; sourceTree = "<group>"; };
+		7874D6572386603C0059068A /* GoodsInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoView.m; sourceTree = "<group>"; };
+		7874D659238662AD0059068A /* SureOrderInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SureOrderInfoView.h; sourceTree = "<group>"; };
+		7874D65A238662AD0059068A /* SureOrderInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SureOrderInfoView.m; sourceTree = "<group>"; };
+		7874D65C238669A70059068A /* GoodsCountSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCountSelectView.m; sourceTree = "<group>"; };
+		7874D65D238669A70059068A /* GoodsCountSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCountSelectView.h; sourceTree = "<group>"; };
+		7874D65F23866BC50059068A /* OrderPayWayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderPayWayView.h; sourceTree = "<group>"; };
+		7874D66023866BC50059068A /* OrderPayWayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderPayWayView.m; sourceTree = "<group>"; };
+		7874D66223866FE90059068A /* SureOrderToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SureOrderToolView.h; sourceTree = "<group>"; };
+		7874D66323866FE90059068A /* SureOrderToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SureOrderToolView.m; sourceTree = "<group>"; };
+		7874D6652386732C0059068A /* GoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
+		7874D6662386732C0059068A /* GoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
+		7874D6BB23868EAC0059068A /* MineOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderDetailViewController.m; sourceTree = "<group>"; };
+		7874D6BE23868EAC0059068A /* MineOrderBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderBaseViewController.h; sourceTree = "<group>"; };
+		7874D6BF23868EAC0059068A /* MineOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderViewController.h; sourceTree = "<group>"; };
+		7874D6C123868EAC0059068A /* MineOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailViewController.h; sourceTree = "<group>"; };
+		7874D6C423868EAC0059068A /* MineOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderViewController.m; sourceTree = "<group>"; };
+		7874D6C523868EAC0059068A /* MineOrderBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderBaseViewController.m; sourceTree = "<group>"; };
+		7874D6C823868EAC0059068A /* MineOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderModel.m; sourceTree = "<group>"; };
+		7874D6C923868EAC0059068A /* MineOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderModel.h; sourceTree = "<group>"; };
+		7874D6CB23868EAC0059068A /* NoMoreOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoMoreOrderView.h; sourceTree = "<group>"; };
+		7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableViewCell.m; sourceTree = "<group>"; };
+		7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableFootView.m; sourceTree = "<group>"; };
+		7874D6CE23868EAC0059068A /* MineOrderTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableHeaderView.h; sourceTree = "<group>"; };
+		7874D6CF23868EAC0059068A /* NoMoreOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoMoreOrderView.m; sourceTree = "<group>"; };
+		7874D6D023868EAC0059068A /* MineOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableViewCell.h; sourceTree = "<group>"; };
+		7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableHeaderView.m; sourceTree = "<group>"; };
+		7874D6D223868EAC0059068A /* MineOrderTableFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableFootView.h; sourceTree = "<group>"; };
+		7874D6E0238690280059068A /* MineOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderViewModel.m; sourceTree = "<group>"; };
+		7874D6E1238690280059068A /* MineOrderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderViewModel.h; sourceTree = "<group>"; };
+		7874D6E6238790F90059068A /* MineOrderDetailStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailStatusView.h; sourceTree = "<group>"; };
+		7874D6E7238790F90059068A /* MineOrderDetailStatusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineOrderDetailStatusView.m; sourceTree = "<group>"; };
+		7874D6E92387925D0059068A /* MineOrderDetailAddressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailAddressView.h; sourceTree = "<group>"; };
+		7874D6EA2387925D0059068A /* MineOrderDetailAddressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineOrderDetailAddressView.m; sourceTree = "<group>"; };
+		7874D6EC2387AD570059068A /* MineOrderDetailInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailInfoView.h; sourceTree = "<group>"; };
+		7874D6ED2387AD570059068A /* MineOrderDetailInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineOrderDetailInfoView.m; sourceTree = "<group>"; };
+		7874D6EF2387B1D20059068A /* MineOrderDetailOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailOrderView.h; sourceTree = "<group>"; };
+		7874D6F02387B1D20059068A /* MineOrderDetailOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineOrderDetailOrderView.m; sourceTree = "<group>"; };
+		7874D6F22387C7D00059068A /* VipPersonDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VipPersonDetailModel.h; sourceTree = "<group>"; };
+		7874D6F32387C7D00059068A /* VipPersonDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VipPersonDetailModel.m; sourceTree = "<group>"; };
+		7874D6FA2387DD7E0059068A /* MerchantManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerViewController.h; sourceTree = "<group>"; };
+		7874D6FB2387DD7E0059068A /* MerchantManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerViewController.m; sourceTree = "<group>"; };
+		7874D6FD2387DDA00059068A /* MerchantManagerTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerTopView.h; sourceTree = "<group>"; };
+		7874D6FE2387DDA00059068A /* MerchantManagerTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerTopView.m; sourceTree = "<group>"; };
+		7874D7002387DF1E0059068A /* MerchantManagerCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerCardView.h; sourceTree = "<group>"; };
+		7874D7012387DF1E0059068A /* MerchantManagerCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerCardView.m; sourceTree = "<group>"; };
+		7874D7032387E6830059068A /* MerchantManagerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerViewModel.h; sourceTree = "<group>"; };
+		7874D7042387E6830059068A /* MerchantManagerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerViewModel.m; sourceTree = "<group>"; };
+		7874D7062387E72E0059068A /* MerchantManagerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerModel.h; sourceTree = "<group>"; };
+		7874D7072387E72E0059068A /* MerchantManagerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerModel.m; sourceTree = "<group>"; };
+		7874D7092387E8E20059068A /* MerchantManagerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MerchantManagerCell.h; sourceTree = "<group>"; };
+		7874D70A2387E8E20059068A /* MerchantManagerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MerchantManagerCell.m; sourceTree = "<group>"; };
 		789700072374F54D00635E69 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
 		789700082374F54E00635E69 /* libexbankcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexbankcardios.a; sourceTree = "<group>"; };
 		7897000B2374F55A00635E69 /* libbexbankcard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbexbankcard.a; sourceTree = "<group>"; };
@@ -1798,6 +1915,171 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7872E16123839A25001920C8 /* 收货地址 */ = {
+			isa = PBXGroup;
+			children = (
+				7872E16223839A25001920C8 /* ViewModel */,
+				7872E16323839A25001920C8 /* Controller */,
+				7872E16423839A25001920C8 /* Model */,
+				7872E16523839A25001920C8 /* View */,
+			);
+			path = "收货地址";
+			sourceTree = "<group>";
+		};
+		7872E16223839A25001920C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7872E1722383D879001920C8 /* MineAddressViewModel.h */,
+				7872E1732383D879001920C8 /* MineAddressViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7872E16323839A25001920C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7872E16623839A3E001920C8 /* MineAddressViewController.h */,
+				7872E16723839A3E001920C8 /* MineAddressViewController.m */,
+				7872E16C2383CB5C001920C8 /* CreatMineAddressViewController.h */,
+				7872E16D2383CB5C001920C8 /* CreatMineAddressViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7872E16423839A25001920C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7872E16F2383D344001920C8 /* MineAddressModel.h */,
+				7872E1702383D344001920C8 /* MineAddressModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7872E16523839A25001920C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7872E16923839BE7001920C8 /* MineAddressCell.h */,
+				7872E16A23839BE7001920C8 /* MineAddressCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7874D6B723868EAC0059068A /* MineOrder */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6DF238690280059068A /* ViewModel */,
+				7874D6B823868EAC0059068A /* Controller */,
+				7874D6C723868EAC0059068A /* Model */,
+				7874D6CA23868EAC0059068A /* View */,
+			);
+			path = MineOrder;
+			sourceTree = "<group>";
+		};
+		7874D6B823868EAC0059068A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6BE23868EAC0059068A /* MineOrderBaseViewController.h */,
+				7874D6C523868EAC0059068A /* MineOrderBaseViewController.m */,
+				7874D6C123868EAC0059068A /* MineOrderDetailViewController.h */,
+				7874D6BB23868EAC0059068A /* MineOrderDetailViewController.m */,
+				7874D6BF23868EAC0059068A /* MineOrderViewController.h */,
+				7874D6C423868EAC0059068A /* MineOrderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7874D6C723868EAC0059068A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6C923868EAC0059068A /* MineOrderModel.h */,
+				7874D6C823868EAC0059068A /* MineOrderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7874D6CA23868EAC0059068A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6D223868EAC0059068A /* MineOrderTableFootView.h */,
+				7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */,
+				7874D6CE23868EAC0059068A /* MineOrderTableHeaderView.h */,
+				7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */,
+				7874D6D023868EAC0059068A /* MineOrderTableViewCell.h */,
+				7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */,
+				7874D6CB23868EAC0059068A /* NoMoreOrderView.h */,
+				7874D6CF23868EAC0059068A /* NoMoreOrderView.m */,
+				7874D6E6238790F90059068A /* MineOrderDetailStatusView.h */,
+				7874D6E7238790F90059068A /* MineOrderDetailStatusView.m */,
+				7874D6E92387925D0059068A /* MineOrderDetailAddressView.h */,
+				7874D6EA2387925D0059068A /* MineOrderDetailAddressView.m */,
+				7874D6EC2387AD570059068A /* MineOrderDetailInfoView.h */,
+				7874D6ED2387AD570059068A /* MineOrderDetailInfoView.m */,
+				7874D6EF2387B1D20059068A /* MineOrderDetailOrderView.h */,
+				7874D6F02387B1D20059068A /* MineOrderDetailOrderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7874D6DF238690280059068A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6E1238690280059068A /* MineOrderViewModel.h */,
+				7874D6E0238690280059068A /* MineOrderViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7874D6F52387DD440059068A /* 商户管理 */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6F62387DD440059068A /* ViewModel */,
+				7874D6F72387DD440059068A /* Controller */,
+				7874D6F82387DD440059068A /* Model */,
+				7874D6F92387DD440059068A /* View */,
+			);
+			path = "商户管理";
+			sourceTree = "<group>";
+		};
+		7874D6F62387DD440059068A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7874D7032387E6830059068A /* MerchantManagerViewModel.h */,
+				7874D7042387E6830059068A /* MerchantManagerViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7874D6F72387DD440059068A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6FA2387DD7E0059068A /* MerchantManagerViewController.h */,
+				7874D6FB2387DD7E0059068A /* MerchantManagerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7874D6F82387DD440059068A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7874D7062387E72E0059068A /* MerchantManagerModel.h */,
+				7874D7072387E72E0059068A /* MerchantManagerModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7874D6F92387DD440059068A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7874D6FD2387DDA00059068A /* MerchantManagerTopView.h */,
+				7874D6FE2387DDA00059068A /* MerchantManagerTopView.m */,
+				7874D7002387DF1E0059068A /* MerchantManagerCardView.h */,
+				7874D7012387DF1E0059068A /* MerchantManagerCardView.m */,
+				7874D7092387E8E20059068A /* MerchantManagerCell.h */,
+				7874D70A2387E8E20059068A /* MerchantManagerCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		78E884BD23741925004257CE /* ZZCTMediatorProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -1937,6 +2219,8 @@
 			children = (
 				78E884EF23741925004257CE /* loginViewController.h */,
 				78E884EC23741925004257CE /* loginViewController.m */,
+				781CA8C3238294BB00EEE670 /* Login2ViewController.h */,
+				781CA8C4238294BB00EEE670 /* Login2ViewController.m */,
 				78E884EB23741925004257CE /* RegisterTextFieldCell.h */,
 				78E884EE23741925004257CE /* RegisterTextFieldCell.m */,
 				78E884F023741925004257CE /* RegisterViewController.h */,
@@ -2104,6 +2388,8 @@
 		78E8853623741925004257CE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7874D6F52387DD440059068A /* 商户管理 */,
+				7872E16123839A25001920C8 /* 收货地址 */,
 				78E8862023741925004257CE /* 编辑资料 */,
 				78E885AC23741925004257CE /* 订单管理 */,
 				78E8860F23741925004257CE /* 积分明细 */,
@@ -2158,6 +2444,8 @@
 				78E8854323741925004257CE /* MineSettingViewController.m */,
 				78E8854A23741925004257CE /* SelectStoreViewController.h */,
 				78E8853F23741925004257CE /* SelectStoreViewController.m */,
+				7872E15E238387ED001920C8 /* FeedbackViewController.h */,
+				7872E15F238387ED001920C8 /* FeedbackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2320,6 +2608,7 @@
 		78E885AC23741925004257CE /* 订单管理 */ = {
 			isa = PBXGroup;
 			children = (
+				7874D6B723868EAC0059068A /* MineOrder */,
 				78E885AD23741925004257CE /* ViewModel */,
 				78E885AE23741925004257CE /* Controller */,
 				78E885AF23741925004257CE /* Model */,
@@ -2338,6 +2627,10 @@
 		78E885AE23741925004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7872E17523851C98001920C8 /* GoodsDetailViewController.h */,
+				7872E17623851C98001920C8 /* GoodsDetailViewController.m */,
+				7874D65023863EA40059068A /* GoodsSureOrderController.h */,
+				7874D65123863EA40059068A /* GoodsSureOrderController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2345,6 +2638,8 @@
 		78E885AF23741925004257CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7874D6652386732C0059068A /* GoodsModel.h */,
+				7874D6662386732C0059068A /* GoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2352,6 +2647,22 @@
 		78E885B023741925004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7874D65D238669A70059068A /* GoodsCountSelectView.h */,
+				7874D65C238669A70059068A /* GoodsCountSelectView.m */,
+				7872E17823851D36001920C8 /* GoodsDetailTopView.h */,
+				7872E17923851D36001920C8 /* GoodsDetailTopView.m */,
+				78270E8C2386338A005B02DC /* GoodsDetailToolView.h */,
+				78270E8D2386338A005B02DC /* GoodsDetailToolView.m */,
+				7874D65323863FD50059068A /* SureOrderAddressView.h */,
+				7874D65423863FD50059068A /* SureOrderAddressView.m */,
+				7874D6562386603C0059068A /* GoodsInfoView.h */,
+				7874D6572386603C0059068A /* GoodsInfoView.m */,
+				7874D659238662AD0059068A /* SureOrderInfoView.h */,
+				7874D65A238662AD0059068A /* SureOrderInfoView.m */,
+				7874D65F23866BC50059068A /* OrderPayWayView.h */,
+				7874D66023866BC50059068A /* OrderPayWayView.m */,
+				7874D66223866FE90059068A /* SureOrderToolView.h */,
+				7874D66323866FE90059068A /* SureOrderToolView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2677,16 +2988,16 @@
 		78E8862423741925004257CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78E8862523741925004257CE /* EditCertificateViewController.m */,
-				78E8862623741925004257CE /* EditMapAnnotation.m */,
-				78E8862723741925004257CE /* EditPhotoPreviewViewController.m */,
-				78E8862823741925004257CE /* EditShopInfoViewController.m */,
-				78E8862923741925004257CE /* EditMapViewController.h */,
 				78E8862A23741925004257CE /* EditCertificateViewController.h */,
+				78E8862523741925004257CE /* EditCertificateViewController.m */,
 				78E8862B23741925004257CE /* EditMapAnnotation.h */,
-				78E8862C23741925004257CE /* EditShopInfoViewController.h */,
+				78E8862623741925004257CE /* EditMapAnnotation.m */,
+				78E8862923741925004257CE /* EditMapViewController.h */,
 				78E8862D23741925004257CE /* EditMapViewController.m */,
 				78E8862E23741926004257CE /* EditPhotoPreviewViewController.h */,
+				78E8862723741925004257CE /* EditPhotoPreviewViewController.m */,
+				78E8862C23741925004257CE /* EditShopInfoViewController.h */,
+				78E8862823741925004257CE /* EditShopInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2887,7 +3198,6 @@
 				78E8874323741926004257CE /* SDAutoLayout */,
 				78E886E823741926004257CE /* SDCityPicker */,
 				78E8871923741926004257CE /* SDNetWorkHelper */,
-				78E8867B23741926004257CE /* ShowInfoLabel */,
 				78E8867123741926004257CE /* SPKeyBoard */,
 				78E886FE23741926004257CE /* TTS */,
 				78E8875D23741926004257CE /* WLPieView */,
@@ -2933,13 +3243,6 @@
 				78E8867A23741926004257CE /* IPAddressHelper.m */,
 			);
 			path = IPAddressHelper;
-			sourceTree = "<group>";
-		};
-		78E8867B23741926004257CE /* ShowInfoLabel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ShowInfoLabel;
 			sourceTree = "<group>";
 		};
 		78E8867C23741926004257CE /* ZZLocationManager */ = {
@@ -3448,24 +3751,24 @@
 		78E8877023741926004257CE /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				78E8877123741926004257CE /* H5CommonViewController.h */,
-				78E8877223741926004257CE /* UIViewController+defaultConfig.h */,
-				78E8877323741926004257CE /* H5HTMLViewController.h */,
-				78E8877423741926004257CE /* PaySuccessViewController.m */,
 				78E8877523741926004257CE /* BaseH5ViewController.h */,
-				78E8877623741926004257CE /* H5NoNavBarViewController.m */,
-				78E8877723741926004257CE /* LZWKScriptMessageHandler.m */,
-				78E8877823741926004257CE /* SDBaseViewController.m */,
-				78E8877923741926004257CE /* UIViewController+defaultConfig.m */,
-				78E8877A23741926004257CE /* h5PaySuccess.jpg */,
-				78E8877B23741926004257CE /* H5CommonViewController.m */,
-				78E8877C23741926004257CE /* PaySuccessViewController.h */,
-				78E8877D23741926004257CE /* H5HTMLViewController.m */,
-				78E8877E23741926004257CE /* BaseHeader.h */,
 				78E8877F23741926004257CE /* BaseH5ViewController.m */,
-				78E8878023741926004257CE /* SDBaseViewController.h */,
-				78E8878123741926004257CE /* LZWKScriptMessageHandler.h */,
+				78E8877E23741926004257CE /* BaseHeader.h */,
+				78E8877123741926004257CE /* H5CommonViewController.h */,
+				78E8877B23741926004257CE /* H5CommonViewController.m */,
+				78E8877323741926004257CE /* H5HTMLViewController.h */,
+				78E8877D23741926004257CE /* H5HTMLViewController.m */,
 				78E8878223741926004257CE /* H5NoNavBarViewController.h */,
+				78E8877623741926004257CE /* H5NoNavBarViewController.m */,
+				78E8877A23741926004257CE /* h5PaySuccess.jpg */,
+				78E8878123741926004257CE /* LZWKScriptMessageHandler.h */,
+				78E8877723741926004257CE /* LZWKScriptMessageHandler.m */,
+				78E8877C23741926004257CE /* PaySuccessViewController.h */,
+				78E8877423741926004257CE /* PaySuccessViewController.m */,
+				78E8878023741926004257CE /* SDBaseViewController.h */,
+				78E8877823741926004257CE /* SDBaseViewController.m */,
+				78E8877223741926004257CE /* UIViewController+defaultConfig.h */,
+				78E8877923741926004257CE /* UIViewController+defaultConfig.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -3559,8 +3862,8 @@
 		78E887BB23741926004257CE /* AppPay */ = {
 			isa = PBXGroup;
 			children = (
-				78E887BC23741926004257CE /* AppPayManager.m */,
 				78E887BD23741926004257CE /* AppPayManager.h */,
+				78E887BC23741926004257CE /* AppPayManager.m */,
 			);
 			path = AppPay;
 			sourceTree = "<group>";
@@ -3579,17 +3882,17 @@
 		78E887BF23741926004257CE /* LZAddressCenter */ = {
 			isa = PBXGroup;
 			children = (
-				78E887C023741926004257CE /* LZAddressModel.h */,
-				78E887C123741926004257CE /* AddressSelectViewController.m */,
-				78E887C223741926004257CE /* LZAddressModelProtocol.h */,
-				78E887C323741926004257CE /* LZAddressAPIRequest.m */,
-				78E887C423741926004257CE /* LZAddressEnum.h */,
-				78E887C523741926004257CE /* LZAddressCenter.m */,
 				78E887C623741926004257CE /* AddressApiProtocol.h */,
 				78E887C723741926004257CE /* AddressSelectViewController.h */,
-				78E887C823741926004257CE /* LZAddressModel.m */,
+				78E887C123741926004257CE /* AddressSelectViewController.m */,
 				78E887C923741926004257CE /* LZAddressAPIRequest.h */,
+				78E887C323741926004257CE /* LZAddressAPIRequest.m */,
 				78E887CA23741926004257CE /* LZAddressCenter.h */,
+				78E887C523741926004257CE /* LZAddressCenter.m */,
+				78E887C423741926004257CE /* LZAddressEnum.h */,
+				78E887C023741926004257CE /* LZAddressModel.h */,
+				78E887C823741926004257CE /* LZAddressModel.m */,
+				78E887C223741926004257CE /* LZAddressModelProtocol.h */,
 			);
 			path = LZAddressCenter;
 			sourceTree = "<group>";
@@ -3644,6 +3947,8 @@
 				78E887DE23741926004257CE /* LaunchViewController.m */,
 				78E887E123741926004257CE /* ShowNeedAuthenViewController.h */,
 				78E887DB23741926004257CE /* ShowNeedAuthenViewController.m */,
+				781E3326238D07420058E317 /* ShowNeedLevelViewController.h */,
+				781E3327238D07420058E317 /* ShowNeedLevelViewController.m */,
 				780D31E0237BA4AF00489A85 /* LZEmptyViewController.h */,
 				780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */,
 			);
@@ -3667,8 +3972,8 @@
 		78E887E923741926004257CE /* CM_InputView */ = {
 			isa = PBXGroup;
 			children = (
-				78E887EA23741926004257CE /* CMInputView.m */,
 				78E887EB23741926004257CE /* CMInputView.h */,
+				78E887EA23741926004257CE /* CMInputView.m */,
 			);
 			path = CM_InputView;
 			sourceTree = "<group>";
@@ -4103,10 +4408,10 @@
 		78E8890223741927004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E8890323741927004257CE /* VipPersonViewModel.m */,
+				78E8890623741927004257CE /* VipConsumeRecordViewModel.h */,
 				78E8890423741927004257CE /* VipConsumeRecordViewModel.m */,
 				78E8890523741927004257CE /* VipPersonViewModel.h */,
-				78E8890623741927004257CE /* VipConsumeRecordViewModel.h */,
+				78E8890323741927004257CE /* VipPersonViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4115,11 +4420,11 @@
 			isa = PBXGroup;
 			children = (
 				78E8890823741927004257CE /* VipConsumeRecordViewController.h */,
-				78E8890923741927004257CE /* VipManagerViewController.m */,
-				78E8890A23741927004257CE /* VipPersonDetailViewController.m */,
 				78E8890B23741927004257CE /* VipConsumeRecordViewController.m */,
-				78E8890C23741927004257CE /* VipPersonDetailViewController.h */,
 				78E8890D23741927004257CE /* VipManagerViewController.h */,
+				78E8890923741927004257CE /* VipManagerViewController.m */,
+				78E8890C23741927004257CE /* VipPersonDetailViewController.h */,
+				78E8890A23741927004257CE /* VipPersonDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4127,10 +4432,12 @@
 		78E8890E23741927004257CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78E8890F23741927004257CE /* VipConsumeRecordModel.m */,
-				78E8891023741927004257CE /* VipPersonModel.m */,
 				78E8891123741927004257CE /* VipConsumeRecordModel.h */,
+				78E8890F23741927004257CE /* VipConsumeRecordModel.m */,
 				78E8891223741927004257CE /* VipPersonModel.h */,
+				78E8891023741927004257CE /* VipPersonModel.m */,
+				7874D6F22387C7D00059068A /* VipPersonDetailModel.h */,
+				7874D6F32387C7D00059068A /* VipPersonDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4138,16 +4445,16 @@
 		78E8891323741927004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E8891423741927004257CE /* VipPersonCell.h */,
-				78E8891523741927004257CE /* VipPersonDetailCellView.h */,
-				78E8891623741927004257CE /* VipPersonDetailTopView.m */,
-				78E8891723741927004257CE /* VipManagerMenuView.m */,
 				78E8891823741927004257CE /* VipConsumeRecordTopView.h */,
-				78E8891923741927004257CE /* VipPersonDetailCellView.m */,
-				78E8891A23741927004257CE /* VipPersonCell.m */,
-				78E8891B23741927004257CE /* VipManagerMenuView.h */,
-				78E8891C23741927004257CE /* VipPersonDetailTopView.h */,
 				78E8891D23741927004257CE /* VipConsumeRecordTopView.m */,
+				78E8891B23741927004257CE /* VipManagerMenuView.h */,
+				78E8891723741927004257CE /* VipManagerMenuView.m */,
+				78E8891423741927004257CE /* VipPersonCell.h */,
+				78E8891A23741927004257CE /* VipPersonCell.m */,
+				78E8891523741927004257CE /* VipPersonDetailCellView.h */,
+				78E8891923741927004257CE /* VipPersonDetailCellView.m */,
+				78E8891C23741927004257CE /* VipPersonDetailTopView.h */,
+				78E8891623741927004257CE /* VipPersonDetailTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5102,6 +5409,7 @@
 				78E88C1A23741928004257CE /* MarketHomeViewController.m in Sources */,
 				78E88AAD23741928004257CE /* ChangePswdCell.m in Sources */,
 				78E88AD423741928004257CE /* YasicClipPage.m in Sources */,
+				7874D6672386732C0059068A /* GoodsModel.m in Sources */,
 				78E88C2523741928004257CE /* WakeUpAddBirthdayTopView.m in Sources */,
 				78E88AF423741928004257CE /* SDCityPickerConst.m in Sources */,
 				78E88BA423741928004257CE /* NoticeModel.m in Sources */,
@@ -5110,6 +5418,7 @@
 				78E88A4E23741927004257CE /* MineInfoEditStyle1Cell.m in Sources */,
 				78E88A4123741927004257CE /* ChangePhoneViewController.m in Sources */,
 				78E88B2B23741928004257CE /* UIViewController+defaultConfig.m in Sources */,
+				7874D70B2387E8E20059068A /* MerchantManagerCell.m in Sources */,
 				78E88A1A23741927004257CE /* RegisterTextFieldCell.m in Sources */,
 				78E88B3523741928004257CE /* UIView+Category.m in Sources */,
 				78E88AA823741928004257CE /* EditTagsCell.m in Sources */,
@@ -5131,6 +5440,7 @@
 				78E88B6523741928004257CE /* NSDate+HooDatePicker.m in Sources */,
 				78E88BCE23741928004257CE /* RealName3ViewController.m in Sources */,
 				78E88A5323741927004257CE /* FormDataManagerModel.m in Sources */,
+				7874D7052387E6830059068A /* MerchantManagerViewModel.m in Sources */,
 				78E88A5123741927004257CE /* DataManagerViewModel.m in Sources */,
 				78E88CAE237425E3004257CE /* JYBDScanCardManage.m in Sources */,
 				78E88BA523741928004257CE /* NoticeListViewModel.m in Sources */,
@@ -5145,6 +5455,7 @@
 				78E88A8723741927004257CE /* CashViewController.m in Sources */,
 				78E88B0423741928004257CE /* LFAlertView.m in Sources */,
 				78E88AB023741928004257CE /* CTMediator+ModuleMineActions.m in Sources */,
+				7872E1742383D879001920C8 /* MineAddressViewModel.m in Sources */,
 				78E88BDD23741928004257CE /* VipPersonCell.m in Sources */,
 				78E88A4323741927004257CE /* MineKefuViewController.m in Sources */,
 				78E88A4723741927004257CE /* SettingNormalCell.m in Sources */,
@@ -5160,9 +5471,11 @@
 				78E88C1123741928004257CE /* MarkSendMessageViewController.m in Sources */,
 				78E88BF923741928004257CE /* CouponInputTextCell.m in Sources */,
 				78E88BD923741928004257CE /* VipPersonModel.m in Sources */,
+				7874D6F12387B1D20059068A /* MineOrderDetailOrderView.m in Sources */,
 				78E88AF823741928004257CE /* SDCityInitial.m in Sources */,
 				78E88B4423741928004257CE /* LZNoDataView.m in Sources */,
 				78E88B2323741928004257CE /* LZApp.m in Sources */,
+				7874D66123866BC50059068A /* OrderPayWayView.m in Sources */,
 				78E88B9523741928004257CE /* BookTableViewCell.m in Sources */,
 				78E88B4023741928004257CE /* OperatorManModel.m in Sources */,
 				78E88BD023741928004257CE /* RealNameOneViewController.m in Sources */,
@@ -5171,6 +5484,7 @@
 				78E88ACE23741928004257CE /* ZLSelectPhotoModel.m in Sources */,
 				78E88B1023741928004257CE /* LFUpDateLicenseManger.m in Sources */,
 				78E88B1D23741928004257CE /* YPhotoCollectionViewCell.m in Sources */,
+				781E3328238D07420058E317 /* ShowNeedLevelViewController.m in Sources */,
 				78E88B4223741928004257CE /* RealNameCell.m in Sources */,
 				78E88A4A23741927004257CE /* UserInfoShowView.m in Sources */,
 				78E88B4623741928004257CE /* AddressSelectViewController.m in Sources */,
@@ -5193,6 +5507,7 @@
 				78E88A9623741927004257CE /* IntegralRecordDetailViewController.m in Sources */,
 				78E88B5923741928004257CE /* MenuView.m in Sources */,
 				78E88C0C23741928004257CE /* RewardTopView.m in Sources */,
+				7874D65B238662AD0059068A /* SureOrderInfoView.m in Sources */,
 				78E88BD323741928004257CE /* VipPersonViewModel.m in Sources */,
 				78E88A9123741927004257CE /* ManManagerModel.m in Sources */,
 				78E88A6923741927004257CE /* AuthenMerchantPhotoView.m in Sources */,
@@ -5249,6 +5564,7 @@
 				78E88AA423741928004257CE /* EditBgImageSelectCell.m in Sources */,
 				78E88B2723741928004257CE /* PaySuccessViewController.m in Sources */,
 				78E88B9B23741928004257CE /* BookOrdFilterCell.m in Sources */,
+				7872E17723851C98001920C8 /* GoodsDetailViewController.m in Sources */,
 				78E88BE723741928004257CE /* CreatCouponViewController.m in Sources */,
 				78E88C1723741928004257CE /* MessageRecordWaitSendController.m in Sources */,
 				78E88C2F23741928004257CE /* BossStudyCell.m in Sources */,
@@ -5256,28 +5572,34 @@
 				78E88A3623741927004257CE /* GeneralizeCodeImageModel.m in Sources */,
 				78E88C2223741928004257CE /* MarkMessageChoicePersonView.m in Sources */,
 				78E88C0323741928004257CE /* RewardCityViewController.m in Sources */,
+				7874D6582386603C0059068A /* GoodsInfoView.m in Sources */,
 				78E88BE423741928004257CE /* CouponChoiceViewController.m in Sources */,
 				78E88A8A23741927004257CE /* MineDelegateTypeView.m in Sources */,
 				78E88B8A23741928004257CE /* BookViewModel.m in Sources */,
 				78E88C0823741928004257CE /* RewardRecordModel.m in Sources */,
+				7874D6DB23868EAD0059068A /* MineOrderTableViewCell.m in Sources */,
 				78E88BB923741928004257CE /* SKMViewController.m in Sources */,
 				78E88C1823741928004257CE /* WakeUpAddBirthdayController.m in Sources */,
 				78E88BDF23741928004257CE /* CouponVipViewModel.m in Sources */,
 				78E88AD323741928004257CE /* ToastUtils.m in Sources */,
 				78E88BFF23741928004257CE /* RewardCityViewModel.m in Sources */,
 				78E88BC523741928004257CE /* MarketInvestFailureController.m in Sources */,
+				7874D6FC2387DD7E0059068A /* MerchantManagerViewController.m in Sources */,
 				78E88B8923741928004257CE /* BookOrdSearchViewModel.m in Sources */,
 				78E88C0623741928004257CE /* RewardRecordViewController.m in Sources */,
 				78E88A8523741927004257CE /* CashSubmitViewController.m in Sources */,
 				78E88BC323741928004257CE /* MarketMessagePayManager.m in Sources */,
 				78E88C4F23741C7A004257CE /* NotificationService.m in Sources */,
 				78E88C1E23741928004257CE /* PersonTagsModel.m in Sources */,
+				7874D6DD23868EAD0059068A /* NoMoreOrderView.m in Sources */,
 				78E88B5823741928004257CE /* UIColor+Hex.m in Sources */,
 				78E88A3F23741927004257CE /* MineInfoEditViewController.m in Sources */,
 				78E88AAC23741928004257CE /* ChangePswdViewController.m in Sources */,
 				78E88B3F23741928004257CE /* NSData+AES128.m in Sources */,
 				78E88AC223741928004257CE /* ZZNetWorkHandler.m in Sources */,
+				7874D65E238669A70059068A /* GoodsCountSelectView.m in Sources */,
 				78E88AB423741928004257CE /* CTMediator+ModuleScanActions.m in Sources */,
+				7874D6E2238690280059068A /* MineOrderViewModel.m in Sources */,
 				78E88B5C23741928004257CE /* HEMenu.m in Sources */,
 				78E88AA723741928004257CE /* EditTitleTextCell.m in Sources */,
 				78E88BBD23741928004257CE /* SKMCardView.m in Sources */,
@@ -5309,7 +5631,10 @@
 				78E88ACD23741928004257CE /* ZLOnePhoto.m in Sources */,
 				78E88AA323741928004257CE /* EditTitleAddressCell.m in Sources */,
 				78E88A3423741927004257CE /* GeneralizeCodeImageController.m in Sources */,
+				7874D6DA23868EAD0059068A /* MineOrderModel.m in Sources */,
+				7874D6D323868EAD0059068A /* MineOrderDetailViewController.m in Sources */,
 				78E88AA923741928004257CE /* EditShopMessageCell.m in Sources */,
+				7874D65223863EA40059068A /* GoodsSureOrderController.m in Sources */,
 				78E88B4923741928004257CE /* LZAddressModel.m in Sources */,
 				78E88BC023741928004257CE /* SKMSignMoneyView.m in Sources */,
 				78E88BC223741928004257CE /* MarketRechargeRecordViewModel.m in Sources */,
@@ -5325,14 +5650,17 @@
 				78E88C3E23741928004257CE /* ScanViewController.m in Sources */,
 				78E88C0723741928004257CE /* RewardViewController.m in Sources */,
 				78E88C1523741928004257CE /* MessageRecordDidSendController.m in Sources */,
+				7872E17A23851D36001920C8 /* GoodsDetailTopView.m in Sources */,
 				78E88C0523741928004257CE /* RewardDetailViewController.m in Sources */,
 				78E88B2A23741928004257CE /* SDBaseViewController.m in Sources */,
 				78E88B6023741928004257CE /* UIView+ViewController.m in Sources */,
 				78E88A9723741927004257CE /* IntegralRecordModel.m in Sources */,
 				78E88B9323741928004257CE /* FilterModel.m in Sources */,
 				78E88A6B23741927004257CE /* AuthenMerchantTopView.m in Sources */,
+				7874D66423866FE90059068A /* SureOrderToolView.m in Sources */,
 				78E88A9F23741928004257CE /* EditMapViewController.m in Sources */,
 				78E88AAE23741928004257CE /* CTMediator+CTMediatorModuleLoginActions.m in Sources */,
+				7872E16B23839BE7001920C8 /* MineAddressCell.m in Sources */,
 				78E88AB823741928004257CE /* SPKeyBoardSureButton.m in Sources */,
 				78E88B3A23741928004257CE /* UIView+Gradient.m in Sources */,
 				78E88B6323741928004257CE /* NinaBaseView.m in Sources */,
@@ -5340,11 +5668,15 @@
 				78E88B3323741928004257CE /* CALayer+XibBorderColor.m in Sources */,
 				78E88A1523741927004257CE /* LoginViewModel.m in Sources */,
 				78E88A1423741927004257CE /* Target_Login.m in Sources */,
+				781CA8C5238294BB00EEE670 /* Login2ViewController.m in Sources */,
+				7874D6DE23868EAD0059068A /* MineOrderTableHeaderView.m in Sources */,
+				7874D6EB2387925D0059068A /* MineOrderDetailAddressView.m in Sources */,
 				78E88A5923741927004257CE /* DataCollectionCircleChatView.m in Sources */,
 				78E88BD123741928004257CE /* RealNameViewModel.m in Sources */,
 				78E88BFA23741928004257CE /* CouponChoiceCell.m in Sources */,
 				78E88C3523741928004257CE /* LevelViewController.m in Sources */,
 				78E88A2423741927004257CE /* main.m in Sources */,
+				7874D6E8238790F90059068A /* MineOrderDetailStatusView.m in Sources */,
 				78E88B2923741928004257CE /* LZWKScriptMessageHandler.m in Sources */,
 				78E88BC123741928004257CE /* MarketMessageManager.m in Sources */,
 				78E88C0B23741928004257CE /* RewardCityCell.m in Sources */,
@@ -5393,6 +5725,8 @@
 				78E88B5623741928004257CE /* CMInputView.m in Sources */,
 				78E88A5A23741927004257CE /* DataCollectionLineChatView.m in Sources */,
 				78E88A1623741927004257CE /* forgetPsw1ViewController.m in Sources */,
+				7874D6EE2387AD570059068A /* MineOrderDetailInfoView.m in Sources */,
+				7874D6FF2387DDA00059068A /* MerchantManagerTopView.m in Sources */,
 				78E88A9D23741928004257CE /* EditPhotoPreviewViewController.m in Sources */,
 				78E88BB423741928004257CE /* HomeCellView.m in Sources */,
 				78E88C3223741928004257CE /* LevelUpViewModel.m in Sources */,
@@ -5419,7 +5753,9 @@
 				78E88B1623741928004257CE /* LZImageResizerViewController.m in Sources */,
 				78E88AD623741928004257CE /* YasicPanGestureRecognizer.m in Sources */,
 				78E88AD723741928004257CE /* UIImage+FixOrientation.m in Sources */,
+				7874D6D923868EAD0059068A /* MineOrderBaseViewController.m in Sources */,
 				78E88B0023741928004257CE /* VPImageCropperViewController.m in Sources */,
+				7872E160238387ED001920C8 /* FeedbackViewController.m in Sources */,
 				78E88A1823741927004257CE /* loginViewController.m in Sources */,
 				78E88C2A23741928004257CE /* BossStudyViewController.m in Sources */,
 				78E88BBA23741928004257CE /* SKMManagerViewController.m in Sources */,
@@ -5436,7 +5772,9 @@
 				78E88A5823741927004257CE /* DataCollectionOrderDetailView.m in Sources */,
 				78E88B2623741928004257CE /* SDBaseView.m in Sources */,
 				78E88A6623741927004257CE /* AuthenMerchantInfoViewController.m in Sources */,
+				7872E16E2383CB5C001920C8 /* CreatMineAddressViewController.m in Sources */,
 				78E88A0C23741927004257CE /* CreditCardAddViewController.m in Sources */,
+				7874D7082387E72E0059068A /* MerchantManagerModel.m in Sources */,
 				78E88A6A23741927004257CE /* LZSearchBarView.m in Sources */,
 				78E88B6123741928004257CE /* NinaPagerButton.m in Sources */,
 				78E88AA523741928004257CE /* EditTagCollectionCell.m in Sources */,
@@ -5479,6 +5817,7 @@
 				78E88A3823741927004257CE /* GeneralizeCodeImageCell.m in Sources */,
 				78E88A9B23741928004257CE /* EditCertificateViewController.m in Sources */,
 				78E88B0123741928004257CE /* LDImagePicker.m in Sources */,
+				7874D6D823868EAD0059068A /* MineOrderViewController.m in Sources */,
 				78E88BF623741928004257CE /* CouponVipCell.m in Sources */,
 				78E88A2E23741927004257CE /* Target_Share.m in Sources */,
 				78E88C3323741928004257CE /* LevelUpSuccessViewController.m in Sources */,
@@ -5491,10 +5830,12 @@
 				78E88BF823741928004257CE /* CouponVipSectionHeaderView.m in Sources */,
 				78E88AF023741928004257CE /* ZLThumbnailViewController.m in Sources */,
 				78E88BDB23741928004257CE /* VipManagerMenuView.m in Sources */,
+				7872E16823839A3E001920C8 /* MineAddressViewController.m in Sources */,
 				78E88AC023741928004257CE /* UIButton+timeDown.m in Sources */,
 				78E88B1E23741928004257CE /* YPhotoAblumTableViewController.m in Sources */,
 				78E88BC923741928004257CE /* MarketMessageOtherMoneyView.m in Sources */,
 				78E88C1623741928004257CE /* MarketMessageViewController.m in Sources */,
+				7874D7022387DF1E0059068A /* MerchantManagerCardView.m in Sources */,
 				78E88BDE23741928004257CE /* VipConsumeRecordTopView.m in Sources */,
 				78E88A9523741927004257CE /* IntegralRecordViewController.m in Sources */,
 				78E88ABF23741928004257CE /* TimeCountDownManager.m in Sources */,
@@ -5502,10 +5843,12 @@
 				78E88CAA237425E3004257CE /* UIAlertController+IDCardExtend.m in Sources */,
 				78E88C1B23741928004257CE /* MarketBoardCreateViewController.m in Sources */,
 				78E88C3123741928004257CE /* Target_Level.m in Sources */,
+				78270E8E2386338A005B02DC /* GoodsDetailToolView.m in Sources */,
 				78E88A4823741927004257CE /* MineInterfaceCell.m in Sources */,
 				78E88AD223741928004257CE /* ZLPhotoBrowser.m in Sources */,
 				78E88A1123741927004257CE /* DebitCardModel.m in Sources */,
 				78E88AEE23741928004257CE /* ZLShowBigImage.m in Sources */,
+				7872E1712383D344001920C8 /* MineAddressModel.m in Sources */,
 				78E88BBC23741928004257CE /* SKMManagerCardView.m in Sources */,
 				78E88A7B23741927004257CE /* BillRepayViewController.m in Sources */,
 				78E88C2323741928004257CE /* MarketBoardTypeSelectView.m in Sources */,
@@ -5524,6 +5867,7 @@
 				78E88CAD237425E3004257CE /* JYBDBankCardVC.m in Sources */,
 				78E88B3D23741928004257CE /* UIImage+Color.m in Sources */,
 				78E88B6223741928004257CE /* NinaPagerView.m in Sources */,
+				7874D65523863FD50059068A /* SureOrderAddressView.m in Sources */,
 				78E88A4B23741927004257CE /* MineInfoEditInputCell.m in Sources */,
 				78E88A9023741927004257CE /* MineTeamViewController.m in Sources */,
 				78E88C3F23741928004257CE /* TorchButton.m in Sources */,
@@ -5542,8 +5886,10 @@
 				78E88C0023741928004257CE /* RewardViewModel.m in Sources */,
 				78E88A1223741927004257CE /* BankCardCell.m in Sources */,
 				78E88ABA23741928004257CE /* SPKeyBoard.m in Sources */,
+				7874D6DC23868EAD0059068A /* MineOrderTableFootView.m in Sources */,
 				78E88A3023741927004257CE /* FaceToFaceViewController.m in Sources */,
 				78E88AC123741928004257CE /* ZZNetWorker.m in Sources */,
+				7874D6F42387C7D00059068A /* VipPersonDetailModel.m in Sources */,
 				78E88A8D23741927004257CE /* MineTeamViewModel.m in Sources */,
 				78E88BAF23741928004257CE /* StudyCollectionViewCell.m in Sources */,
 				78E88BDA23741928004257CE /* VipPersonDetailTopView.m in Sources */,
@@ -5703,7 +6049,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -5747,7 +6093,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -5786,7 +6132,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -5816,7 +6162,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ZZNotificationExtension/Info.plist;

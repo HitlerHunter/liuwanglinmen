@@ -124,7 +124,31 @@
         [self.navigationController setViewControllers:vcs animated:NO];
         
     }
+    
+    if ([message.name isEqualToString:@"placeOrderH5"]) {
+        [AppPayManager shareInstance].currentPayType = AppPayTypeBoomGoodsPay;
+        if ([message.body isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *payDic = message.body[@"params"][@"data"];
+            [[AppPayManager shareInstance] WXPayWithDic:payDic];
+        }
+    
+    }
+    
 };
+
+/**
+ NSString *title = [tempDic objectForKey:@"title"];
+     NSString *content = [tempDic objectForKey:@"content"];
+     NSString *url = [tempDic objectForKey:@"url"];
+     // 在这里执行分享的操作
+
+     // 将分享结果返回给js
+     NSString *jsStr = [NSString stringWithFormat:@"shareResult('%@','%@','%@')",title,content,url];
+     [self.webView evaluateJavaScript:jsStr completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+         NSLog(@"%@----%@",result, error);
+     }];
+ 
+ */
 
 #pragma mark - WKUIDelegate
     // 创建一个新的WebView
@@ -198,6 +222,7 @@
         [userContentController addScriptMessageHandler:[LZWKScriptMessageHandler handlerWithDelegate:self] name:@"h5_back"];
         [userContentController addScriptMessageHandler:[LZWKScriptMessageHandler handlerWithDelegate:self] name:@"h5_needToLevelUp"];
         [userContentController addScriptMessageHandler:[LZWKScriptMessageHandler handlerWithDelegate:self] name:@"h5_backToSuccess"];
+        [userContentController addScriptMessageHandler:[LZWKScriptMessageHandler handlerWithDelegate:self] name:@"placeOrderH5"];
         
             // 根据需要去设置对应的属性
         WKWebView *webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, LZApp.shareInstance.app_navigationBarHeight, kScreenWidth, self.contentHeight) configuration:config];

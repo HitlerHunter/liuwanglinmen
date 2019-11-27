@@ -47,11 +47,13 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:UIImageName(@"eye_open") forState:UIControlStateNormal];
         [btn setImage:UIImageName(@"eye_colse") forState:UIControlStateSelected];
+        
         btn.frame = CGRectMake(0, 0, 40, 40);
         textField.rightView = btn;
         textField.rightViewMode = UITextFieldViewModeAlways;
         
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self btnClick:btn];
     }else if (_style == RegisterTextFieldCellStyleCode) {
             //view2
         SDBaseView *view2 = [[SDBaseView alloc] initWithFrame:CGRectMake(0, 0, 110, 40)];

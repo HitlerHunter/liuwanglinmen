@@ -125,7 +125,7 @@
         if (model_net.success) {
 
             LZUser *user = [LZUser mj_objectWithKeyValues:model_net.data];
-            
+            user.currentUserInfoDic = data;
             if (block) {
                 block(model_net.success,user);
             }

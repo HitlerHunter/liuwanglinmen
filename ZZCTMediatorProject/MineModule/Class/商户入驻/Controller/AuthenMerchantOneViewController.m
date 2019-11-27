@@ -76,6 +76,7 @@
         self.merchant.pmsMerchantSettlement.balanceUserFlag = @"01";
         self.merchant.pmsMerchantSettlement.balanceUserType = @"02";
         self.merchant.pmsMerchantInfo.merchantType = @"03";
+        self.merchant.pmsMerchantSettlement.fee01 = @"0";
     }
     
     

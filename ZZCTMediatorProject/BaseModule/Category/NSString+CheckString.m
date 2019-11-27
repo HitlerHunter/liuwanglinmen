@@ -228,6 +228,10 @@
     double strValue = [str doubleValue];
     NSString *str1 = [NSString stringWithFormat:@"%.2f",strValue];
     
+    if ([str1 hasSuffix:@"0"]) {
+        str1 = [str1 substringToIndex:str1.length-1];
+    }
+    
     return str1;
 }
 
@@ -239,6 +243,10 @@
     NSString *str = [NSString stringWithFormat:@"%.2f",value];
     double strValue = [str doubleValue];
     NSString *str1 = [NSString stringWithFormat:@"%.2f",strValue];
+    
+    if ([str1 hasSuffix:@"0"]) {
+        str1 = [str1 substringToIndex:str1.length-1];
+    }
     
     return str1;
 }

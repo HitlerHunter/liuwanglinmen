@@ -33,9 +33,9 @@
 - (void)configText:(NSString *)text
         loadingText:(NSString *)loadingText{
     
-    [self configColor:LZLodingBtnNormalColor
-         loadingColor:LZMianBtnDisableColor
-        disabledColor:LZMianBtnDisableColor
+    [self configColor:rgb(255,111,2)
+         loadingColor:rgb(255,142,1)
+        disabledColor:rgb(255,142,1)
                  text:text
           loadingText:loadingText
                  font:kfont(20)

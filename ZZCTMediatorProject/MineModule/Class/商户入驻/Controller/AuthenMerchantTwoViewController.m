@@ -322,8 +322,10 @@
                 
                 if (index == 0) {
                     model.vaule = @"02";
+                    self.merchant.pmsMerchantSettlement.fee01 = @"0";
                 }else{
                     model.vaule = @"01";
+                    self.merchant.pmsMerchantSettlement.fee01 = @"";
                 }
             }];
             dispatch_main_async_safe(^{

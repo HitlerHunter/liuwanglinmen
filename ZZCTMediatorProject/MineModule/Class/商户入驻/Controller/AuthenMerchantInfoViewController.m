@@ -130,7 +130,7 @@
     NSString *type_js = self.merchant.pmsMerchantSettlement.balanceUserFlag;
     if (type_js.integerValue == 1) {
         type_js = @"对私";
-    }else if (type_js.integerValue == 2) {
+    }else{
         type_js = @"对公";
     }
     
@@ -152,10 +152,29 @@
     
     [vauleArray addSafeObject:str];
     
-    [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.headBankName];
-    [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankAccount];
-    [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankProvince];
-    [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankBranch];
+    if (IsNull(self.merchant.pmsMerchantSettlement.headBankName)) {
+        [vauleArray addSafeObject:@""];
+    }else{
+        [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.headBankName];
+    }
+    
+    if (IsNull(self.merchant.pmsMerchantSettlement.bankAccount)) {
+        [vauleArray addSafeObject:@""];
+    }else{
+        [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankAccount];
+    }
+    
+    if (IsNull(self.merchant.pmsMerchantSettlement.bankProvince)) {
+        [vauleArray addSafeObject:@""];
+    }else{
+        [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankProvince];
+    }
+    
+    if (IsNull(self.merchant.pmsMerchantSettlement.bankBranch)) {
+        [vauleArray addSafeObject:@""];
+    }else{
+        [vauleArray addSafeObject:self.merchant.pmsMerchantSettlement.bankBranch];
+    }
     
     return vauleArray;
     

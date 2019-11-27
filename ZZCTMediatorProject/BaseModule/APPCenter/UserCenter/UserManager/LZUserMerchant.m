@@ -23,7 +23,9 @@
         || _status.integerValue == 8) {
         return AuthenMerchantStatusRefund;
     }else if (_status.integerValue == 5
-              || _status.integerValue == 9) {
+              || _status.integerValue == 9
+              || _status.integerValue == 7
+              || _status.integerValue == 11) {
         return AuthenMerchantStatusSuccess;
     }else if (_status.integerValue == -1) {
         return AuthenMerchantStatusNoSubmit;

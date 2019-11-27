@@ -10,10 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class VipPersonModel;
 @interface VipPersonDetailViewController : SDBaseViewController
 
-- (instancetype)initWithModel:(VipPersonModel *)model;
+- (instancetype)initWithUserId:(NSString *)userId;
 
 @end
 

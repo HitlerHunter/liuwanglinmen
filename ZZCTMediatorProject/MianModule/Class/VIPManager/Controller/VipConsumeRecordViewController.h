@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class VipPersonModel;
+@class VipPersonDetailModel;
 @interface VipConsumeRecordViewController : SDBaseViewController
 
-- (instancetype)initWithModel:(VipPersonModel *)model;
+- (instancetype)initWithModel:(VipPersonDetailModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

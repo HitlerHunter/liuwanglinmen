@@ -109,6 +109,11 @@
     _toplineSpacingX = spacingX;
 }
 
+- (void)setLineColor:(UIColor *)lineColor{
+    _topLine.backgroundColor = lineColor.CGColor;
+    _bottomLine.backgroundColor = lineColor.CGColor;
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     

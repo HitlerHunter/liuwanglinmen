@@ -108,4 +108,17 @@ static NSString * getRoleIconWithLevel(NSInteger level){
     return @"";
 }
 
+/** 订单状态 订单状态: 待付款1；待发货2；已发货3 */
+typedef NS_ENUM(NSUInteger, MineOrderStatus) {
+    /**已取消*/
+    MineOrderStatusCancel = 0,
+    /**待付款*/
+    MineOrderStatusWaitingPay = 1,
+    /**已发货*/
+    MineOrderStatusWaitingTake = 3,
+    /**待发货*/
+    MineOrderStatusWaitingSend = 2,
+    
+};
+
 #endif /* CommenEnum_h */

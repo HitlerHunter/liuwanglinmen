@@ -26,6 +26,7 @@
 static NSString * const API_sendMessageCode = @"/public/sendMessageCode";
 static NSString * const API_refreshToken = @"/auth/refresh";//ddtk
 static NSString * const API_Login = @"/auth/login";
+static NSString * const API_LoginWithCode = @"/auth/sms/login";
 
 static NSString * const API_getUserInfo = @"/user-biz/sysUser";//ddtk
 static NSString * const API_register = @"/admin/merchant/merchantRegister";//ddtk

@@ -11,7 +11,7 @@
 #import "AppInfoModel.h"
 #import "CYLTabBarControllerConfig.h"
 #import <UShareUI/UShareUI.h>
-
+#import <WXApi.h>
 
 @implementation AppCenter
 
@@ -221,7 +221,7 @@
 #pragma mark - 版本检查
 + (void)getAppInfo{
     ZZNetWorker.GET.zz_param(@{@"appId":OEMID})
-    .zz_url(API_getOemInfo)
+    .zz_url(API_getOemInfo).zz_authorization(@"")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
@@ -235,7 +235,7 @@
 
 + (void)showUpdateWith:(AppInfoModel *)appInfo{
 
-    if (!appInfo.valid) {
+    if (!appInfo.iosUrl.boolValue) {
         return;
     }
     
@@ -244,7 +244,7 @@
         return ;
     }
     
-    HDAlertView *alert = [HDAlertView alertViewWithTitle:@"发现新版本" andMessage:@"是否前往下载新版本？"];
+    HDAlertView *alert = [HDAlertView alertViewWithTitle:@"发现新版本" andMessage:appInfo.remark];
     alert.cancelButtonTitleColor = UIColorHex(0x353535);
     if (!appInfo.force) {
        [alert addButtonWithTitle:@"取消" type:HDAlertViewButtonTypeCancel handler:nil];
@@ -268,13 +268,27 @@
 }
 
 + (void)shareURL:(NSString *)url{
+    [self shareURL:url
+             title:@"快来注册，省钱赚钱"
+          subTitle:@"您已经有99个熟人在使用了"
+             image:[AppCenter appIcon]];
+}
+
++ (void)shareURL:(NSString *)url
+           title:(NSString *)title
+        subTitle:(NSString *)subTitle
+           image:(id)image{
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
             // 根据获取的platformType确定所选平台进行下一步操作
-        [self shareImageToPlatformType:platformType URL:url];
+        [self shareImageToPlatformType:platformType URL:url title:title subTitle:subTitle image:image];
     }];
 }
 
-+ (void)shareImageToPlatformType:(UMSocialPlatformType)platformType URL:(NSString *)url
++ (void)shareImageToPlatformType:(UMSocialPlatformType)platformType
+                             URL:(NSString *)url
+                           title:(NSString *)title
+                        subTitle:(NSString *)subTitle
+                           image:(id)image
 {
         //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
@@ -282,10 +296,10 @@
         //创建图片内容对象
     UMShareWebpageObject *shareObject = [[UMShareWebpageObject alloc] init];
         //如果有缩略图，则设置缩略图
-    shareObject.thumbImage = [AppCenter appIcon];
+    shareObject.thumbImage = image;
     shareObject.webpageUrl = url;
-    shareObject.title = @"快来注册，省钱赚钱";
-    shareObject.descr = @"您已经有99个熟人在使用了";
+    shareObject.title = title;
+    shareObject.descr = subTitle;
         //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
     
@@ -298,5 +312,29 @@
         }
     }];
 }
+
+/**跳小程序*/
++ (void)toMiniProgram{
+    
+    WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
+    launchMiniProgramReq.userName = @"gh_ca5b1657f94b";//拉起的小程序的username
+   id userInfo = CurrentUser.currentUserInfoDic;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString;
+
+    if (!jsonData) {
+        NSLog(@"%@",error);
+    }else{
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+
+    launchMiniProgramReq.path = [NSString stringWithFormat:@"pages/index/main?taken_id=%@&user_info=%@",CurrentUser.access_token,jsonString];
+    launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease;//拉起小程序的类型
+//WXMiniProgramTypeRelease
+    [WXApi sendReq:launchMiniProgramReq];
+
+}
+
 @end
  

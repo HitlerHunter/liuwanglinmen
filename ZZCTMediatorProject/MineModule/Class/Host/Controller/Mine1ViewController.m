@@ -22,6 +22,8 @@
 #import "AuthenMerchantViewController.h"
 #import "MineTeamViewController.h"
 #import "BankCardListViewController.h"
+#import "MineAddressViewController.h"
+#import "MerchantManagerViewController.h"
 
 @interface Mine1ViewController ()<HomeToolsViewDelegate>
 @property (nonatomic, strong) MineUserInfoHeader *header;
@@ -146,7 +148,8 @@
     
     MineInterfaceCell *cell_address = [MineInterfaceCell cellWithImage:@"mine_address" title:@"收货地址" block:^{
         [AppCenter setEmptyControllerTitle:@"收货地址"];
-        AppCenterCheckNotOpenToAllUser
+        MineAddressViewController *vc = [MineAddressViewController new];
+        PushController(vc);
     }];
     
     MineInterfaceCell *cell_kefu = [MineInterfaceCell cellWithImage:@"mine_kefu" title:@"联系客服" block:^{
@@ -211,11 +214,14 @@
         APPCenterPowerCheckMerchant
         [[CTMediator sharedInstance] CTMediator_EditShopInfoViewControllerWithNav:self.navigationController];
     }else if ([title isEqualToString:@"商户管理"]) {
-        [AppCenter setEmptyControllerTitle:@"商户管理"];
-        AppCenterCheckNotOpenToAllUser
+        if ([AppCenter checkLevel:1]) {
+            MerchantManagerViewController *vc = [MerchantManagerViewController new];
+            PushController(vc);
+        };
     }else if ([title isEqualToString:@"我的订单"]) {
-        [AppCenter setEmptyControllerTitle:@"我的订单"];
-        AppCenterCheckNotOpenToAllUser
+        
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_OrderManagerController];
+        PushController(vc);
     }
     
     

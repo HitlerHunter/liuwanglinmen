@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hSP-Tg-Mqp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hSP-Tg-Mqp">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -133,6 +133,18 @@
                                             <action selector="toRegister" destination="UWc-ai-yPp" eventType="touchUpInside" id="jQH-tJ-8P9"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp9-vS-bNr">
+                                        <rect key="frame" x="25" y="449" width="93" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="a7t-79-rZd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="账号密码登录">
+                                            <color key="titleColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -144,6 +156,7 @@
                                     <constraint firstItem="dAq-QC-Lao" firstAttribute="top" secondItem="OVv-ju-fra" secondAttribute="top" constant="75" id="F3M-6x-1Yd"/>
                                     <constraint firstAttribute="trailing" secondItem="7fq-Pj-SLe" secondAttribute="trailing" constant="30" id="IEZ-sk-VHQ"/>
                                     <constraint firstItem="emV-c3-O4K" firstAttribute="top" secondItem="tw6-0X-eTD" secondAttribute="bottom" constant="23" id="P6S-hH-qHx"/>
+                                    <constraint firstItem="yp9-vS-bNr" firstAttribute="top" secondItem="WYQ-zH-8GO" secondAttribute="bottom" constant="8" id="QlA-wn-IZW"/>
                                     <constraint firstItem="CtA-JZ-dD4" firstAttribute="top" secondItem="emV-c3-O4K" secondAttribute="bottom" constant="13" id="Txc-7k-U53"/>
                                     <constraint firstItem="emV-c3-O4K" firstAttribute="trailing" secondItem="7fq-Pj-SLe" secondAttribute="trailing" id="UNe-p0-dBa"/>
                                     <constraint firstItem="p2J-eP-0V7" firstAttribute="leading" secondItem="39Y-vg-3lL" secondAttribute="leading" id="UqP-q2-NZA"/>
@@ -162,6 +175,7 @@
                                     <constraint firstItem="jiI-ZS-0W9" firstAttribute="trailing" secondItem="CtA-JZ-dD4" secondAttribute="trailing" id="oox-wt-RvT"/>
                                     <constraint firstItem="Q0E-KQ-zUI" firstAttribute="centerY" secondItem="WYQ-zH-8GO" secondAttribute="centerY" id="r7F-X5-awG"/>
                                     <constraint firstItem="jiI-ZS-0W9" firstAttribute="top" secondItem="CtA-JZ-dD4" secondAttribute="bottom" constant="40" id="whj-lt-Ugh"/>
+                                    <constraint firstItem="yp9-vS-bNr" firstAttribute="leading" secondItem="jiI-ZS-0W9" secondAttribute="leading" id="xcy-a1-j6p"/>
                                     <constraint firstAttribute="trailing" secondItem="Q0E-KQ-zUI" secondAttribute="trailing" constant="30" id="yAf-2E-7GL"/>
                                 </constraints>
                             </scrollView>

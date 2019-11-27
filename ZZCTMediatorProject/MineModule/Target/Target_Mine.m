@@ -8,7 +8,7 @@
 
 #import "Target_Mine.h"
 #import "SelectStoreViewController.h"
-
+#import "MineOrderViewController.h"
 #import "Mine1ViewController.h"
 #import "DataCollectionViewController.h"
 
@@ -41,7 +41,12 @@
     return vc;
 }
 
+- (UIViewController *)Action_OrderManagerController:(NSDictionary *)params
+{
+    MineOrderViewController *vc = [MineOrderViewController new];
 
+    return vc;
+}
 
 - (void)Action_pushEditShopInfoViewController:(NSDictionary *)params
 {

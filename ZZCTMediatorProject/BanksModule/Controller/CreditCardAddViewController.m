@@ -74,7 +74,7 @@
         make.top.mas_equalTo(20);
     }];
     
-//    UIButton *removeBtn = [UIButton buttonWithFontSize:17 text:@"删除信用卡" textColor:AppCenter.color_nextButtonColor];
+//    UIButton *removeBtn = [UIButton buttonWithFontSize:17 text:@"删除信用卡" textColor:rgb(53,53,53)];
 //    
 //    [bottomView addSubview:removeBtn];
 //    [removeBtn mas_makeConstraints:^(MASConstraintMaker *make) {

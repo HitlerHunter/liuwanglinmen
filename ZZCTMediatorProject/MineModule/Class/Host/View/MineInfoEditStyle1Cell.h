@@ -13,11 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MineInfoEditStyle1Cell : SDBaseView
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UILabel *valueLabel;
+@property (nonatomic, strong) UITextField *valueLabel;
+@property (nonatomic, strong) NSString *placeholder;
 @property (nonatomic, assign) BOOL showMoreIcon;
 
 + (MineInfoEditStyle1Cell *)cellWithTitle:(NSString *)title
                                     vaule:(NSString *)vaule
+                                    block:(void (^)(void))block;
++ (MineInfoEditStyle1Cell *)cellWithTitle:(NSString *)title
+                                    vaule:(NSString *)vaule
+                              placeholder:(NSString *)placeholder
                                     block:(void (^)(void))block;
 @end
 

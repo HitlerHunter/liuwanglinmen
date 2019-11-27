@@ -43,6 +43,7 @@ return ;\
 + (BOOL)checkAppIsToHoc;
 /**是否在开发*/
 + (BOOL)checkAppIsDevelopment;
++ (BOOL)checkLevel:(NSInteger)level;
 @end
 
 NS_ASSUME_NONNULL_END

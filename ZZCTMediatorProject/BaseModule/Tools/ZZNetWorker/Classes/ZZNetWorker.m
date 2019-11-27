@@ -208,7 +208,8 @@
     
     NSURL *url = nil;
     
-     if (self.paramType == ZZNetWorkerParamTypeAppendAfterURL) {
+    
+     if (self.paramType == ZZNetWorkerParamTypeAppendAfterURL && parameters) {
          
          NSMutableString *dataStr = [[NSMutableString alloc] initWithString:URLString];
          [dataStr appendString:@"?"];
@@ -247,7 +248,7 @@
         [request setValue:self.Authorization forHTTPHeaderField:@"Authorization"];
     }
     
-    if (self.paramType == ZZNetWorkerParamTypeFormData) {
+    if (self.paramType == ZZNetWorkerParamTypeFormData && parameters) {
         NSMutableString *dataStr = [[NSMutableString alloc] init];
         
         NSArray *keys = [parameters allKeys];
@@ -261,7 +262,7 @@
         request.HTTPBody = paramData;
         [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         
-    }else if (self.paramType == ZZNetWorkerParamTypeNormalBody) {
+    }else if (self.paramType == ZZNetWorkerParamTypeNormalBody && parameters) {
         
         if (parameters) {
             NSError *error = nil;

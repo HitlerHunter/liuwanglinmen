@@ -23,4 +23,8 @@ static NSString * const JPushStoreScanNotificationName = @"JPushStoreScanNotific
 static NSString * const WXPayFinishedUplevelNotificationName = @"WXPayFinishedUplevelNotificationName";
 static NSString * const WXPayFinishedMarketMessageNotificationName = @"WXPayFinishedMarketMessageNotificationName";
 
+static NSString * const WXPayFinishedHotGoodsNotificationName = @"WXPayFinishedHotGoodsNotificationName";
+
+static NSString * const LevelUpNeedSelectedNotificationName = @"LevelUpNeedSelectedNotificationName";
+
 #endif /* LZNotifacationName_h */

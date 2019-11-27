@@ -29,11 +29,11 @@
     _menuView = [[VipManagerMenuView alloc] initWithFrame:CGRectMake(0, self.base_navigationbarHeight, kScreenWidth, 35)];
     _menuView.delegate = self;
     
-    VipManagerMenuModel *menu1 = [VipManagerMenuModel initWithTitle:@"注册时间" status:VipManagerMenuStatusNoSelected];
+//    VipManagerMenuModel *menu1 = [VipManagerMenuModel initWithTitle:@"注册时间" status:VipManagerMenuStatusNoSelected];
     VipManagerMenuModel *menu2 = [VipManagerMenuModel initWithTitle:@"支付金额" status:VipManagerMenuStatusNoSelected];
     VipManagerMenuModel *menu3 = [VipManagerMenuModel initWithTitle:@"消费次数" status:VipManagerMenuStatusNoSelected];
     VipManagerMenuModel *menu4 = [VipManagerMenuModel initWithTitle:@"消费时间" status:VipManagerMenuStatusNoSelected];
-    [_menuView initUIWithMenuModelArray:@[menu1,menu2,menu3,menu4]];
+    [_menuView initUIWithMenuModelArray:@[menu2,menu3,menu4]];
     
     [self.view addSubview:_menuView];
     
@@ -49,42 +49,30 @@
 }
 
 
-- (void)refreshData{
-    [self.viewModel refreshData];
-}
-
-- (void)loadMore{
-    [self.viewModel loadMoreData];
-}
-
 #pragma mark - VipManagerMenuDelegate
 - (void)VipManagerMenuDidSelectedWithTitle:(NSString *)title status:(VipManagerMenuStatus)status{
     
-    id sortType = @"0";
-    if (status == VipManagerMenuStatusUp) {
-        sortType = @"1";
-    }else if (status == VipManagerMenuStatusDown) {
-        sortType = @"2";
-    }else if (status == VipManagerMenuStatusNoSelected) {
-        sortType = nil;
-    }
-    
-    _viewModel.orderByRegisterTime = nil;
-    _viewModel.orderByPayTotal = nil;
-    _viewModel.orderByPayTimes = nil;
-    _viewModel.orderByLastPayTime = nil;
-    
-    if ([title isEqualToString:@"注册时间"]) {
-        _viewModel.orderByRegisterTime = sortType;
-    }else if ([title isEqualToString:@"支付金额"]) {
-        _viewModel.orderByPayTotal = sortType;
+    NSString *str = @"";
+    if ([title isEqualToString:@"支付金额"]) {
+        str = @"consumer_amt";
     }else if ([title isEqualToString:@"消费次数"]) {
-        _viewModel.orderByPayTimes = sortType;
+        str = @"consumer_times";
     }else if ([title isEqualToString:@"消费时间"]) {
-        _viewModel.orderByLastPayTime = sortType;
+        str = @"last_txn_time";
     }
     
-    [self refreshData];
+    
+    if (status == VipManagerMenuStatusUp) {
+        _viewModel.isAsc = str;
+        _viewModel.isDesc = nil;
+    }else if (status == VipManagerMenuStatusDown) {
+        _viewModel.isDesc = str;
+        _viewModel.isAsc = nil;
+    }else if (status == VipManagerMenuStatusNoSelected) {
+        
+    }
+    
+    [self.viewModel refreshData];
 }
 
 #pragma mark - tableView Delegate
@@ -108,7 +96,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     VipPersonModel *model = self.viewModel.dataArray[indexPath.row];
-    VipPersonDetailViewController *detail = [[VipPersonDetailViewController alloc] initWithModel:model];
+    VipPersonDetailViewController *detail = [[VipPersonDetailViewController alloc] initWithUserId:model.txnUsrNo];
     PushController(detail);
 };
 

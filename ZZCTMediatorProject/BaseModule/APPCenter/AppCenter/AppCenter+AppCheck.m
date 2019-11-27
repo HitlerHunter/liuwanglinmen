@@ -11,6 +11,7 @@
 #import "RealNameOneViewController.h"
 #import "LFLivenessManager.h"
 #import "LZEmptyViewController.h"
+#import "ShowNeedLevelViewController.h"
 
 @implementation AppCenter (AppCheck)
 
@@ -74,6 +75,22 @@
     UIViewController *vc = [self getCurrentVC];
    
     [ShowNeedAuthenViewController showNeedAuthenWithController:vc];
+    return NO;
+}
+
++ (BOOL)checkLevel:(NSInteger)level{
+    
+    if ([self checkAppIsDevelopment]) {
+        return YES;
+    }
+    
+    if (CurrentUser.userLvl >= level) {
+        return YES;
+    }
+    
+    UIViewController *vc = [self getCurrentVC];
+   
+    [ShowNeedLevelViewController showNeedAuthenWithController:vc];
     return NO;
 }
 

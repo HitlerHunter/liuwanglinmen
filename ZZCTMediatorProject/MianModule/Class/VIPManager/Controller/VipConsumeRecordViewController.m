@@ -12,12 +12,13 @@
 #import "VipPersonModel.h"
 #import "VipConsumeRecordViewModel.h"
 #import "VipConsumeRecordModel.h"
+#import "VipPersonDetailModel.h"
 
 @interface VipConsumeRecordViewController ()
 
 @property (nonatomic, strong) VipConsumeRecordTopView *topView;
 
-@property (nonatomic, strong) VipPersonModel *model;
+@property (nonatomic, strong) VipPersonDetailModel *model;
 @property (nonatomic, strong) VipConsumeRecordViewModel *viewModel;
 @end
 
@@ -31,7 +32,7 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (instancetype)initWithModel:(VipPersonModel *)model{
+- (instancetype)initWithModel:(VipPersonDetailModel *)model{
     if (self = [super init]) {
         _model = model;
     }
@@ -71,17 +72,30 @@
     
     
     _topView.headImage.image = [AppCenter defaultAppAvatar];
-    _topView.label_name.text = _model.nickName;
-    _topView.label_phone.text = [NSString stringWithFormat:@"会员ID:%@",_model.userId];
+    _topView.label_name.text = _model.usrName;
+    if (!IsNull(_model.usrNo)) {
+       _topView.label_phone.text = [NSString stringWithFormat:@"会员ID:%@",_model.usrNo];
+    }else{
+        _topView.label_phone.text = @"";
+    }
     
-    self.topView.label_money1.text = [NSString formatFloatString:_model.totalPay];
-    self.topView.label_money2.text = _model.payTimes;
     
     _viewModel = [VipConsumeRecordViewModel new];
-    _viewModel.userId = _model.userId;
+    _viewModel.userId = _model.usrNo;
     _viewModel.tableView = self.tableView;
 
     [self.viewModel refreshData];
+      
+    @weakify(self);
+    [RACObserve(_viewModel, sumCount) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.topView.label_money2.text = [NSString stringWithFormat:@"%@次",self.viewModel.sumCount];
+    }];
+    
+    [RACObserve(_viewModel, sumOrderAmt) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.topView.label_money1.text = [NSString formatFloatString:self.viewModel.sumOrderAmt];
+    }];
 }
 
 #pragma mark - tableView Delegate
@@ -100,9 +114,9 @@
     MarketInvestRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MarketInvestRecordCell"];
     cell.backgroundColor = LZWhiteColor;
     
-    cell.label_title.text = getPayWayNameWithCode(model.payTypeName);
-    cell.label_info.text = model.createTime;
-    cell.label_money.text = [NSString stringWithFormat:@"￥%@",[NSString formatFloatString:model.orderAmount]];
+    cell.label_title.text = getPayWayNameWithCode(model.payType);
+    cell.label_info.text = model.createDate;
+    cell.label_money.text = [NSString stringWithFormat:@"￥%@",[NSString formatFloatString:model.orderAmt]];
     
     if (indexPath.row == 0) {
         [cell isHiddenTopLine:YES];

@@ -43,4 +43,11 @@
 
 + (NSString *)shareRegisterURL;
 + (void)shareURL:(NSString *)url;
++ (void)shareURL:(NSString *)url
+           title:(NSString *)title
+        subTitle:(NSString *)subTitle
+           image:(id)image;
+
+/**跳小程序*/
++ (void)toMiniProgram;
 @end

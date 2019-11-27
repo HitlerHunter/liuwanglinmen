@@ -19,6 +19,18 @@
     [self loginWithParams:params URL:API_Login block:block];
 }
 
++ (void)loginWithPhone:(NSString *)phone
+                  code:(NSString *)code
+               codeKey:(NSString *)codeKey
+                 block:(void (^)(NSDictionary *data, NSError *error))block{
+    NewParams;
+    [params setSafeObject:phone forKey:@"principal"];
+    [params setSafeObject:code forKey:@"smsCode"];
+    [params setSafeObject:codeKey forKey:@"key"];
+    [params setSafeObject:@"6w" forKey:@"appId"];
+    [self loginWithParams:params URL:API_LoginWithCode block:block];
+}
+
 + (void)loginWithParams:(NSDictionary *)params URL:(NSString *)URL block:(void (^)(NSDictionary *data, NSError *error))block{
     
     ZZNetWorker.POST.zz_param(params).zz_url(URL)

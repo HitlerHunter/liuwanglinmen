@@ -140,7 +140,7 @@
     if (!_titleIconDic) {
         _titleIconDic = @{
                           @"扫码收款":@"saoma",
-                          @"收银员":@"renyuanguanli",
+                          @"会员管理":@"huiyuanguanli",
                           @"报表管理":@"baobiaoguanli",
                           @"店铺账本":@"zhangben",
                           @"店铺二维码":@"zhangben",

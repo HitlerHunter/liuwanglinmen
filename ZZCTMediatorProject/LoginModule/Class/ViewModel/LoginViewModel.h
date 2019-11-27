@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginViewModel : NSObject
 
-+ (void)loginWithPhone:(NSString *)phone pswd:(NSString *)pswd block:(void (^)(NSDictionary *data, NSError *error))block;
++ (void)loginWithPhone:(NSString *)phone
+                  pswd:(NSString *)pswd
+                 block:(void (^)(NSDictionary *data, NSError *error))block;
++ (void)loginWithPhone:(NSString *)phone
+                  code:(NSString *)code
+               codeKey:(NSString *)codeKey
+                 block:(void (^)(NSDictionary *data, NSError *error))block;
 
 + (void)registerWithParams:(NSDictionary *)params block:(void (^)(NSDictionary *data, NSError *error))block;
 @end

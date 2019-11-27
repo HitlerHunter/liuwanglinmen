@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, AppPayType) {
     AppPayTypeUplevel,
     AppPayTypeMarketMessage,
+    AppPayTypeBoomGoodsPay,
 };
 
 typedef NS_ENUM(NSUInteger, AppPayStatus) {
@@ -26,6 +27,8 @@ typedef NS_ENUM(NSUInteger, AppPayStatus) {
 @property (nonatomic, assign) AppPayType currentPayType;
 
 + (AppPayManager *)shareInstance;
+
+- (void)WXPayWithDic:(NSDictionary *)dict;
 @end
 
 NS_ASSUME_NONNULL_END

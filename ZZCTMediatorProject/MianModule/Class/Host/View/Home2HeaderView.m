@@ -146,8 +146,8 @@
     [self addSubview:self.toolsView2];
     
     [self.toolsView2 setToolsArray:@[@"扫码收款",@"悬赏拓客",@"优惠券",
-                                     @"短信营销",@"收银员",@"店铺账本",
-                                     @"数据统计",@"创业大学",
+                                     @"短信营销",@"会员管理",@"店铺账本",
+                                     @"数据统计",@"同城优惠",
                                      ]];//店铺账本
 }
 
@@ -190,8 +190,8 @@
         APPCenterPowerCheckMerchant
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_SKMManagerViewController];
         PushController(vc);
-    }else if ([title isEqualToString:@"创业大学"]) {
-       [AppCenter openURL:@"https://m.lizhiweike.com/lecture2/13450371?fr=live_last_push&from_old_lecture=1"];
+    }else if ([title isEqualToString:@"同城优惠"]) {
+       [AppCenter toMiniProgram];
     }
     
 }

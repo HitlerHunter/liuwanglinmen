@@ -28,7 +28,7 @@
 }
 
 - (BOOL)hiddenNavgationBar{
-    return YES;
+    return NO;
 }
 - (BOOL)hasHiddenTabBar{
     return YES;
@@ -46,6 +46,7 @@
     [self.tableView registerClass:[NoticeTableViewCell class] forCellReuseIdentifier:@"NoticeTableViewCell"];
     self.tableView.rowHeight = 75;
     self.tableView.height -= 40;
+    self.tableView.top = 0;
     self.viewModel.tableView = self.tableView;
     
     if (self.viewModel.type.intValue == 1) {

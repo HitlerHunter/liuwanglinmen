@@ -17,6 +17,9 @@
 #import "MianSectionHeader.h"
 #import "MainStudyCell.h"
 
+#import "IPAddressHelper.h"
+#import "GoodsDetailViewController.h"
+
 @interface Home2ViewController ()
 @property (nonatomic, strong) Home2HeaderView *headerView;
 @property (nonatomic, strong) BossStudyViewModel *viewModel;
@@ -44,6 +47,8 @@
     }
     
     [self.headerView getTodayData];
+    
+    
 }
 
 - (BOOL)hiddenNavgationBar{
@@ -181,8 +186,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     BossStudyModel *model = self.viewModel.dataArray[indexPath.row];
-    [AppCenter openURL:model.jumpUrl];
+//    [AppCenter openURL:model.jumpUrl];
     
+    GoodsDetailViewController *vc = [GoodsDetailViewController new];
+    PushController(vc);
 };
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

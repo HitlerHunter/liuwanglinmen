@@ -8,6 +8,7 @@
 
 #import "VipPersonViewModel.h"
 #import "VipPersonModel.h"
+#import "VipPersonDetailModel.h"
 
 @implementation VipPersonViewModel
 
@@ -16,14 +17,13 @@
     NewParams;
     
     [params setSafeObject:@(self.page) forKey:@"page"];
-    [params setSafeObject:@"20" forKey:@"rows"];
-    [params setSafeObject:self.orderByLastPayTime forKey:@"orderByLastPayTime"];
-    [params setSafeObject:self.orderByPayTimes forKey:@"orderByPayTimes"];
-    [params setSafeObject:self.orderByPayTotal forKey:@"orderByPayTotal"];
-    [params setSafeObject:self.orderByRegisterTime forKey:@"orderByRegisterTime"];
+    [params setSafeObject:@"20" forKey:@"limit"];
+    [params setSafeObject:self.isDesc forKey:@"isDesc"];
+    [params setSafeObject:self.isAsc forKey:@"isAsc"];
+    [params setSafeObject:CurrentUser.usrNo forKey:@"receiptUsrNo"];
     
-    ZZNetWorker.POST.zz_param(params)
-    .zz_url(@"/admin/user/open/memberList").zz_isPostByURLSession(YES)
+    ZZNetWorker.POST.zz_willHandlerParam(NO).zz_param(params)
+    .zz_url(@"/view-biz/memberStatisticsView/page")
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         
@@ -67,6 +67,32 @@
         if (model_net.success) {
             if (block) {
                 block(YES);
+            }
+        }else{
+            [SVProgressHUD showErrorWithStatus:model_net.message];
+        }
+    });
+}
+
++ (void)getVipDetailWithVipID:(NSString *)manId
+                        block:(SimpleObjBlock)block{
+    
+    if (!manId) {
+        return;
+    }
+    
+    NewParams;
+    [params setSafeObject:manId forKey:@"txnUsrNo"];
+    ZZNetWorker.GET
+    .zz_url(@"/view-biz/memberStatisticsView/detail")
+    .zz_param(params)
+    .zz_completion(^(NSDictionary *data, NSError *error) {
+        ZZNetWorkModelWithJson(data);
+        if (model_net.success) {
+            
+            VipPersonDetailModel *model = [VipPersonDetailModel mj_objectWithKeyValues:model_net.data];
+            if (block) {
+                block(model);
             }
         }else{
             [SVProgressHUD showErrorWithStatus:model_net.message];

@@ -11,20 +11,23 @@
 #import "VipPersonDetailTopView.h"
 #import "VipConsumeRecordViewController.h"
 #import "VipPersonModel.h"
+#import "VipPersonDetailModel.h"
+#import "VipPersonViewModel.h"
 
 @interface VipPersonDetailViewController ()<LDActionSheetDelegate>
 @property (nonatomic, strong) VipPersonDetailTopView *topView;
 @property (nonatomic, strong) VipPersonDetailCellView *cellView1;
 @property (nonatomic, strong) VipPersonDetailCellView *cellView2;
 
-@property (nonatomic, strong) VipPersonModel *model;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) VipPersonDetailModel *model;
 @end
 
 @implementation VipPersonDetailViewController
 
-- (instancetype)initWithModel:(VipPersonModel *)model{
+- (instancetype)initWithUserId:(NSString *)userId{
     if (self = [super init]) {
-        _model = model;
+        _userId = userId;
     }
     return self;
 }
@@ -34,6 +37,16 @@
     
     self.title = @"会员详情";
     [self.view addSubview:self.scrollView];
+    
+    [VipPersonViewModel getVipDetailWithVipID:_userId block:^(id  _Nullable obj) {
+        self.model = obj;
+        [self creatUI];
+    }];
+    
+    
+}
+
+- (void)creatUI{
     
     _topView = [VipPersonDetailTopView new];
     [self.scrollView addSubview:_topView];
@@ -52,29 +65,34 @@
     [self initCellView1];
     [self initCellView2];
     
-    @weakify(self);
-    [self addRightItemWithImage:nil title:@"更多" font:nil color:nil block:^{
-        @strongify(self);
-        [self showAlertView];
-    }];
-    
     _topView.headImage.image = [AppCenter defaultAppAvatar];
-    _topView.label_name.text = _model.nickName;
-    _topView.label_phone.text = [NSString stringWithFormat:@"会员ID:%@",_model.userId];
+    _topView.label_name.text = _model.usrName;
+    
+    if (!IsNull(_model.usrNo)) {
+       _topView.label_phone.text = [NSString stringWithFormat:@"会员ID:%@",_model.usrNo];
+        @weakify(self);
+        [self addRightItemWithImage:nil title:@"更多" font:nil color:nil block:^{
+            @strongify(self);
+            [self showAlertView];
+        }];
+    }else{
+        _topView.label_phone.text = @"";
+    }
+  
 }
 
 - (void)initCellView1{
     NSArray *titleArray = @[@"手机号码",@"性别",@"生日",];
     NSMutableArray *vauleArray = [NSMutableArray array];
     
-   [vauleArray addObject:IsNull(_model.phone)?@"暂无":_model.phone.phoneTakeSecure];
-    if ([_model.gendar isEqualToString:@"male"]) {
+   [vauleArray addObject:IsNull(_model.mobile)?@"暂无":_model.mobile.phoneTakeSecure];
+    if (_model.sex == 0) {
         [vauleArray addObject:@"男"];
     }else{
         [vauleArray addObject:@"女"];
     }
     
-    [vauleArray addObject:IsNull(_model.birthday)?@"暂无":_model.birthday];
+    [vauleArray addObject:IsNull(_model.birth)?@"暂无":_model.birth];
     
     NSMutableArray *arr1 = [NSMutableArray array];
     for (int i = 0; i < titleArray.count; i++) {
@@ -122,16 +140,14 @@
 }
 
 - (void)initCellView2{
-    NSArray *titleArray = @[@"会员等级",@"会员分组",@"注册时间",@"消费次数",@"消费金额",@"最后一次消费时间",];
+    NSArray *titleArray = @[@"注册时间",@"消费次数",@"消费金额",@"最后一次消费时间",];
     
     NSMutableArray *vauleArray = [NSMutableArray array];
     
-    [vauleArray addObject:IsNull(_model.phone)?@"游客":@"会员"];
-    [vauleArray addObject:IsNull(_model.tagName)?@"暂无":_model.tagName];
-    [vauleArray addObject:_model.createTime];
-    [vauleArray addObject:[NSString stringWithFormat:@"%@次",_model.payTimes]];
-    [vauleArray addObject:[NSString stringWithFormat:@"%@元",[NSString formatFloatString:_model.totalPay]]];
-    [vauleArray addObject:IsNull(_model.lastPayTime)?@"暂无":_model.lastPayTime];
+    [vauleArray addObject:IsNull(_model.registerTime)?@"":_model.registerTime];
+    [vauleArray addObject:[NSString stringWithFormat:@"%@次",_model.consumerTimes]];
+    [vauleArray addObject:[NSString stringWithFormat:@"%@元",[NSString formatMoneyCentToYuanString:_model.consumerAmt]]];
+    [vauleArray addObject:IsNull(_model.lastTxnTime)?@"暂无":_model.lastTxnTime];
     
     NSMutableArray *arr1 = [NSMutableArray array];
     for (int i = 0; i < titleArray.count; i++) {

@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VipConsumeRecordViewModel : BaseRefreshViewModel
 
 @property (nonatomic, strong) NSString *userId;
+
+@property (nonatomic, strong) NSString *sumOrderAmt;
+@property (nonatomic, strong) NSString *sumCount;
+
 @end
 
 NS_ASSUME_NONNULL_END

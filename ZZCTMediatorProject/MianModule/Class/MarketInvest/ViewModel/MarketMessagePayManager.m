@@ -8,8 +8,6 @@
 
 #import "MarketMessagePayManager.h"
 #import "IPAddressHelper.h"
-#import <WechatOpenSDK/WXApi.h>
-#import "AppPayManager.h"
 
 @implementation MarketMessagePayManager
 
@@ -30,18 +28,8 @@
             NSDictionary *dict = model_net.data;
             
             [AppPayManager shareInstance].currentPayType = AppPayTypeMarketMessage;
-            
-            NSMutableString *stamp  = [dict objectForKey:@"timestamp"];
-            
-            //调起微信支付
-            PayReq* req             = [[PayReq alloc] init];
-            req.partnerId           = [dict objectForKey:@"partnerid"];
-            req.prepayId            = [dict objectForKey:@"prepayid"];
-            req.nonceStr            = [dict objectForKey:@"noncestr"];
-            req.timeStamp           = stamp.intValue;
-            req.package             = [dict objectForKey:@"package"];
-            req.sign                = [dict objectForKey:@"sign"];
-            [WXApi sendReq:req];
+            [[AppPayManager shareInstance] WXPayWithDic:dict];
+
         }
     });
 }

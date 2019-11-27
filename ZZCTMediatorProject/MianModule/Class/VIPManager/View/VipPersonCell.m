@@ -94,15 +94,15 @@
 - (void)setModel:(VipPersonModel *)model{
     _model = model;
     
-    [self.headImage sd_setImageWithURL:TLURL(model.avatar) placeholderImage:[AppCenter defaultAppAvatar]];
+    [self.headImage sd_setImageWithURL:TLURL(model.txnUserHeader) placeholderImage:[AppCenter defaultAppAvatar]];
     
-    if (model.nickName.length) {
-        self.label_name.text = model.nickName;
+    if (model.txnUserName.length) {
+        self.label_name.text = model.txnUserName;
     }else{
-        self.label_name.text = [NSString stringWithFormat:@"会员ID:%@",model.userId];
+        self.label_name.text = [NSString stringWithFormat:@"会员ID:%@",model.txnUsrNo];
     }
     
-    self.label_phone.text = IsNull(model.phone)?@"":model.phone.phoneTakeSecure;
+    self.label_phone.text = IsNull(model.txnUserMobile)?@"":model.txnUserMobile.phoneTakeSecure;
     
     NSDictionary *defaultAtt = @{NSFontAttributeName:Font_PingFang_SC_Medium(12),
                                  NSForegroundColorAttributeName:rgb(152,152,152),
@@ -114,8 +114,8 @@
     //money
     NSMutableAttributedString *attTitle = [[NSMutableAttributedString alloc] initWithString:@"总支付金额：元" attributes:defaultAtt];
     
-    if (model.totalPay.length) {
-        NSMutableAttributedString *attMoney = [[NSMutableAttributedString alloc] initWithString:[NSString formatFloatString:model.totalPay] attributes:numberAtt];
+    if (model.consumerAmt.length) {
+        NSMutableAttributedString *attMoney = [[NSMutableAttributedString alloc] initWithString:[NSString formatMoneyCentToYuanString:model.consumerAmt] attributes:numberAtt];
         [attTitle insertAttributedString:attMoney atIndex:attTitle.length-1];
     }
     
@@ -124,8 +124,8 @@
     //number
     NSMutableAttributedString *attTitle2 = [[NSMutableAttributedString alloc] initWithString:@"消费次数：次" attributes:defaultAtt];
     
-    if (model.payTimes.length) {
-        NSMutableAttributedString *attNumber = [[NSMutableAttributedString alloc] initWithString:model.payTimes attributes:numberAtt];
+    if (model.consumerTimes.length) {
+        NSMutableAttributedString *attNumber = [[NSMutableAttributedString alloc] initWithString:model.consumerTimes attributes:numberAtt];
         [attTitle2 insertAttributedString:attNumber atIndex:attTitle2.length-1];
     }
     
