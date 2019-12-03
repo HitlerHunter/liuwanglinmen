@@ -214,7 +214,7 @@
         APPCenterPowerCheckMerchant
         [[CTMediator sharedInstance] CTMediator_EditShopInfoViewControllerWithNav:self.navigationController];
     }else if ([title isEqualToString:@"商户管理"]) {
-        if ([AppCenter checkLevel:1]) {
+        if ([AppCenter checkLevel:2]) {
             MerchantManagerViewController *vc = [MerchantManagerViewController new];
             PushController(vc);
         };

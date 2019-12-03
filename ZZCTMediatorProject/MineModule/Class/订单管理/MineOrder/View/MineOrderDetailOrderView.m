@@ -13,10 +13,9 @@
 
 @property (nonatomic, strong) UILabel *label1;
 @property (nonatomic, strong) UILabel *label2;
-@property (nonatomic, strong) UILabel *label3;
-@property (nonatomic, strong) UILabel *label4;
 
 @property (nonatomic, strong) UIButton *btn_toPay;
+@property (nonatomic, strong) UIButton *btn_copyKD;
 @end
 
 @implementation MineOrderDetailOrderView
@@ -46,20 +45,6 @@
         make.top.mas_equalTo(label1.mas_bottom).offset(5);
     }];
     
-    UILabel *label3 = [UILabel labelWithFont:Font_PingFang_SC_Regular(12) text:@"" textColor:rgb(53,53,53)];
-    [self addSubview:label3];
-    [label3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(titleLabel);
-        make.top.mas_equalTo(label2.mas_bottom).offset(5);
-    }];
-    
-    UILabel *label4 = [UILabel labelWithFont:Font_PingFang_SC_Regular(12) text:@"支付方式：微信支付" textColor:rgb(53,53,53)];
-    [self addSubview:label4];
-    [label4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(titleLabel);
-        make.top.mas_equalTo(label3.mas_bottom).offset(5);
-    }];
-    
     UIButton *btn_tx = [UIButton buttonWithFontSize:12 text:@"复制" textColor:rgb(255,81,0)];
     [self addSubview:btn_tx];
     [btn_tx mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -71,8 +56,6 @@
     
     _label1 = label1;
     _label2 = label2;
-    _label3 = label3;
-    _label4 = label4;
     
     UIButton *btn_toPay = [UIButton buttonWithFontSize:12 text:@"付款" textColor:rgb(101,101,101)];
     [self addSubview:btn_toPay];
@@ -84,9 +67,21 @@
     _btn_toPay = btn_toPay;
     btn_toPay.lz_setView.lz_cornerRadius(3).lz_border(1, rgb(152,152,152));
     [btn_toPay addTarget:self action:@selector(toPay) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn_fzkd = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn_fzkd setImage:UIImageName(@"order_copy") forState:UIControlStateNormal];
+    [self addSubview:btn_fzkd];
+    [btn_fzkd addTarget:self action:@selector(fzkdBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    _btn_copyKD = btn_fzkd;
 }
 
 - (void)toolBtnClick{
+    
+    [[UIPasteboard generalPasteboard] setString:_model.Id];
+    [SVProgressHUD showSuccessWithStatus:@"已复制订单编号！"];
+}
+
+- (void)fzkdBtnClick{
     
     [[UIPasteboard generalPasteboard] setString:_model.Id];
     [SVProgressHUD showSuccessWithStatus:@"已复制订单编号！"];
@@ -107,16 +102,58 @@
     _label1.text = [NSString stringWithFormat:@"订单编号：%@",_model.Id];
     _label2.text = [NSString stringWithFormat:@"创建时间：%@",_model.createTime];
     
+    NSArray *arr = @[@"支付方式：微信支付"];
     if (model.status == MineOrderStatusWaitingPay) {
-        _label4.hidden = YES;
-        _label3.text = @"支付方式：微信支付";
+        arr = @[@"支付方式：微信支付"];
         _btn_toPay.hidden = NO;
-    }else{
+        _btn_copyKD.hidden = YES;
+    }else if (model.status == MineOrderStatusCancel) {
         _btn_toPay.hidden = YES;
-        _label3.text = [NSString stringWithFormat:@"付款时间：%@",_model.updateTime];
+        _btn_copyKD.hidden = YES;
+        arr = @[@"支付方式：微信支付"];
+    }else if (model.status == MineOrderStatusWaitingTake) {
+        _btn_toPay.hidden = YES;
+        _btn_copyKD.hidden = NO;
+        arr = @[[NSString stringWithFormat:@"付款时间：%@",_model.payDate]
+                ,@"支付方式：微信支付"
+        ,[NSString stringWithFormat:@"发货时间：%@",_model.updateTime]
+        ,[NSString stringWithFormat:@"交易物流：%@ %@",_model.expressCompany,_model.expressNo]];
+    }else if (model.status == MineOrderStatusWaitingSend) {
+        _btn_toPay.hidden = YES;
+        _btn_copyKD.hidden = YES;
+        arr = @[[NSString stringWithFormat:@"付款时间：%@",_model.payDate]
+                ,@"支付方式：微信支付"];
     }
     
+    UIView *lastView = _label2;
     
+    for (NSString *text in arr) {
+        
+        UILabel *label2 = [UILabel labelWithFont:Font_PingFang_SC_Regular(12) text:text textColor:rgb(53,53,53)];
+        [self addSubview:label2];
+        [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(lastView);
+            make.top.mas_equalTo(lastView.mas_bottom).offset(5);
+        }];
+        
+        lastView = label2;
+    }
+    
+    CGFloat bottomSpacing = -10;
+    if (_btn_toPay.hidden == NO) {
+        bottomSpacing = -50;
+    }
+    [lastView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(bottomSpacing);
+    }];
+    
+    if (model.status == MineOrderStatusWaitingTake) {
+        [_btn_copyKD mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(lastView.mas_right).offset(10);
+            make.centerY.mas_equalTo(lastView);
+            make.size.mas_equalTo(CGSizeMake(30, 30));
+        }];
+    }
 }
 
 @end

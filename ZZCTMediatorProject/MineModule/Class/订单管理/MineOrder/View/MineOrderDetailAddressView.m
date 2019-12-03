@@ -23,12 +23,12 @@
     
     self.backgroundColor = LZWhiteColor;
     
-    UIImageView *imageV = [UIImageView viewWithImage:UIImageName(@"location_gray")];
+    UIImageView *imageV = [UIImageView viewWithImage:UIImageName(@"address_location")];
     [self addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.centerY.mas_equalTo(0);
-        make.size.mas_equalTo(CGSizeMake(16, 16));
+//        make.size.mas_equalTo(CGSizeMake(16, 16));
     }];
      
      UILabel *nameLabel = [UILabel labelWithFont:Font_PingFang_SC_Bold(14) text:@"" textColor:rgb(53,53,53)];

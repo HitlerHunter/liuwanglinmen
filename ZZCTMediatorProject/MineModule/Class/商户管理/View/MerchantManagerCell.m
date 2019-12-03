@@ -85,7 +85,7 @@
     _model = model;
     
     _titleLab.text = model.pmsMerchantInfo.shortMerchantName;
-    _phoneLabel.text = model.pmsMerchantInfo.linkmanMobile;
+    _phoneLabel.text = model.pmsMerchantInfo.linkmanMobile.phoneTakeSecure;
     
     _btn.hidden = YES;
     if (model.pmsMerchantInfo.status_lz == AuthenMerchantStatusReviewing) {

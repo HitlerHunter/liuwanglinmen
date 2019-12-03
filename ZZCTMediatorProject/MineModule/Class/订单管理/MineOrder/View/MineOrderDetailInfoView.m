@@ -22,7 +22,7 @@
     
     self.backgroundColor = LZWhiteColor;
     
-    UIImageView *icon = [UIImageView view];
+    UIImageView *icon = [UIImageView viewWithImage:UIImageName(@"order_shopLogo")];
       UILabel *titleLab = [UILabel labelWithFont:Font_PingFang_SC_Medium(15) text:@"六旺临门" textColor:rgb(53,53,53)];
     
       [self addSubview:icon];
@@ -87,7 +87,7 @@
     [_infoView.imageView sd_setImageWithURL:TLURL(model.picture)];
     _infoView.nameLabel.text = model.goodsName;
     _infoView.phoneLabel.text = model.goodsSpecs;
-    _infoView.priceLabel.text = [NSString stringWithFormat:@"%@",model.goodsPrice];
+    _infoView.priceLabel.text = [NSString stringWithFormat:@"￥%@",[NSString formatFloatValue:model.orderAmt.floatValue/model.goodsCount.intValue]];
     _infoView.count = 1;
     
     _orderAmtLabel.text = [NSString formatFloatString:model.orderAmt];

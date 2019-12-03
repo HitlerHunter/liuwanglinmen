@@ -45,7 +45,9 @@
 - (SYHomeTypeView *)typeScrollView{
     if (!_typeScrollView) {
         _typeScrollView = [[SYHomeTypeView alloc] initWithFrame:self.typeBgView.bounds maker:^(SYHomeTypeMaker * _Nonnull maker) {
-            
+            maker.minItemW = kScreenWidth*0.25;
+            maker.firstItemSpaceX = 0;
+            maker.spaceX = 0;
         }];
         
     }

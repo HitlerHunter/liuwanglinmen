@@ -18,7 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *reStatus;
 @property (nonatomic, strong) NSString *unStatus;
 
+@property (nonatomic, strong) NSString *total;
+
 - (void)getTodayNewdataInfo;
+
++ (void)getMerchantInfoWithUserNo:(NSString *)userNo
+                            block:(void (^)(LZUserMerchant *merchant))block;
 @end
 
 NS_ASSUME_NONNULL_END

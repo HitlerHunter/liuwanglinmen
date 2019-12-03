@@ -159,7 +159,7 @@
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_ManManagerController];
         PushController(vc);
     }else if ([title isEqualToString:@"会员管理"]) {
-          
+        APPCenterPowerCheckMerchant
         VipManagerViewController *vc = [VipManagerViewController new];
         PushController(vc);
     }else if ([title isEqualToString:@"短信营销"]) {

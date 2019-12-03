@@ -15,6 +15,7 @@
 
 @interface MerchantManagerViewController ()
 
+@property (nonatomic, strong) LZNoDataView *noDataView;
 @property (nonatomic, strong) MerchantManagerTopView *topView;
 @property (nonatomic, strong) MerchantManagerViewModel *viewModel;
 @end
@@ -33,7 +34,6 @@
     [super viewDidLoad];
     
     self.title = @"商户管理";
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     
     _topView = [[MerchantManagerTopView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, self.base_navigationbarHeight+162)];
     self.tableView.height = kScreenHeight-_topView.height;
@@ -63,13 +63,18 @@
         @strongify(self);
         self.topView.cardView.lab_center.text = x;
     }];
-    [RACObserve(self.viewModel, reStatus) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, unStatus) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.topView.cardView.lab_left.text = x;
     }];
-    [RACObserve(self.viewModel, unStatus) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, reStatus) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.topView.cardView.lab_right.text = x;
+    }];
+    
+    [RACObserve(self.viewModel, total) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.topView.lab_number.text = [NSString stringWithFormat:@"直推商户数：%@",x];
     }];
     
     [_viewModel getTodayNewdataInfo];
@@ -95,9 +100,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MerchantManagerModel *merchant = self.viewModel.dataArray[indexPath.row];
-    //成功状态 查看info
-    AuthenMerchantInfoViewController *info = [[AuthenMerchantInfoViewController alloc] initWithMerchant:merchant];
-    [self.navigationController pushViewController:info animated:YES linearBackId:LinearBackId_AuthenLine];
+    
+    [MerchantManagerViewModel getMerchantInfoWithUserNo:merchant.pmsMerchantInfo.userNo block:^(LZUserMerchant * _Nonnull merchantDetail) {
+        //成功状态 查看info
+        AuthenMerchantInfoViewController *info = [[AuthenMerchantInfoViewController alloc] initWithMerchant:merchantDetail];
+        [self.navigationController pushViewController:info animated:YES linearBackId:LinearBackId_AuthenLine];
+    }];
+    
 };
 
 #pragma mark - 导航栏透明
@@ -106,7 +115,7 @@
     
         //设置导航栏背景图片为一个空的image，这样就透明了
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -116,5 +125,19 @@
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor]};
+}
+
+#pragma mark - TableView 占位图
+- (UIView   *)xy_noDataView{
+    return self.noDataView;
+}
+
+- (LZNoDataView *)noDataView{
+    if (!_noDataView) {
+        _noDataView = [[LZNoDataView alloc] initWithFrame:self.tableView.frame];
+        _noDataView.image = UIImageName(@"wujilu");
+        _noDataView.message = @"暂无数据";
+    }
+    return _noDataView;
 }
 @end

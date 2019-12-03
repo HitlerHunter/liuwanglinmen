@@ -8,9 +8,11 @@
 
 #import "MineOrderDetailStatusView.h"
 #import "MineOrderModel.h"
+#import "NSDate+countDown.h"
 
 @interface MineOrderDetailStatusView ()
 
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *titleLabel2;
 @end
@@ -42,6 +44,7 @@
     
     _titleLabel = titleLabel;
     _titleLabel2 = titleLabel2;
+    _imageView = imageView;
 }
 
 - (void)setModel:(MineOrderModel *)model{
@@ -49,21 +52,30 @@
     
     if (_model.status == MineOrderStatusWaitingPay) {
         _titleLabel.text = @"待付款";
-        self.titleLabel2.text = @"请付款完成订单";
         
+        weakSelf(weakSelf);
+        [NSDate countDownSinceDateBeginStr:model.createTime TimeInterval:1800 block:^(NSString * _Nonnull HMSString) {
+            weakSelf.titleLabel2.text = [NSString stringWithFormat:@"剩余时间：%@",HMSString];
+        }];
+        
+        _imageView.image = UIImageName(@"order_waitingPay");
     }else if (_model.status == MineOrderStatusCancel) {
         _titleLabel.text = @"交易关闭";
         self.titleLabel2.text = @"订单超时";
-
+        _imageView.image = UIImageName(@"order_hasCancel");
     }else if (_model.status == MineOrderStatusWaitingTake) {
         _titleLabel.text = @"卖家已发货";
         self.titleLabel2.text = @"您的订单已发货";
-      
+      _imageView.image = UIImageName(@"order_hasSend");
     }else if (_model.status == MineOrderStatusWaitingSend) {
         _titleLabel.text = @"买家已付款";
         self.titleLabel2.text = @"您的订单待配货";
-       
+       _imageView.image = UIImageName(@"order_hasPay");
     }
 }
-
+ 
+- (void)dealloc{
+    [NSDate stopCountDown];
+}
 @end
+

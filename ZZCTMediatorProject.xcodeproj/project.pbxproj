@@ -10,6 +10,7 @@
 		780D31E2237BA4AF00489A85 /* LZEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D31E1237BA4AF00489A85 /* LZEmptyViewController.m */; };
 		781CA8C5238294BB00EEE670 /* Login2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781CA8C4238294BB00EEE670 /* Login2ViewController.m */; };
 		781E3328238D07420058E317 /* ShowNeedLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E3327238D07420058E317 /* ShowNeedLevelViewController.m */; };
+		781E332B238E67E10058E317 /* NSDate+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E332A238E67E10058E317 /* NSDate+countDown.m */; };
 		78270E8E2386338A005B02DC /* GoodsDetailToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78270E8D2386338A005B02DC /* GoodsDetailToolView.m */; };
 		784CC4B8231E729100513A79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784CC4B7231E729100513A79 /* MapKit.framework */; };
 		785FE22D214112B600FBC11B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785FE22C214112B600FBC11B /* CoreGraphics.framework */; };
@@ -47,9 +48,7 @@
 		7874D6D923868EAD0059068A /* MineOrderBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6C523868EAC0059068A /* MineOrderBaseViewController.m */; };
 		7874D6DA23868EAD0059068A /* MineOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6C823868EAC0059068A /* MineOrderModel.m */; };
 		7874D6DB23868EAD0059068A /* MineOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */; };
-		7874D6DC23868EAD0059068A /* MineOrderTableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */; };
 		7874D6DD23868EAD0059068A /* NoMoreOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6CF23868EAC0059068A /* NoMoreOrderView.m */; };
-		7874D6DE23868EAD0059068A /* MineOrderTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */; };
 		7874D6E2238690280059068A /* MineOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6E0238690280059068A /* MineOrderViewModel.m */; };
 		7874D6E8238790F90059068A /* MineOrderDetailStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6E7238790F90059068A /* MineOrderDetailStatusView.m */; };
 		7874D6EB2387925D0059068A /* MineOrderDetailAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874D6EA2387925D0059068A /* MineOrderDetailAddressView.m */; };
@@ -672,6 +671,8 @@
 		781CA8C4238294BB00EEE670 /* Login2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Login2ViewController.m; sourceTree = "<group>"; };
 		781E3326238D07420058E317 /* ShowNeedLevelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNeedLevelViewController.h; sourceTree = "<group>"; };
 		781E3327238D07420058E317 /* ShowNeedLevelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNeedLevelViewController.m; sourceTree = "<group>"; };
+		781E3329238E67E10058E317 /* NSDate+countDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+countDown.h"; sourceTree = "<group>"; };
+		781E332A238E67E10058E317 /* NSDate+countDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+countDown.m"; sourceTree = "<group>"; };
 		78270E8C2386338A005B02DC /* GoodsDetailToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsDetailToolView.h; sourceTree = "<group>"; };
 		78270E8D2386338A005B02DC /* GoodsDetailToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailToolView.m; sourceTree = "<group>"; };
 		784CC4B7231E729100513A79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -731,12 +732,8 @@
 		7874D6C923868EAC0059068A /* MineOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderModel.h; sourceTree = "<group>"; };
 		7874D6CB23868EAC0059068A /* NoMoreOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoMoreOrderView.h; sourceTree = "<group>"; };
 		7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableViewCell.m; sourceTree = "<group>"; };
-		7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableFootView.m; sourceTree = "<group>"; };
-		7874D6CE23868EAC0059068A /* MineOrderTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableHeaderView.h; sourceTree = "<group>"; };
 		7874D6CF23868EAC0059068A /* NoMoreOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoMoreOrderView.m; sourceTree = "<group>"; };
 		7874D6D023868EAC0059068A /* MineOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableViewCell.h; sourceTree = "<group>"; };
-		7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderTableHeaderView.m; sourceTree = "<group>"; };
-		7874D6D223868EAC0059068A /* MineOrderTableFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderTableFootView.h; sourceTree = "<group>"; };
 		7874D6E0238690280059068A /* MineOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineOrderViewModel.m; sourceTree = "<group>"; };
 		7874D6E1238690280059068A /* MineOrderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineOrderViewModel.h; sourceTree = "<group>"; };
 		7874D6E6238790F90059068A /* MineOrderDetailStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineOrderDetailStatusView.h; sourceTree = "<group>"; };
@@ -2000,10 +1997,6 @@
 		7874D6CA23868EAC0059068A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7874D6D223868EAC0059068A /* MineOrderTableFootView.h */,
-				7874D6CD23868EAC0059068A /* MineOrderTableFootView.m */,
-				7874D6CE23868EAC0059068A /* MineOrderTableHeaderView.h */,
-				7874D6D123868EAC0059068A /* MineOrderTableHeaderView.m */,
 				7874D6D023868EAC0059068A /* MineOrderTableViewCell.h */,
 				7874D6CC23868EAC0059068A /* MineOrderTableViewCell.m */,
 				7874D6CB23868EAC0059068A /* NoMoreOrderView.h */,
@@ -2559,8 +2552,8 @@
 		78E8858D23741925004257CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78E8858E23741925004257CE /* AuthenBankManager.m */,
 				78E8858F23741925004257CE /* AuthenBankManager.h */,
+				78E8858E23741925004257CE /* AuthenBankManager.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2683,8 +2676,8 @@
 			isa = PBXGroup;
 			children = (
 				78E885B323741925004257CE /* SYHomeViewModel.h */,
-				78E885B423741925004257CE /* Controller */,
 				78E885B923741925004257CE /* SYHomeViewModel.m */,
+				78E885B423741925004257CE /* Controller */,
 				78E885BA23741925004257CE /* Model */,
 				78E885C123741925004257CE /* View */,
 			);
@@ -2695,9 +2688,9 @@
 			isa = PBXGroup;
 			children = (
 				78E885B523741925004257CE /* SYTJViewController.h */,
+				78E885B823741925004257CE /* SYTJViewController.m */,
 				78E885B623741925004257CE /* SYViewController.h */,
 				78E885B723741925004257CE /* SYViewController.m */,
-				78E885B823741925004257CE /* SYTJViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2705,12 +2698,12 @@
 		78E885BA23741925004257CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78E885BE23741925004257CE /* BillCashModel.h */,
 				78E885BB23741925004257CE /* BillCashModel.m */,
+				78E885C023741925004257CE /* CashRecordModel.h */,
 				78E885BC23741925004257CE /* CashRecordModel.m */,
 				78E885BD23741925004257CE /* SYHomeListModel.h */,
-				78E885BE23741925004257CE /* BillCashModel.h */,
 				78E885BF23741925004257CE /* SYHomeListModel.m */,
-				78E885C023741925004257CE /* CashRecordModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2718,19 +2711,19 @@
 		78E885C123741925004257CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78E885C223741925004257CE /* SYHomeHeader.xib */,
-				78E885C323741925004257CE /* SYHomeNavBar.m */,
-				78E885C423741925004257CE /* SYHomeHeader.h */,
+				78E885CA23741925004257CE /* BillTableViewCell.h */,
 				78E885C523741925004257CE /* BillTableViewCell.m */,
+				78E885C923741925004257CE /* BillTableViewCell.xib */,
+				78E885C423741925004257CE /* SYHomeHeader.h */,
+				78E885CB23741925004257CE /* SYHomeHeader.m */,
+				78E885C223741925004257CE /* SYHomeHeader.xib */,
+				78E885CC23741925004257CE /* SYHomeNavBar.h */,
+				78E885C323741925004257CE /* SYHomeNavBar.m */,
+				78E885C823741925004257CE /* SYHomeSectionHeader.h */,
+				78E885CE23741925004257CE /* SYHomeSectionHeader.m */,
+				78E885CD23741925004257CE /* SYHomeTableViewCell.h */,
 				78E885C623741925004257CE /* SYHomeTableViewCell.m */,
 				78E885C723741925004257CE /* SYHomeTableViewCell.xib */,
-				78E885C823741925004257CE /* SYHomeSectionHeader.h */,
-				78E885C923741925004257CE /* BillTableViewCell.xib */,
-				78E885CA23741925004257CE /* BillTableViewCell.h */,
-				78E885CB23741925004257CE /* SYHomeHeader.m */,
-				78E885CC23741925004257CE /* SYHomeNavBar.h */,
-				78E885CD23741925004257CE /* SYHomeTableViewCell.h */,
-				78E885CE23741925004257CE /* SYHomeSectionHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3275,10 +3268,12 @@
 		78E8868523741926004257CE /* ButtonCountDown */ = {
 			isa = PBXGroup;
 			children = (
-				78E8868623741926004257CE /* TimeCountDownManager.m */,
-				78E8868723741926004257CE /* UIButton+timeDown.m */,
-				78E8868823741926004257CE /* UIButton+timeDown.h */,
 				78E8868923741926004257CE /* TimeCountDownManager.h */,
+				78E8868623741926004257CE /* TimeCountDownManager.m */,
+				78E8868823741926004257CE /* UIButton+timeDown.h */,
+				78E8868723741926004257CE /* UIButton+timeDown.m */,
+				781E3329238E67E10058E317 /* NSDate+countDown.h */,
+				781E332A238E67E10058E317 /* NSDate+countDown.m */,
 			);
 			path = ButtonCountDown;
 			sourceTree = "<group>";
@@ -5669,7 +5664,6 @@
 				78E88A1523741927004257CE /* LoginViewModel.m in Sources */,
 				78E88A1423741927004257CE /* Target_Login.m in Sources */,
 				781CA8C5238294BB00EEE670 /* Login2ViewController.m in Sources */,
-				7874D6DE23868EAD0059068A /* MineOrderTableHeaderView.m in Sources */,
 				7874D6EB2387925D0059068A /* MineOrderDetailAddressView.m in Sources */,
 				78E88A5923741927004257CE /* DataCollectionCircleChatView.m in Sources */,
 				78E88BD123741928004257CE /* RealNameViewModel.m in Sources */,
@@ -5830,6 +5824,7 @@
 				78E88BF823741928004257CE /* CouponVipSectionHeaderView.m in Sources */,
 				78E88AF023741928004257CE /* ZLThumbnailViewController.m in Sources */,
 				78E88BDB23741928004257CE /* VipManagerMenuView.m in Sources */,
+				781E332B238E67E10058E317 /* NSDate+countDown.m in Sources */,
 				7872E16823839A3E001920C8 /* MineAddressViewController.m in Sources */,
 				78E88AC023741928004257CE /* UIButton+timeDown.m in Sources */,
 				78E88B1E23741928004257CE /* YPhotoAblumTableViewController.m in Sources */,
@@ -5886,7 +5881,6 @@
 				78E88C0023741928004257CE /* RewardViewModel.m in Sources */,
 				78E88A1223741927004257CE /* BankCardCell.m in Sources */,
 				78E88ABA23741928004257CE /* SPKeyBoard.m in Sources */,
-				7874D6DC23868EAD0059068A /* MineOrderTableFootView.m in Sources */,
 				78E88A3023741927004257CE /* FaceToFaceViewController.m in Sources */,
 				78E88AC123741928004257CE /* ZZNetWorker.m in Sources */,
 				7874D6F42387C7D00059068A /* VipPersonDetailModel.m in Sources */,
@@ -6049,7 +6043,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -6073,7 +6067,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6093,7 +6087,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZZCTMediatorProject/ZZCTMediatorProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_BITCODE = NO;
@@ -6117,7 +6111,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6132,7 +6126,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -6147,7 +6141,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
@@ -6162,7 +6156,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UM86M33WX3;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ZZNotificationExtension/Info.plist;
@@ -6176,7 +6170,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
 				PRODUCT_NAME = ZZNotificationExtension;

@@ -149,7 +149,8 @@
                           @"优惠券":@"youhuiquan",
                           @"创业大学":@"ketang",
                           @"数据统计":@"tongji",
-                    
+                          @"同城优惠":@"tongchengyouhui",
+                          
                           @"收益明细":@"mine_profit",
                           @"我的团队":@"mine_team",
                           @"我的订单":@"mine_order",

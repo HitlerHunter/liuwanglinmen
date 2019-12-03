@@ -8,6 +8,7 @@
 
 #import "AdvertManager.h"
 #import "BankCardManager.h"
+#import "GoodsDetailViewController.h"
 
 @implementation AdvertModel
 
@@ -57,6 +58,10 @@
     
     if ([model.func isEqualToString:@"upgrade"]) {
         [(UITabBarController *)KeyWindow.rootViewController setSelectedIndex:2];
+        return;
+    }else if ([model.func isEqualToString:@"shopping"]) {
+        GoodsDetailViewController *vc = [GoodsDetailViewController new];
+        [controller.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([model.func isEqualToString:@"cash"]) {
         APPCenterCheckRealName

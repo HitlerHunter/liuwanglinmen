@@ -8,6 +8,8 @@
 
 #import "UserManager.h"
 #import <JPUSHService.h>
+#import "MerchantManagerViewModel.h"
+
 @interface UserManager ()
 
 @end
@@ -159,44 +161,27 @@
 
 - (void)getUserMerchant:(void (^)(LZUserMerchant *merchant))block{
     
-    ZZNetWorker.POST.zz_url(@"/merchant-biz/pmsMerchantInfo/getMerchantInfoByVo")
-    .zz_param(@{@"userNo":self.user.usrNo})
-    .zz_completion(^(NSDictionary *data, NSError *error) {
-        
-        ZZNetWorkModelWithJson(data);
-        
-        if (model_net.success) {
-            
-            NSArray *arr = model_net.data;
-            
-            LZUserMerchant *merchant = nil;
-            if (arr.count) {
-                merchant = [LZUserMerchant mj_objectWithKeyValues:arr.firstObject];
+    [MerchantManagerViewModel getMerchantInfoWithUserNo:self.user.usrNo block:^(LZUserMerchant * _Nonnull merchant) {
+        if (merchant == nil) {
+            NSString *key = [NSString stringWithFormat:@"%@_merchantJson",CurrentUser.usrNo];
+            NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+            if (dic) {
+                merchant = [LZUserMerchant mj_objectWithKeyValues:dic];
+                merchant.pmsMerchantInfo.status = @"-1";
             }else{
-                NSString *key = [NSString stringWithFormat:@"%@_merchantJson",CurrentUser.usrNo];
-                NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-                if (dic) {
-                    merchant = [LZUserMerchant mj_objectWithKeyValues:dic];
-                    merchant.pmsMerchantInfo.status = @"-1";
-                }else{
-                    merchant = [LZUserMerchant creatMerchant];
-                }
+                merchant = [LZUserMerchant creatMerchant];
             }
-            
-            merchant.canEdit = YES;
-            if (merchant.pmsMerchantInfo.status.integerValue == 5) {
-                merchant.canEdit = NO;
-            }
-            
-            if (block) {
-                block(merchant);
-            }
-            
-        }else{
-            [SVProgressHUD showErrorWithStatus:model_net.message];
         }
         
-    });
+        merchant.canEdit = YES;
+        if (merchant.pmsMerchantInfo.status.integerValue == 5) {
+            merchant.canEdit = NO;
+        }
+        
+        if (block) {
+            block(merchant);
+        }
+    }];
 }
 
 - (void)changeUserInfo:(NSDictionary *)params block:(void (^)(void))block{
