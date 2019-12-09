@@ -22,7 +22,7 @@
 
 /**是否在开发*/
 + (BOOL)checkAppIsDevelopment{
-    return YES;
+    return NO;
 }
 
 + (void)checkModuleNotOpenToMemberUser{

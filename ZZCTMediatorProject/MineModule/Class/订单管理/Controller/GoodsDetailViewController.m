@@ -18,11 +18,19 @@
 @property (nonatomic, strong) GoodsDetailTopView *topView;
 @property (nonatomic, strong) GoodsDetailToolView *bottomView;
 @property (nonatomic, strong) GoodsModel *model;
-
+@property (nonatomic, strong) NSString *type;
 
 @end
 
 @implementation GoodsDetailViewController
+
+- (instancetype)initWithType:(NSString *)type{
+    self = [super init];
+    if (self) {
+        _type = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -92,8 +100,9 @@
 
 - (void)requestData{
 
+    NSString *url = [NSString stringWithFormat:@"/outside-biz/dict/type/%@",_type];
     ZZNetWorker.GET.zz_param(@{})
-    .zz_url(@"/outside-biz/dict/type/hotSale")
+    .zz_url(url)
     .zz_completion(^(NSDictionary *data, NSError *error) {
         ZZNetWorkModelWithJson(data);
         

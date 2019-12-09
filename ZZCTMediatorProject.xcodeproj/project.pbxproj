@@ -6067,7 +6067,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6111,7 +6111,7 @@
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/LFLiveness/libLFMultipleLiveness",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Vender/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6141,7 +6141,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
@@ -6170,7 +6170,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZZCTMediatorProject/BaseModule/Tools/TTS/BDSClientLib",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.wqcf.ZZNotificationExtension1;
 				PRODUCT_NAME = ZZNotificationExtension;

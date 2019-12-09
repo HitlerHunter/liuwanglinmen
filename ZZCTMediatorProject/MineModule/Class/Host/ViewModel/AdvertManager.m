@@ -60,7 +60,7 @@
         [(UITabBarController *)KeyWindow.rootViewController setSelectedIndex:2];
         return;
     }else if ([model.func isEqualToString:@"shopping"]) {
-        GoodsDetailViewController *vc = [GoodsDetailViewController new];
+        GoodsDetailViewController *vc = [[GoodsDetailViewController alloc] initWithType:model.remark];
         [controller.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([model.func isEqualToString:@"cash"]) {

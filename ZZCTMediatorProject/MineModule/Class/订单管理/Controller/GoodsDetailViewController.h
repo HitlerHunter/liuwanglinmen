@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GoodsDetailViewController : SDBaseViewController
 
+- (instancetype)initWithType:(NSString *)type;
 @end
 
 NS_ASSUME_NONNULL_END
