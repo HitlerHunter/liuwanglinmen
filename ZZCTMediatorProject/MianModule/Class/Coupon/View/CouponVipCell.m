@@ -80,16 +80,16 @@
     _label_phone = label_phone;
     _avatar = imageView;
     
-    imageView.lz_setView.lz_cornerRadius(25);
+    imageView.lz_setView.lz_cornerRadius(25).lz_border(0.5, LZLineColor);
 }
 
 - (void)setModel:(CouponVipModel *)model{
     _model = model;
     
     if (!IsNull(model.avatar)) {
-        [_avatar sd_setImageWithURL:TLURL(model.avatar) placeholderImage:UIImageName(@"touxiang")];
+        [_avatar sd_setImageWithURL:TLURL(model.avatar) placeholderImage:[AppCenter appIcon]];
     }else{
-        _avatar.image = UIImageName(@"touxiang");
+        _avatar.image = [AppCenter appIcon];
     }
     
     NSMutableString *nickName = [[NSMutableString alloc] init];

@@ -36,10 +36,10 @@ static NSString * getRoleNameWithLZUserTypeAndLevel(LZUserType type,NSInteger le
     if (type == LZUserTypeMember) {
         switch (level) {
             case 0:
-                return @"普通用户";
+                return @"副业";
                 break;
             case 1:
-                return @"VIP用户";
+                return @"创业";
                 break;
             case 2:
                 return @"服务商";

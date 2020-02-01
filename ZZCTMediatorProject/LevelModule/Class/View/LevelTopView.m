@@ -38,50 +38,50 @@
     }];
     
     LevelSelectButton *btn1 = [LevelSelectButton new];
-    btn1.titleLabel2.text = @"VIP";
+    btn1.titleLabel2.text = @"副业";
     [self addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(97);
         make.height.mas_equalTo(68);
-        make.width.mas_equalTo(kScreenWidth/3);
+        make.width.mas_equalTo(kScreenWidth/2);
     }];
     
     LevelSelectButton *btn2 = [LevelSelectButton new];
-    btn2.titleLabel2.text = @"服务商";
+    btn2.titleLabel2.text = @"创业";
     [self addSubview:btn2];
     [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(btn1.mas_right);
         make.top.mas_equalTo(btn1);
         make.height.mas_equalTo(btn1);
-        make.width.mas_equalTo(kScreenWidth/3);
+        make.width.mas_equalTo(kScreenWidth/2);
     }];
     
-    LevelSelectButton *btn3 = [LevelSelectButton new];
-    btn3.titleLabel2.text = @"区域服务商";
-    [self addSubview:btn3];
-    [btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(btn2.mas_right);
-        make.top.mas_equalTo(btn1);
-        make.height.mas_equalTo(btn1);
-        make.width.mas_equalTo(kScreenWidth/3);
-    }];
+//    LevelSelectButton *btn3 = [LevelSelectButton new];
+//    btn3.titleLabel2.text = @"区域服务商";
+//    [self addSubview:btn3];
+//    [btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(btn2.mas_right);
+//        make.top.mas_equalTo(btn1);
+//        make.height.mas_equalTo(btn1);
+//        make.width.mas_equalTo(kScreenWidth/3);
+//    }];
     
     btn1.selected = YES;
     btn2.selected = NO;
-    btn3.selected = NO;
+//    btn3.selected = NO;
     
     btn1.tag = 101;
     btn2.tag = 102;
-    btn3.tag = 103;
+//    btn3.tag = 103;
     
     _btn1 = btn1;
     _btn2 = btn2;
-    _btn3 = btn3;
+//    _btn3 = btn3;
     
     [btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];=
     
 }
 

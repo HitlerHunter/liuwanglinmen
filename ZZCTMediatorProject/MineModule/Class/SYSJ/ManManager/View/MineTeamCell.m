@@ -31,7 +31,7 @@
         make.left.mas_equalTo(7);
         make.size.mas_equalTo(CGSizeMake(38, 38));
     }];
-    avatar.lz_setView.lz_cornerRadius(19);
+    avatar.lz_setView.lz_cornerRadius(19).lz_border(0.5, LZLineColor);
     
     UILabel *lab1 = [UILabel labelWithFont:Font_PingFang_SC_Bold(13) text:@"11" textColor:rgb(53,53,53)];
     [self.contentView addSubview:lab1];
@@ -88,9 +88,9 @@
     _phoneLabel.text = model.mobile.phoneTakeSecure;
     _dateLabel.text = [model.createTime substringToIndex:10];
     
-    _avatar.image = [AppCenter defaultAppAvatar];
+    _avatar.image = [AppCenter appIcon];
     if (!IsNull(model.nickUrl)) {
-        [_avatar sd_setImageWithURL:TLURL(model.nickUrl) placeholderImage:[AppCenter defaultAppAvatar]];
+        [_avatar sd_setImageWithURL:TLURL(model.nickUrl) placeholderImage:[AppCenter appIcon]];
     }
     
     NSString *icon = getRoleIconWithLevel(model.userLvl);

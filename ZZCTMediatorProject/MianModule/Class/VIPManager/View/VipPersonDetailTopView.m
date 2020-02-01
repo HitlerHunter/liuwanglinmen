@@ -43,7 +43,7 @@
         make.top.mas_equalTo(label_name.mas_bottom).offset(5);
     }];
     
-    imageView.lz_setView.lz_cornerRadius(25);
+    imageView.lz_setView.lz_cornerRadius(25).lz_border(0.5, LZLineColor);
     
    
 }

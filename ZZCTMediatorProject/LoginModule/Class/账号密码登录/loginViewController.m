@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *title = [NSString stringWithFormat:@"%@",@"六旺临门"];
+    NSString *title = [NSString stringWithFormat:@"%@",@"副业吧"];
     
     self.titleLabel.text = title;
     self.widthConstraint.constant = kScreenWidth;
@@ -97,7 +97,7 @@
     }
     
 
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《六旺商家版用户协议》"];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《副业吧用户协议》"];
     [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
     

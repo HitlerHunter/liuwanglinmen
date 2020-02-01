@@ -71,7 +71,7 @@
     [self.tableView registerClass:[MarketInvestRecordCell class] forCellReuseIdentifier:@"MarketInvestRecordCell"];
     
     
-    _topView.headImage.image = [AppCenter defaultAppAvatar];
+    _topView.headImage.image = [AppCenter appIcon];
     _topView.label_name.text = _model.usrName;
     if (!IsNull(_model.usrNo)) {
        _topView.label_phone.text = [NSString stringWithFormat:@"会员ID:%@",_model.usrNo];

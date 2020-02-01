@@ -13,8 +13,14 @@
 #import "MineKefuViewController.h"
 #import "MineSettingViewController.h"
 #import "IntegralRecordViewController.h"
+#import "MarketMessageViewController.h"
+#import "VipManagerViewController.h"
 
 #import "CTMediator+ModuleMineActions.h"
+#import "CTMediator+ModuleScanActions.h"
+#import "CTMediator+ModuleMainActions.h"
+#import "CTMediator+CTMediatorModuleLoginActions.h"
+#import "CTMediator+ModuleBookActions.h"
 
 #import "AdvertManager.h"
 #import "MineInterfaceCell.h"
@@ -99,7 +105,7 @@
         make.left.mas_equalTo(15);
         make.right.mas_equalTo(-15);
         make.top.mas_equalTo(self.toolsView2.mas_bottom).offset(5);
-        make.height.mas_equalTo(111);
+        make.height.mas_equalTo(171);
     }];
     
     UILabel *label2 = [UILabel labelWithFont:Font_PingFang_SC_Medium(15) text:@"我的商户" textColor:rgb(53,53,53)];
@@ -108,15 +114,18 @@
         make.left.top.mas_equalTo(15);
     }];
     
-    _toolsView3 = [[HomeToolsView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth-30, 60)];
+    _toolsView3 = [[HomeToolsView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth-30, 120)];
+    _toolsView3.maxCountOneLine = 4;
     _toolsView3.topSpacing = 5;
     if (CurrentUserMerchant.pmsMerchantInfo.status_lz == AuthenMerchantStatusSuccess) {
-        [_toolsView3 setToolsArray:@[@"商户信息",
-         @"线上开店",@"商户管理",
+        [_toolsView3 setToolsArray:@[
+         @"线上开店",@"商户管理",@"商户信息"
+         ,@"会员管理",@"同城优惠",@"发优惠券",@"数据统计"
         ]];
     }else{
-        [_toolsView3 setToolsArray:@[@"商户入驻",
-         @"线上开店",@"商户管理",
+        [_toolsView3 setToolsArray:@[
+         @"线上开店",@"商户管理",@"商户入驻"
+         ,@"会员管理",@"同城优惠",@"发优惠券",@"数据统计"
         ]];
     }
     
@@ -125,7 +134,7 @@
     [_toolsView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-10);
-        make.height.mas_equalTo(60);
+        make.height.mas_equalTo(120);
     }];
     
     //view4
@@ -222,6 +231,38 @@
         
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_OrderManagerController];
         PushController(vc);
+    }else if ([title isEqualToString:@"收银员"]) {
+        AppCenterCheckNotOpen
+        APPCenterPowerCheckMerchant
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_ManManagerController];
+        PushController(vc);
+    }else if ([title isEqualToString:@"会员管理"]) {
+        APPCenterPowerCheckMerchant
+        VipManagerViewController *vc = [VipManagerViewController new];
+        PushController(vc);
+    }else if ([title isEqualToString:@"短信营销"]) {
+        [AppCenter setEmptyControllerTitle:@"短信营销"];
+        APPCenterPowerCheckMerchant
+        MarketMessageViewController *vc = [MarketMessageViewController new];
+        PushController(vc);
+    }else if ([title isEqualToString:@"发优惠券"]) {
+         APPCenterPowerCheckMerchant
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_CouponListViewController];
+        PushController(vc);
+    }else if ([title isEqualToString:@"店铺管理"]) {
+
+        [[CTMediator sharedInstance] CTMediator_EditShopInfoViewControllerWithNav:self.navigationController];
+    }else if ([title isEqualToString:@"店铺账本"]) {
+        APPCenterPowerCheckMerchant
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_BookViewController];
+        PushController(vc);
+    }else if ([title isEqualToString:@"数据统计"]) {
+
+        APPCenterPowerCheckMerchant
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_FormDataManagerController];
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if ([title isEqualToString:@"同城优惠"]) {
+       [AppCenter toMiniProgram];
     }
     
     

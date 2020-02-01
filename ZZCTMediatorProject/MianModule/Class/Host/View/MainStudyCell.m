@@ -43,10 +43,10 @@
 
 - (void)initData{
     NSArray *arr = @[@{@"createTime":@"2019-10-25",
-                       @"content":@"六旺临门，您值得从事的事业",
+                       @"content":@"副业吧，您值得从事的事业",
                        @"jumpUrl":@"https://m.lizhiweike.com/lecture2/13911153",
                        @"picture":@"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1569818252&di=72016276df3fbc8e60c85cc36ac15664&src=http://hbimg.b0.upaiyun.com/48b4ddaececbc8940418c06f74f6b5fffd9edcdc65c5a-qGqu6t_fw658",
-                       @"title":@"六旺临门，您值得从事的事业",
+                       @"title":@"副业吧，您值得从事的事业",
                        },
                      @{@"createTime":@"2019-10-25",
                        @"content":@"新零售运营之直营地推",

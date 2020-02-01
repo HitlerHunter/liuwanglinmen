@@ -58,7 +58,7 @@
     CGFloat h = 50;
     
     CGFloat spacingX = (self.width-maxCount*w)/(maxCount+1);
-    CGFloat spacingY = 30;
+    CGFloat spacingY = 18;
     
     for (int i = 0; i < titles.count; i++) {
         
@@ -85,7 +85,7 @@
 
 - (void)updateItemsFrame{
     
-    NSInteger maxCount = 3;
+    NSInteger maxCount = _maxCountOneLine;
     
     CGFloat w = 85;
     CGFloat h = 50;
@@ -146,7 +146,7 @@
                           @"店铺二维码":@"zhangben",
                           @"短信营销":@"xiaoshou",
                           @"悬赏拓客":@"xuanshang",
-                          @"优惠券":@"youhuiquan",
+                          @"发优惠券":@"youhuiquan",
                           @"创业大学":@"ketang",
                           @"数据统计":@"tongji",
                           @"同城优惠":@"tongchengyouhui",
@@ -159,7 +159,12 @@
                           @"商户信息":@"mine_ruzhu",
                           @"线上开店":@"mine_kaidian",
                           @"商户管理":@"mine_manager",
-                          
+
+                          @"爆品商城":@"mine_shop",
+                          @"商家收款":@"mine_sk",
+                          @"预借现金":@"mine_jiecash",
+                          @"办信用卡":@"mine_banka",
+
                           };
     }
     return _titleIconDic;

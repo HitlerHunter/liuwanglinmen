@@ -31,15 +31,15 @@
     [super awakeFromNib];
     
     [self addTopLine];
-    self.avatar.lz_setView.lz_cornerRadius(self.avatar.height*0.5);
+    self.avatar.lz_setView.lz_cornerRadius(self.avatar.height*0.5).lz_border(0.5, LZLineColor);
 }
 
 - (void)setModel:(SYHomeListModel *)model{
     _model = model;
     
-    self.avatar.image = [AppCenter defaultAppAvatar];
+    self.avatar.image = [AppCenter appIcon];
     if (!IsNull(model.txnUserHeader)) {
-        [self.avatar sd_setImageWithURL:TLURL(model.txnUserHeader) placeholderImage:[AppCenter defaultAppAvatar]];
+        [self.avatar sd_setImageWithURL:TLURL(model.txnUserHeader) placeholderImage:[AppCenter appIcon]];
     }
     
     self.userNameLabel.text = [NSString stringWithFormat:@"%@",model.txnUserName];

@@ -22,7 +22,7 @@
 }
 
 - (NSInteger)imageCount{
-    return 4;
+    return 3;
 }
 
 - (UIScrollView *)scrollView{

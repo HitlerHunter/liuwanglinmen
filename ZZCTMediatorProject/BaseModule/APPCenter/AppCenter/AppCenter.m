@@ -269,7 +269,7 @@
 
 + (void)shareURL:(NSString *)url{
     [self shareURL:url
-             title:@"快来注册，省钱赚钱"
+             title:@"快来注册，副业赚钱"
           subTitle:@"您已经有99个熟人在使用了"
              image:[AppCenter appIcon]];
 }

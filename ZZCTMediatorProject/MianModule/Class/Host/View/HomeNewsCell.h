@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeNewsCell : LZBaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *readNumberLabel;
 
 @end
 

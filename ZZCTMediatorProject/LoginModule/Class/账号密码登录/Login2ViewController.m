@@ -36,8 +36,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *titleLabel = [UILabel labelWithFontSize:24 text:@"六旺临门"];
-    UILabel *subTitleLabel = [UILabel labelWithFontSize:13 text:@"生意旺，用六旺！"];
+    UILabel *titleLabel = [UILabel labelWithFontSize:24 text:@"副业吧"];
+    UILabel *subTitleLabel = [UILabel labelWithFontSize:13 text:@"怕钱不够花，就做副业吧！"];
     
     [self.view addSubview:titleLabel];
     [self.view addSubview:subTitleLabel];
@@ -197,13 +197,13 @@
 }
 
 - (void)addAgreement{
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《六旺商家版用户协议》"];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"注册/登录即同意《用户协议》"];
     [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
     
         // text-style1
-    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(8, 11)];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(255,81,0) range:NSMakeRange(8, 11)];
+    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(8, 6)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(255,81,0) range:NSMakeRange(8, 6)];
     
     UILabel *label_xy = [UILabel labelWithFont:Font_PingFang_SC_Bold(18) text:@"" textColor:rgb(255,81,0)];
     [self.view addSubview:label_xy];
@@ -333,7 +333,7 @@
 
 - (void)toAgrementVC{
     
-    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithUrl:@"http://pay.6wang666.com/userAgreement/userAgreement.html"];
+    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithUrl:UserDelegateURL];
     PushController(h5);
 }
 

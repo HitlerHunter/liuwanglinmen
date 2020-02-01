@@ -23,7 +23,7 @@
     self.backgroundColor = LZWhiteColor;
     
     UIImageView *icon = [UIImageView viewWithImage:UIImageName(@"order_shopLogo")];
-      UILabel *titleLab = [UILabel labelWithFont:Font_PingFang_SC_Medium(15) text:@"六旺临门" textColor:rgb(53,53,53)];
+      UILabel *titleLab = [UILabel labelWithFont:Font_PingFang_SC_Medium(15) text:@"副业吧" textColor:rgb(53,53,53)];
     
       [self addSubview:icon];
       [self addSubview:titleLab];

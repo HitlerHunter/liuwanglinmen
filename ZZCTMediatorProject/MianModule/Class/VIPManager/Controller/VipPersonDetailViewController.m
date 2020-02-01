@@ -65,7 +65,7 @@
     [self initCellView1];
     [self initCellView2];
     
-    _topView.headImage.image = [AppCenter defaultAppAvatar];
+    _topView.headImage.image = [AppCenter appIcon];
     _topView.label_name.text = _model.usrName;
     
     if (!IsNull(_model.usrNo)) {

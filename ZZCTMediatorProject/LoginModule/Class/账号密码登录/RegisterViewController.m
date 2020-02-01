@@ -107,7 +107,7 @@
     }];
     _agreementBtn = selectBtn;
     
-    UIButton *btn = [UIButton buttonWithFontSize:14 text:@"《六旺商家版用户协议》" textColor:rgb(255,81,0)];
+    UIButton *btn = [UIButton buttonWithFontSize:14 text:@"《用户协议》" textColor:rgb(255,81,0)];
     [btn addTarget:self action:@selector(toAgrementVC) forControlEvents:UIControlEventTouchUpInside];
     
     [self.scrollView addSubview:selectBtn];
@@ -126,7 +126,7 @@
 }
 
 - (void)toAgrementVC{
-    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithNoEncodeUrl:[NSString stringWithFormat:@"%@?oemId=%@",UserRegisterDelegateURL,OEMID]];
+    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithNoEncodeUrl:[NSString stringWithFormat:@"%@?oemId=%@",UserDelegateURL,OEMID]];
     PushController(h5);
 }
 

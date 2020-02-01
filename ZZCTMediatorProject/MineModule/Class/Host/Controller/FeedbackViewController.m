@@ -135,7 +135,7 @@
         make.top.mas_equalTo(imageView.mas_bottom).offset(25);
     }];
     
-    UILabel *lab2 = [UILabel labelWithFontSize:14 text:@"感谢你对六旺的关注与支持，我们会认真处理你的\
+    UILabel *lab2 = [UILabel labelWithFontSize:14 text:@"感谢你对副业吧的关注与支持，我们会认真处理你的\
 反馈，尽快修复和完善相关功能" textAlignment:NSTextAlignmentCenter];
     lab2.textColor = rgb(101,101,101);
     lab2.numberOfLines = 3;

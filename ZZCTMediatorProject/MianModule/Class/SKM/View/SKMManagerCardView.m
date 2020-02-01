@@ -145,8 +145,8 @@ static CGFloat scale = 0.0;
         make.centerX.mas_equalTo(bottomView);
     }];
  
-    NSString *kefuPhone = [AppCenter KeFuPhone];
-    label_info.text = [NSString stringWithFormat:@"生意旺，用六旺！ 服务热线：%@",kefuPhone];;
+//    NSString *kefuPhone = [AppCenter KeFuPhone];
+    label_info.text = [NSString stringWithFormat:@"怕钱不够花，就做副业吧！"];
     
     _codeImageView = codeImageView;
     _label_info = label_info;

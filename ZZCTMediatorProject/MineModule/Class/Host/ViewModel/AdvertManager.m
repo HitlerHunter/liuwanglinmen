@@ -9,6 +9,7 @@
 #import "AdvertManager.h"
 #import "BankCardManager.h"
 #import "GoodsDetailViewController.h"
+#import "CTMediator+ModuleMainActions.h"
 
 @implementation AdvertModel
 
@@ -56,8 +57,10 @@
 
 + (void)tapAdvertModel:(AdvertModel *)model withController:(UIViewController *)controller{
     
-    if ([model.func isEqualToString:@"upgrade"]) {
-        [(UITabBarController *)KeyWindow.rootViewController setSelectedIndex:2];
+    if ([model.func isEqualToString:@"receive"]) {
+        APPCenterPowerCheckMerchant
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_SKMManagerViewController];
+        [controller.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([model.func isEqualToString:@"shopping"]) {
         GoodsDetailViewController *vc = [[GoodsDetailViewController alloc] initWithType:model.remark];

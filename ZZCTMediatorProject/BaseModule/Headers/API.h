@@ -16,9 +16,9 @@
 //#define BaseURL @"http://192.168.1.190:8099"
 
 //用户协议
-#define UserDelegateURL @"http://mercpay.xingyema.com/manager/h5/agreement.html"
-#define UserRegisterDelegateURL @"http://mercpay.xingyema.com/manager/h5/service.html"
-
+#define UserDelegateURL @"http://139.9.76.21/new6wH5/html/userAgreement.html"
+#define DelegateFuYeURL @"http://139.9.76.21/new6wH5/html/sidelineAgreement.html"
+#define DelegateChuangYeURL @"http://139.9.76.21/new6wH5/html/startAgreement.html"
 #define URL_RegisterHTML @"http://admin.6wang666.com/new6wH5/html/register.html"
 
 #pragma mark - 通用

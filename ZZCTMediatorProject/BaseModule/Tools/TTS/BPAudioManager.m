@@ -61,7 +61,7 @@ NSString* SECRET_KEY = @"zzkdtRLk28l1IzAhb3kyIEIsuk6LLnFa";
 
 - (void)willPlayWithMoney:(NSString *)money{
     
-    NSString *text = [NSString stringWithFormat:@"六旺进账%@元",money];
+    NSString *text = [NSString stringWithFormat:@"副业吧进账%@元",money];
     [self willPlayWithText:text];
 }
 

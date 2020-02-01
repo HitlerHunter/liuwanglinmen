@@ -33,6 +33,8 @@ typedef NS_ENUM(NSUInteger, LevelInfoType) {
 
 @property (nonatomic, assign) LevelInfoType type;
 
+@property (nonatomic, strong) NSString *delegateUrl;
+@property (nonatomic, strong) NSString *text_xy;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *btnTitle;
 @property (nonatomic, strong) NSAttributedString *btnAttributedTitle;

@@ -95,13 +95,13 @@
 
 - (void)saveCardImage{
     
-    NSString *kefuPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"kefuPhone"];
+//    NSString *kefuPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"kefuPhone"];
     
     SKMManagerCardView *card = [[SKMManagerCardView alloc] initWithWidth:kScreenWidth*2];
     
     UIImage *codeImage = [self creatCodeImageWithSize:card.width*1.5];
     card.codeImageView.image = codeImage;
-    card.label_info.text = [NSString stringWithFormat:@"生意旺，用六旺！ 服务热线：%@",kefuPhone];
+    card.label_info.text = [NSString stringWithFormat:@"怕钱不够花，就做副业吧！"];
     
     [self.view insertSubview:card atIndex:0];
 

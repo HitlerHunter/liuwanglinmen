@@ -72,7 +72,7 @@
         make.width.mas_lessThanOrEqualTo(90);
     }];
     
-    imageView.lz_setView.lz_cornerRadius(25);
+    imageView.lz_setView.lz_cornerRadius(25).lz_border(0.5, LZLineColor);
     
     [label_money1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(label_name.mas_bottom).offset(6);
@@ -94,7 +94,7 @@
 - (void)setModel:(VipPersonModel *)model{
     _model = model;
     
-    [self.headImage sd_setImageWithURL:TLURL(model.txnUserHeader) placeholderImage:[AppCenter defaultAppAvatar]];
+    [self.headImage sd_setImageWithURL:TLURL(model.txnUserHeader) placeholderImage:[AppCenter appIcon]];
     
     if (model.txnUserName.length) {
         self.label_name.text = model.txnUserName;

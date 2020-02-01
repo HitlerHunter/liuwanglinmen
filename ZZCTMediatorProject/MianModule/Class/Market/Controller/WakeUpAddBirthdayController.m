@@ -252,7 +252,7 @@
  `task_status` int(11) DEFAULT NULL COMMENT '订单状态 1：执行中  2：执行成功  3：失败终止',
  `perday_time` varchar(32) DEFAULT NULL COMMENT '每日时间',
  `before_date` varchar(32) DEFAULT NULL COMMENT '上一次执行日期YYYYYMMdd',
- `send_targe_type` varchar(256) DEFAULT NULL COMMENT '目标类型 tag:标签分组用户 vip:vip用户 all:名下所有用户',
+ `send_targe_type` varchar(256) DEFAULT NULL COMMENT '目标类型 tag:标签分组用户 vip:创业 all:名下所有用户',
  `send_targe` varchar(256) DEFAULT NULL COMMENT '发送目标',
  `send_template_id` int(11) DEFAULT NULL COMMENT '发送模板id',
  `send_head` varchar(32) DEFAULT NULL COMMENT '短信头',

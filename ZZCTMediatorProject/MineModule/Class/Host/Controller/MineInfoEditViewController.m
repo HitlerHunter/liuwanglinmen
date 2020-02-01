@@ -132,7 +132,7 @@
         cell_birth.valueLabel.text = self.birthDay;
     }];
     
-    imageView.image = [AppCenter defaultAppAvatar];
+    imageView.image = [AppCenter appIcon];
     if (!IsNull(CurrentUser.nickUrl)) {
         [imageView sd_setImageWithURL:TLURL(CurrentUser.nickUrl)];
     }

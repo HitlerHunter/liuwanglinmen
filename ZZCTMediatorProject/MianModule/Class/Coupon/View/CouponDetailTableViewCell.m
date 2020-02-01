@@ -64,7 +64,7 @@
     _label_phone = label_phone;
     _avatar = imageView;
     
-    imageView.lz_setView.lz_cornerRadius(22);
+    imageView.lz_setView.lz_cornerRadius(22).lz_border(0.5, LZLineColor);
     
     
     UILabel *label_time2 = [UILabel labelWithFont:Font_PingFang_SC_Regular(12) text:@"" textColor:rgb(152,152,152) textAlignment:NSTextAlignmentCenter];
@@ -85,9 +85,9 @@
     _model = model;
     
     if (!IsNull(model.avatar)) {
-        [_avatar sd_setImageWithURL:TLURL(model.avatar) placeholderImage:UIImageName(@"touxiang")];
+        [_avatar sd_setImageWithURL:TLURL(model.avatar) placeholderImage:[AppCenter appIcon]];
     }else{
-        _avatar.image = UIImageName(@"touxiang");
+        _avatar.image = [AppCenter appIcon];
     }
     
     _label_name.text = IsNull(model.nickName)?@"会员昵称":model.nickName;

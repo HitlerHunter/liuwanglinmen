@@ -113,7 +113,7 @@
         }];
     }
     
-    [_logo sd_setImageWithURL:TLURL(model.pmsMerchantPicture.shopPhoto) placeholderImage:[AppCenter defaultAppAvatar]];
+    [_logo sd_setImageWithURL:TLURL(model.pmsMerchantPicture.shopPhoto) placeholderImage:[AppCenter appIcon]];
 }
 
 - (void)showReason{

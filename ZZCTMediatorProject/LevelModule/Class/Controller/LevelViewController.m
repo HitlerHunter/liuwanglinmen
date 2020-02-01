@@ -37,7 +37,7 @@
         }else if (CurrentUser.userLvl == 3
                   || CurrentUser.userLvl == 2
                   || CurrentUser.userLvl == 4) {
-            [_topView toSelectInde:3];
+            [_topView toSelectInde:2];
         }
     }else{
         _isShowNotificationSelected = NO;
@@ -68,12 +68,16 @@
             NSString *money = obj[@"upgradeAmount"];
             if (index == 1) {
                 model = [LevelInfoModel modelWithType:LevelInfoTypeVIP dic:obj];
+                model.delegateUrl = DelegateFuYeURL;
+                model.text_xy = @"同意《副业服务协议》及其服务条款";
                 model.submitBlock = ^{
                     self.upToLevel = LevelInfoTypeVIP;
                     [LevelUpViewModel upLevelWithMoney:money level:@"1" block:nil];
                 };
             }else if (index == 2) {
                 model = [LevelInfoModel modelWithType:LevelInfoTypeServer dic:obj];
+                model.delegateUrl = DelegateChuangYeURL;
+                model.text_xy = @"同意《创业服务协议》及其服务条款";
                 model.submitBlock = ^{
                     self.upToLevel = LevelInfoTypeServer;
                     [LevelUpViewModel upLevelWithMoney:money level:@"2" block:nil];

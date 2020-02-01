@@ -58,7 +58,7 @@
     [editBtn addTarget:self action:@selector(toEditInfo) forControlEvents:UIControlEventTouchUpInside];
     
     //avatar、name
-    imageView.image = [AppCenter defaultAppAvatar];
+    imageView.image = [AppCenter appIcon];
     if (!IsNull(CurrentUser.nickUrl)) {
         [imageView sd_setImageWithURL:TLURL(CurrentUser.nickUrl)];
     }

@@ -119,7 +119,7 @@
     }
     
     if (level == 0) {
-        return @"普通用户";
+        return @"副业";
     }else if (level == 1){
         return @"一级代理";
     }else if (level == 2){
@@ -130,7 +130,7 @@
         return @"省级合伙人";
     }
     
-    return @"普通用户";
+    return @"副业";
 }
 
 /*

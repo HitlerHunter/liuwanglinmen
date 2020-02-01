@@ -58,7 +58,7 @@
         make.top.mas_equalTo(label_name.mas_bottom).offset(5);
     }];
     
-    imageView.lz_setView.lz_cornerRadius(25);
+    imageView.lz_setView.lz_cornerRadius(25).lz_border(0.5, LZLineColor);
     
     [label_money1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(imageView.mas_bottom).offset(25);

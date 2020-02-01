@@ -24,7 +24,7 @@
     UILabel *text_label = [UILabel labelWithFontSize:14 textColor:rgb(53,53,53)];
     text_label.textAlignment = NSTextAlignmentRight;
     UIImageView *rightIcon = [UIImageView viewWithImage:UIImageName(@"more_gray")];
-    UIImageView *leftIcon = [UIImageView viewWithImage:UIImageName(@"touxiang")];
+    UIImageView *leftIcon = [UIImageView viewWithImage:[AppCenter appIcon]];
     _logoImageView = leftIcon;
     leftIcon.hidden = YES;
     

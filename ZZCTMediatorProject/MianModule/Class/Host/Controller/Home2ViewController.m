@@ -16,6 +16,7 @@
 #import "BossStudyViewController.h"
 #import "MianSectionHeader.h"
 #import "MainStudyCell.h"
+#import "HomeFirstCell.h"
 
 #import "IPAddressHelper.h"
 
@@ -57,13 +58,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _titleArray = @[@"精选课堂",@"精选推荐"];
+    _titleArray = @[@"创业大学"];
     
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeNewsCell" bundle:nil] forCellReuseIdentifier:@"HomeNewsCell"];
-    [self.tableView registerClass:[MainStudyCell class] forCellReuseIdentifier:@"MainStudyCell"];
+    [self.tableView registerClass:[HomeFirstCell class] forCellReuseIdentifier:@"HomeFirstCell"];
     
     @weakify(self);
     [AppMessage getHomePresentNoticeWithBlock:^(NoticeModel * _Nonnull message) {
@@ -141,31 +142,31 @@
 
 #pragma mark - tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 1;
-    }
+//    if (section == 0) {
+//        return 1;
+//    }
     return self.viewModel.dataArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        return 175;
+    if (indexPath.row == 0) {
+        return kScreenWidth/108.0*72;
     }
-    return 121;
+    return 74;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.section == 0) {
-        MainStudyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainStudyCell"];
+    if (indexPath.row == 0) {
+        HomeFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFirstCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+
         return cell;
     }
     
@@ -174,10 +175,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.titleLab.text = model.title;
-    cell.readNumberLabel.text = @"";
-    cell.timeLabel.text = model.showTime;
-    
-    [cell.imgView sd_setImageWithURL:TLURL(model.picture)];
+
+//    [cell.imgView sd_setImageWithURL:TLURL(model.picture)];
+    cell.imgView.image = UIImageName(model.picture);
     
     return cell;
     

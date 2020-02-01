@@ -69,7 +69,7 @@
     
     //限时活动
     if (type == LevelInfoTypeVIP) {
-        model.title = @"五大权益";
+        model.title = @"订购1瓶溺龄男士按摩膏，开启副业";
         model.btnTitle = [NSString stringWithFormat:@"￥%@  立即升级",dic[@"upgradeAmount"]];
         model.cellModelArray = @[cellModel1,cellModel2,cellModel3,cellModel4,cellModel5];
         
@@ -84,7 +84,7 @@
         
         cellModel5.tagInfo = @"";
         
-        model.title = @"五大权益";
+        model.title = @"订购30瓶溺龄男士按摩膏，开始创业";
         model.btnTitle = [NSString stringWithFormat:@"￥%@ 立即升级",dic[@"upgradeAmount"]];
         model.cellModelArray = @[cellModel1,cellModel2,cellModel3,cellModel4,cellModel5];
         
@@ -235,6 +235,7 @@
 @interface LevelInfoView ()
 
 @property (nonatomic, strong) UILabel *label_title;
+@property (nonatomic, strong) UILabel *label_delegate;
 @property (nonatomic, strong) UIButton *btn;
 @property (nonatomic, strong) UIButton *xybtn;
 @property (nonatomic, strong) UIView *xyView;
@@ -247,7 +248,7 @@
     
     self.backgroundColor = LZWhiteColor;
     
-    UILabel *label_title = [UILabel labelWithFont:Font_PingFang_SC_Bold(18) text:@"" textColor:rgb(255,81,0)];
+    UILabel *label_title = [UILabel labelWithFont:Font_PingFang_SC_Regular(14) text:@"" textColor:rgb(255,81,0)];
     [self addSubview:label_title];
     [label_title mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
@@ -275,7 +276,7 @@
     }];
     _xyView = xyView;
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"同意《升级协议》及其服务条款"];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"同意《副业服务协议》及其服务条款"];
     [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
     
@@ -290,6 +291,7 @@
         make.bottom.mas_equalTo(0);
         make.height.mas_equalTo(20);
     }];
+    _label_delegate = label_xy;
     label_xy.attributedText = attributedString;
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -320,8 +322,9 @@
 }
 
 - (void)btnClick1{
-    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithUrl:@"http://admin.6wang666.com/new6wH5/html/userUpgradeAgreement.html"];
+    H5CommonViewController *h5 = [[H5CommonViewController alloc] initWithUrl:_model.delegateUrl];
     PushController(h5);
+    //@"http://admin.6wang666.com/new6wH5/html/userUpgradeAgreement.html"
     
 }
 
@@ -395,6 +398,15 @@
     self.lz_setView.lz_shadow(5, rgba(255, 81, 0, 0.19), CGSizeMake(0, 1), 1, 12);
     
     _xyView.hidden = model.type == LevelInfoTypeAreaServer;
+
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:model.text_xy];
+    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(33,33,33) range:NSMakeRange(0, attributedString.length)];
+
+        // text-style1
+    [attributedString addAttribute:NSFontAttributeName value:Font_PingFang_SC_Medium(12) range:NSMakeRange(2, 8)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:rgb(255,81,0) range:NSMakeRange(2, 8)];
+    _label_delegate.attributedText = attributedString;
 }
 
 - (NSMutableArray *)cellArray{
